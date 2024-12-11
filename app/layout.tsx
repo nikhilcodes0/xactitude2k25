@@ -3,8 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import { Antonio } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const antonio = Antonio({ subsets: ['latin'], weight: ['400', '600', '700'] });
+
+const antonio = Antonio({ subsets: ['latin'], weight: ['400'] });
+const inter = Inter({ subsets: ['latin'], weight: ['400'] });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,6 +24,12 @@ const humane = localFont({
   variable: "--font-humane",
   weight: "100 900",
 });
+const jacquard = localFont({
+  src: "./fonts/Jacquard12-Regular.ttf",
+  variable: "--font-jacquard",
+  weight: "100 900",
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${antonio.className} ${humane.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${antonio.className} ${humane.className} ${jacquard.className} ${inter.className} antialiased`}
       >
         {children}
       </body>
