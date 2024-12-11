@@ -1,21 +1,21 @@
 import React from 'react'
 // import Image from 'next/image'
-import Card from '../components/Card'
+import Card from './Card'
 import bg1 from '../assets/cardbg-1.png'
 import bg2 from '../assets/bgmi.png'
 import bg3 from '../assets/codeshift.png'
 import bg4 from '../assets/fifa.png'
 import bg5 from '../assets/itm.png'
-import PulsatingButton from "@/components/ui/pulsating-button";
+import PulsatingButton from "@/app/components/ui/pulsating-button";
 
 
 const Events = () => {
   return (
     <>
-    <div className="bg-neutral-950">
+    <div className="">
         <h1 className="relative z-10 text-[8rem] mt-5 md:text-7xl font-antonio bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] text-center font-bold tracking-tighter">EVENTS</h1>
 
-        <div className="mt-12 overflow-hidden h-[33rem]">
+        <div className="mt-12 overflow-hidden h-[35rem]">
           <Card 
             title="Weblynx"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -52,7 +52,7 @@ const Events = () => {
             title="IT Manager"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
             image={bg5}
-            className="absolute bottom-[12rem] -left-[7rem] -rotate-[30deg] z-[6]"
+            className="relative bottom-[97rem] -left-[13rem] -rotate-[30deg] z-[6]"
             date="30/1"
             duration="3 Hr"
           />
