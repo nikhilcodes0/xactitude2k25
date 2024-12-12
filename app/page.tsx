@@ -1,11 +1,9 @@
-import Events from './components/Events'
-import Page from './events/page'
+import Home from './home/page'
 
-export default function Home() {
+export default function Page() {
   return (
     <div className='bg-black'>
-    <Page/>
-    <Events/>
+    <Home/>
     </div>
   );
 }
