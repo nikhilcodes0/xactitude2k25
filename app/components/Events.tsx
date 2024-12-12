@@ -6,13 +6,13 @@ import bg2 from '../assets/bgmi.png'
 import bg3 from '../assets/codeshift.png'
 import bg4 from '../assets/fifa.png'
 import bg5 from '../assets/itm.png'
-import PulsatingButton from "@/app/components/ui/pulsating-button";
+import PulsatingButton from "@/components/ui/pulsating-button";
 
 
 const Events = () => {
   return (
     <>
-    <div className="">
+    <div className="mt-20">
         <h1 className="relative z-10 text-[8rem] mt-5 md:text-7xl font-antonio bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] text-center font-bold tracking-tighter">EVENTS</h1>
 
         <div className="mt-12 overflow-hidden h-[35rem]">
