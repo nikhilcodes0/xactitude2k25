@@ -27,7 +27,7 @@ export default function Page() {
       <div>
         <Nav />
         <div className="">
-          <div className=" mt-[22rem] relative">
+          <div className=" mt-[18rem] relative">
             <Image
               src={backdrop}
               alt="backdrop"
@@ -49,7 +49,7 @@ export default function Page() {
           <Image
             src={bgimg}
             alt="background image"
-            className=" object-fill z-0  mx-auto mt-20"
+            className=" object-fill z-0  mx-auto mt-14"
           />
           <div className="absolute bottom-4 border-l-4 mx-2 border-opacity-60 p-2 border-white ">
             <p className="text-white font-sans text-wrap w-20 opacity-60">
@@ -59,8 +59,8 @@ export default function Page() {
         </div>
       </div>
       <div className="mt-36">
-        <h1 className="text-white  text-7xl font-black font-antonio text-start p-4 px-12">
-          Welcome to <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-extrabold pt-6">XACTITUDE -</p>
+        <h1 className="text-white  text-[4.2rem] font-black font-antonio text-start p-4 px-12">
+          Welcome to <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-extrabold">XACTITUDE -</p>
         </h1>
       </div>
     </div>
