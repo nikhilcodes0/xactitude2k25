@@ -5,14 +5,14 @@ import cine from '../assets/cine.png'
 import fc24 from '../assets/fc24.png'
 import quizz from '../assets/quizz.png'
 
-let events = [
+const events = [
     {id: 1, title: 'Weblynx', image: weblynx},
     {id: 2, title: 'Cinephoria', image: cine},
     {id: 3, title: 'FC24', image: fc24},
     {id: 4, title: 'Quizz Buzz', image: quizz}
 ]
 
-let noEvent = events.length
+const noEvent = events.length
 
 
 const Reg = () => {

@@ -12,10 +12,10 @@ import PulsatingButton from "@/components/ui/pulsating-button";
 const Events = () => {
   return (
     <>
-    <div className="mt-20">
+    <div className="mt-48">
         <h1 className="relative z-10 text-[8rem] mt-5 md:text-7xl font-antonio bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] text-center font-bold tracking-tighter">EVENTS</h1>
 
-        <div className="mt-12 overflow-hidden h-[35rem]">
+        <div className="mt-12 overflow-hidden h-[40rem]">
           <Card 
             title="Weblynx"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -36,7 +36,7 @@ const Events = () => {
             title="Code Shift"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
             image={bg3}
-            className="relative bottom-[49rem] left-[7rem] rotate-[20deg] z-[8]"
+            className="relative bottom-[51rem] left-[9rem] rotate-[20deg] z-[8]"
             date="30/1"
             duration="3 Hr"
           />
@@ -44,7 +44,7 @@ const Events = () => {
             title="Fifa"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
             image={bg4}
-            className="relative bottom-[70rem] left-[16rem] rotate-[30deg] z-[7]"
+            className="relative bottom-[74rem] left-[18rem] rotate-[30deg] z-[7]"
             date="30/1"
             duration="3 Hr"
           />
@@ -52,17 +52,17 @@ const Events = () => {
             title="IT Manager"
             description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
             image={bg5}
-            className="relative bottom-[97rem] -left-[13rem] -rotate-[30deg] z-[6]"
+            className="relative bottom-[102rem] -left-[14rem] -rotate-[30deg] z-[6]"
             date="30/1"
             duration="3 Hr"
           />
         </div>
-      <div className='flex flex-col items-center mt-12'>
+      <div className='flex flex-col items-center mt-12 pb-12'>
         <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto'>STARTS FROM JAN 30</p>
         <div className='flex justify-between items-center mt-10 w-full'>
           <hr className='border-neutral-400 w-[8rem] '/>
           <PulsatingButton className='block'>
-            <p className='text-white text-2xl font-antonio font-bold mx-auto'>REGISTER</p>
+            <p className='text-white text-3xl font-antonio font-bold mx-auto'>REGISTER</p>
           </PulsatingButton>
           <hr className='border-neutral-400 w-[8rem] '/>
         </div>
