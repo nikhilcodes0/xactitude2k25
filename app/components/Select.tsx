@@ -25,7 +25,7 @@ const Select: React.FC<SelectProps> = ({ title, selected=false, image, onClick }
       <div className="max-w-[220px]">
         <Image src={image} alt="bg1" className="w-full h-full object-cover" />
         <div className={selected ? 'bg-[#2FFF60] text-black' : 'text-white'}>
-          <h3 className={`${jersey.className} text-3xl `}>{title}</h3>
+          <h3 className={`${jersey.className} text-3xl mx-1 `}>{title}</h3>
         </div>
       </div>
     </div>

@@ -39,8 +39,7 @@ const Group = ({no, title, image, team }: Props) => {
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div> 
     </div>
   )
 }

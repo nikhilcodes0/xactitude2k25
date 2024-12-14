@@ -117,7 +117,7 @@ const Reg = () => {
                 <input type="checkbox" name="agree" id="" className='w-8 h-8 rounded-xl accent-[#2FFF60]'/>
                 <label htmlFor="agree" className='text-white text-l'>I confirm that I have read and accept the terms and conditions.</label>
             </div> 
-            <button className='bg-[#07B6B0] text-xl font-bold py-3 rounded-lg w-[90%] my-6'>REGISTER</button>   
+            <button className='bg-[#07B6B0] text-xl font-bold py-3 rounded-lg w-[90%] my-6 cursor-pointer'>REGISTER</button>   
         </div>
     </div>
   );
