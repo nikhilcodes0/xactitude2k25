@@ -1,98 +1,126 @@
-import React from 'react'
-import Select from '../components/Select'
-import weblynx from '../assets/weblynx.png'
-import cine from '../assets/cine.png'
-import fc24 from '../assets/fc24.png'
-import quizz from '../assets/quizz.png'
+"use client";
 
-const events = [
-    {id: 1, title: 'Weblynx', image: weblynx},
-    {id: 2, title: 'Cinephoria', image: cine},
-    {id: 3, title: 'FC24', image: fc24},
-    {id: 4, title: 'Quizz Buzz', image: quizz}
-]
+import React, { useState } from 'react';
+import Select from '../components/Select';
+import weblynx from '../assets/weblynx.png';
+import cine from '../assets/cine.png';
+import fc24 from '../assets/fc24.png';
+import quizz from '../assets/quizz.png';
+import Group from '../components/group';
 
-const noEvent = events.length
-
+const initialEvents = [
+  { id: 1, title: 'Weblynx', image: weblynx, selected: false },
+  { id: 2, title: 'Cinephoria', image: cine, selected: false },
+  { id: 3, title: 'FC24', image: fc24, selected: false },
+  { id: 4, title: 'Quizz Buzz', image: quizz, selected: false },
+];
 
 const Reg = () => {
+  const [events, setEvents] = useState(initialEvents);
+
+  const handleSelectClick = (name: string) => {
+    setEvents((prevEvents) =>
+      prevEvents.map((event) =>
+        event.title === name ? { ...event, selected: !event.selected } : event
+      )
+    );
+  };
+
+  const selectedCount = events.filter((event) => event.selected).length;
+  console.log('Selected Events:', events.filter((event) => event.selected)); // Log to see selected events
+
   return (
-    <div className='bg-black text-white font-sans'>
-        <div className=''>
-            <h1 className='text-[2rem] font-bold pt-7 pb-3 px-3'>SELECT YOUR EVENTS -</h1>
-            <hr className='mx-3 opacity-60'/>
+    <div className="bg-black text-white font-sans">
+      <div>
+        <h1 className="text-[2rem] font-bold pt-7 pb-3 px-3">SELECT YOUR EVENTS -</h1>
+        <hr className="mx-3 opacity-60" />
+      </div>
+
+      {/* Event Cards */}
+      <div className="grid grid-cols-2 gap-3 mx-3 my-6 bg-black text-white">
+        {events.map((event) => (
+          <Select
+            key={event.id}
+            title={event.title}
+            image={event.image}
+            selected={event.selected}
+            onClick={() => handleSelectClick(event.title)}
+          />
+        ))}
+      </div>
+
+      {/* Selected Count with Radio Button */}
+      <div className="flex gap-2 mx-3 items-center my-4">
+        <input
+          type="radio"
+          checked={selectedCount > 0}
+          readOnly
+          className="w-5 h-5 accent-[#2FFF60]"
+        />
+        <label
+          className={`text-xl transition-colors duration-300 ${
+            selectedCount > 0 ? 'text-[#2FFF60]' : 'text-white'
+          }`}
+        >
+          {selectedCount} events selected
+        </label>
+      </div>
+
+      {/* User Details */}
+      <div className="mx-3 mt-16 bg-black text-white">
+        <h1 className="text-[2rem] font-bold mb-16">ENTER YOUR DETAILS</h1>
+        <div className="flex flex-col gap-4 text-black">
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
+          />
+          <input
+            type="text"
+            placeholder="Institution"
+            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
+          />
+          <input
+            type="text"
+            placeholder="WhatsApp Number"
+            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
+          />
+          <input
+            type="text"
+            placeholder="Email ID"
+            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
+          />
         </div>
+      </div>
 
-        <div className='grid grid-cols-2 gap-3 mx-3 my-6 bg-black text-white'>
-
-            <Select 
-            title='Weblynx'
+      {/* Group Events */}
+      <div className="mx-3 mt-16 bg-black text-white">
+        <h1 className="text-[2rem] font-bold mb-16 text-center">GROUP EVENTS</h1>
+        <div className="flex flex-col gap-4 bg-black text-white">
+          <Group 
+            no="01"
+            title="Weblynx"
             image={weblynx}
-            />
-
-            <Select 
-            title='Cinephoria'
+            team={true}
+          />
+          <Group 
+            no="02"
+            title="Cinephoria"
             image={cine}
-            />
-
-            <Select 
-            title='FC24'
-            image={fc24}
-            />
-
-            <Select 
-            title='Quizz Buzz'
-            image={quizz}
-            />
-
-            <Select 
-            title='Cinephoria'
-            image={cine}
-            />
-
-            <Select 
-            title='Weblynx'
-            image={weblynx}
-            />
-
-            <Select 
-            title='Quizz Buzz'
-            image={quizz}
-            />
-
-            <Select 
-            title='FC24'
-            image={fc24}
-            />
-
+            team={false}
+          />
         </div>
-        
-        <div className='flex gap-2 mx-3 items-center'>
-            <input type="radio" checked className='w-5 h-5 accent-[#2FFF60]' />
-            <label className='text-[#2FFF60] text-xl'> {noEvent} events selected</label>
+      </div>
+      <hr className='mx-3 opacity-60 py-4' />
+      <div className='my-3 flex flex-col items-center justify-center'>
+            <div className='flex  gap-3 mx-3 items-center'>
+                <input type="checkbox" name="agree" id="" className='w-8 h-8 rounded-xl accent-[#2FFF60]'/>
+                <label htmlFor="agree" className='text-white text-l'>I confirm that I have read and accept the terms and conditions.</label>
+            </div> 
+            <button className='bg-[#07B6B0] text-xl font-bold py-3 rounded-lg w-[90%] my-6'>REGISTER</button>   
         </div>
-
-        <div className='mx-3 mt-16 bg-black text-white'>
-            <h1 className='text-[2rem] font-bold mb-16'>ENERT YOUR DETAILS</h1>
-
-            <div className='flex flex-col gap-4 text-black'>
-                <input type="text" placeholder='Full Name' className='p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none'/>
-                <input type="text" placeholder='Institution' className='p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none' />
-                <input type="text" placeholder='Whatsapp Number' className='p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none' />
-                <input type="text" placeholder='Email ID' className='p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none' />
-            </div>
-        </div>
-        <hr className='mx-3 opacity-60 mt-16' />
-
-        <div className='mx-3 mt-16 bg-black text-white'>
-            <h1 className='text-[2rem] font-bold mb-16 text-center'>GROUP EVENTS</h1>
-
-            <div className='flex flex-col gap-4 bg-black text-white'>
-
-            </div>    
-        </div>            
-
     </div>
-  )
-}
-export default Reg
+  );
+};
+
+export default Reg;
