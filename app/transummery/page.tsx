@@ -1,8 +1,8 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Progressbar from '../components/progressbar';
 import success from '../assets/Successicon.png';
-import upload from '../assets/uploadicon.png';
+import upload from '../assets/Uploadicon.png';
 
 
 
