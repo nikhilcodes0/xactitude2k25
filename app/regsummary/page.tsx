@@ -4,7 +4,7 @@ import SummeryCard from '../components/summerycard';
 import weblynx from '../assets/weblynx.png';
 import cine from '../assets/cine.png';
 import fc24 from '../assets/fc24.png';
-import quizz from '../assets/quizz.png';
+
 
 
 const RegSummery = () => {
