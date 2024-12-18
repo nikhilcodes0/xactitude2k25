@@ -8,7 +8,7 @@ import cine from "./assets/cine.png";
 import fc24 from "./assets/fc24.png";
 import quizz from "./assets/quizz.png";
 import bgimg from "./assets/bg.png";
-import itm from "./assets/itm.png";
+import itm from "./assets/cine.png";
 import localFont from "next/font/local";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import Marquee from "@/components/ui/marquee";
@@ -30,11 +30,11 @@ const jersey = localFont({
 });
 
 const events = [
+  { title: "IT Manager", image: itm },
   { title: "Weblynx", image: weblynx },
   { title: "Cinephoria", image: cine },
   { title: "FC24", image: fc24 },
   { title: "Quizz Buzz", image: quizz },
-  { title: "IT Manager", image: itm },
 ];
 
 const meraPro = localFont({
@@ -52,8 +52,8 @@ const EventCard = ({
   image: StaticImageData;
 }) => {
   return (
-    <div className=" rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <Image src={image} alt={title} className="object-cover w-full h-full" />
+    <div className=" rounded-md flex flex-col antialiased  justify-center  overflow-hidden ">
+      <Image src={image} alt={title} className="object-cover h-full" />
       <p
         className={`${jersey.className} text-neutral-950 text-3xl font-bold bg-green-400 w-full text-center`}
       >
@@ -142,7 +142,7 @@ export default function Page() {
         </h1>
       </div>
       <div className=" rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:10s]">
+        <Marquee pauseOnHover={true} className="[--duration:20s]">
           {events.map((event) => (
             <EventCard
               key={event.title}
