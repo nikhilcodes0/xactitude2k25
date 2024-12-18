@@ -4,7 +4,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import EventsGroup from "../components/EventsGroup";
 import weblynx from "../assets/weblynx.png";
-
+import cine from "../assets/cine.png";
+import fifa from "../assets/fifa.png";
+import quizz from "../assets/quizz.png";
 // const jersey = localFont({
 //     src: "../fonts/Jersey10-Regular.ttf",
 //     weight: "400",
@@ -16,6 +18,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
+
+const events = [
+  {no: "01" ,title: "Weblynx", image: weblynx, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", chip1: "UI/UX", chip2: "Development", chip3: "Design"},
+  {no: "02" ,title: "Cinephoria", image: cine, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", chip1: "UI/UX", chip2: "Development", chip3: "Design"},
+  {no: "03" ,title: "Fifa", image: fifa, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", chip1: "UI/UX", chip2: "Development", chip3: "Design"},
+  {no: "04" ,title: "Quiz Buzz", image: quizz, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", chip1: "UI/UX", chip2: "Development", chip3: "Design"},
+]
 
 const Events = () => {
   return (
@@ -42,15 +51,9 @@ const Events = () => {
         </div>
       </div>
       <div>
-        <EventsGroup 
-            no="01"
-            title="Weblynx"
-            image={weblynx}
-            description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-            chip1="UI/UX"
-            chip2="Development"
-            chip3="Design"
-        />
+        {events.map((event) => (
+          <EventsGroup key={event.no} {...event} />
+        ))}
       </div>
     </div>
   );

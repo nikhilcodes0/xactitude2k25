@@ -57,7 +57,7 @@ const Events = () => {
             duration="3 Hr"
           />
         </div>
-      <div className='flex flex-col items-center mt-12 pb-12'>
+      <div className='flex flex-col items-center  pb-12'>
         <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto'>STARTS FROM JAN 30</p>
         <div className='flex justify-between items-center mt-10 w-full'>
           <hr className='border-neutral-400 w-[8rem] '/>
