@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Select from "../components/Select";
 import weblynx from "../assets/weblynx.png";
 import cine from "../assets/cine.png";
@@ -27,6 +28,8 @@ const Reg = () => {
   const [wNo, setWNo] = useState("");
   const [email, setEmail] = useState("");
   const [teamName, setTeamName] = useState("");
+
+  const router = useRouter();
 
   const handleSelectClick = (name: string) => {
     setEvents((prevEvents) =>
@@ -61,20 +64,25 @@ const Reg = () => {
       // Save to sessionStorage
       sessionStorage.setItem("registrationData", JSON.stringify(participantDetails));
 
-      // Register participant
-      await registerParticipant(college, name, participantDetails);
+      // Relaxxx, not updating any data yet
 
-      // Update event data
-      selectedEvents.forEach(async (event) => {
-        await updateEventData(event, name, participantDetails.id);
-      });
+      // // Register participant
+      // await registerParticipant(college, name, participantDetails);
 
-      // Register team if applicable
-      if (teamName) {
-        await registerTeam(college, teamName, name);
-      }
+      // // Update event data
+      // selectedEvents.forEach(async (event) => {
+      //   await updateEventData(event, name, participantDetails.id);
+      // });
 
-      alert("Registration Successful!");
+      // // Register team if applicable
+      // if (teamName) {
+      //   await registerTeam(college, teamName, name);
+      // }
+
+      // alert("Registration Successful!");
+
+      // Navigate to /regsummary
+      router.push("/regsummary");
     } catch (error) {
       console.error("Error during registration:", error);
       alert("An error occurred during registration. Please try again.");
