@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StaticImageData } from 'next/image';
 import Select from './Select';
 import { validateTeam } from '@/src/utils/firestoreHelpers';
-import { input } from 'framer-motion/client';
+// import { input } from 'framer-motion/client';
 
 interface Props {
   no: string;
@@ -11,7 +11,7 @@ interface Props {
   image: string | StaticImageData;
 }
 
-const Group = ({ no, title, image, team }: Props) => {
+const Group = ({ no, title, image }: Props) => {
   const [teamName, setTeamName] = useState('');
   const [isTeamValid, setIsTeamValid] = useState(false);
   const [selectedOption, setSelectedOption] = useState<'create' | 'join'>('create'); // Track selected radio button
@@ -51,26 +51,26 @@ const Group = ({ no, title, image, team }: Props) => {
               <div className="flex items-center">
                 <input
                   type="radio"
-                  name="weblynx"
-                  id="create"
+                  name={title}
+                  id={`create-${title}`}
                   className="w-5 h-5 accent-[#2FFF60]"
                   checked={selectedOption === 'create'}
                   onChange={() => setSelectedOption('create')}
                 />
-                <label htmlFor="create" className="text-white mx-2">
+                <label htmlFor={`create-${title}`} className="text-white mx-2">
                   Create Team
                 </label>
               </div>
               <div className="flex items-center">
                 <input
                   type="radio"
-                  name="weblynx"
-                  id="join"
+                  name={title}
+                  id={`join-${title}`}
                   className="w-5 h-5 accent-[#2FFF60]"
                   checked={selectedOption === 'join'}
                   onChange={() => setSelectedOption('join')}
                 />
-                <label htmlFor="join" className="text-white mx-2">
+                <label htmlFor={`join-${title}`} className="text-white mx-2">
                   Join Team
                 </label>
               </div>

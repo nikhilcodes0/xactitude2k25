@@ -36,7 +36,7 @@ const Reg = () => {
     );
   };
 
-  const selectedCount = events.filter((event) => event.selected).length;
+  // const selectedCount = events.filter((event) => event.selected).length;
   console.log('Selected Events:', events.filter((event) => event.selected)); // Log to see selected events
 
   // Register handler
@@ -171,7 +171,7 @@ const Reg = () => {
             no="01"
             title="Weblynx"
             image={weblynx}
-            team={true}
+            team={false}
           />
           <Group 
             no="02"
