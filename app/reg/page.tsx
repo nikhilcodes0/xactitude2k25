@@ -9,6 +9,7 @@ import quizz from "../assets/quizz.png";
 import {
   registerParticipant,
   registerTeam,
+  updateEventData,
 } from "../../src/utils/firestoreHelpers";
 import Group from '../components/group';
 
@@ -59,7 +60,13 @@ const Reg = () => {
     };
 
     try {
+      // Update Registration data
       await registerParticipant(college, name, participantDetails);
+
+      // Update Event data
+      selectedEvents.forEach(async (event) => {
+        await updateEventData(event, name, participantDetails.id);
+      });
 
       // Register Team (if applicable)
       if (teamName) {

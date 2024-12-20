@@ -41,7 +41,8 @@ export const registerTeam = async (collegeName, teamName, memberName) => {
 
   } catch (error) {
     if (error.code === "not-found") {
-      // Define `teamMembersRef` here to avoid referencing an undefined variable
+      
+      // Team does not exist, create it with the member
       const teamMembersRef = doc(db, "Teams", teamName);
       await setDoc(teamMembersRef, { [memberName]: collegeName });
       console.log(`Team '${teamName}' created with member '${memberName}'!`);
@@ -51,3 +52,19 @@ export const registerTeam = async (collegeName, teamName, memberName) => {
   }
 };
 
+// Function to update event data
+export const updateEventData = async (eventName, participantName, participantId) => {
+  try {
+    // const db = getFirestore();  // Initialize Firestore
+    const eventRef = doc(db, "Events", eventName);
+    await setDoc(
+      eventRef,
+      { [participantName]: participantId },
+      { merge: true }
+    );
+
+    console.log(`Participant ${participantName} registered for ${eventName}`);
+  } catch (error) {
+    console.error("Error registering participant:", error);
+  }
+};
