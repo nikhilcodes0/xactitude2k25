@@ -1,4 +1,4 @@
-import { doc, collection, setDoc, updateDoc } from "firebase/firestore";
+import { doc, collection, setDoc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Function to register a participant
@@ -68,3 +68,18 @@ export const updateEventData = async (eventName, participantName, participantId)
     console.error("Error registering participant:", error);
   }
 };
+
+// Function for team validation
+export const validateTeam = async (teamName) => {
+  try {
+    // Check if the team exists and if the member is registered
+    const teamRef = doc(collection(db, "Teams"), teamName);
+    const teamSnapshot = await getDoc(teamRef);
+    if (teamSnapshot.exists()) {
+      return true;
+    }
+  }
+  catch (error) {
+    console.error("Error validating team:", error);
+  }
+}
