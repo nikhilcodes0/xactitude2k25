@@ -19,29 +19,27 @@ const jersey = localFont({
 
 interface Props {
     no: string;
-    title: string;
+    name: string;
     image: string | StaticImageData;
     description: string;
-    chip1: string;
-    chip2: string;
-    chip3: string;
+    chips: string[];
 }
 
-const EventsGroup = ({no, title, image, description, chip1, chip2, chip3}: Props) => {
+const EventsGroup = ({no, name, image, description, chips}: Props) => {
   return (
     <div className=' text-white'>
         <div className="my-6 flex justify-between gap-8 p-4">
             <div>
-                <h1 className={`${inter.className} text-[5rem] text-white font-bold opacity-60 leading-none tracking-[0.03em]`}>{no}.</h1>
+                <h1 className={`${inter.className} text-[3rem] text-white font-bold opacity-60 leading-none tracking-[0.03em]`}>{no}.</h1>
             </div>
             <div className='flex  gap-3 flex-col    '>
-                <Image src={image} alt={title} className='w-full h-full object-cover' />
+                <Image src={image} alt={name} className='w-full h-full object-cover rounded-lg' />
                 <p className={`${inter.className} text-base`}>{description}</p>
-                <p className={`${jersey.className} text-4xl font-bold`}>{title}</p>
+                <p className={`${jersey.className} text-4xl font-bold capitalize`}>{name}</p>
                 <div className='flex gap-3'>
-                    <Badge variant="outline" className='text-white font-sans'>{chip1}</Badge>
-                    <Badge variant="outline" className='text-white font-sans'>{chip2}</Badge>
-                    <Badge variant="outline" className='text-white font-sans'>{chip3}</Badge>
+                    {chips.map((chip: string, index: number) => (
+                        <Badge key={index} variant="outline" className='text-white font-sans'>{chip}</Badge>
+                    ))}
                 </div>
             </div>
         </div>

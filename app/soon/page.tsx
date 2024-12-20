@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import HyperText from "@/components/ui/hyper-text";
 import BoxReveal from "@/components/ui/box-reveal";
 import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,15 +16,15 @@ const Soon = () => {
           <p
             className={`z-10 flex gap-2 items-center whitespace-pre-wrap text-center text-lg font-medium tracking-tighter text-white relative ${inter.className}`}
           >
-            <HyperText className="text-6xl" duration={1000}>
+            <HyperText className="text-5xl" duration={1000}>
               
               Coming Soon 
             </HyperText>
-            <span className="text-[#40E0D0] font-bold text-7xl">!</span>
+            <span className="text-[#40E0D0] font-bold text-6xl">!</span>
           </p>
         </BoxReveal>
       </div>
-      <div className="relative top-36">
+      <div className="relative top-36 w-[90%]">
         <BoxReveal boxColor="#40E0D0">
           <p
             className={`z-10 whitespace-pre-wrap text-center text-lg font-medium tracking-tighter text-white ${inter.className}`}
@@ -42,7 +43,9 @@ const Soon = () => {
       </div>
       <div className="relative top-28">
         <BoxReveal boxColor="#40E0D0">
-          <InteractiveHoverButton className={`text-sm text-white ${inter.className} w-[15rem]`} text="Register Now" />
+            <Link href="/"> 
+          <InteractiveHoverButton className={`text-sm text-white ${inter.className} w-[15rem]`} text="Go back to homepage" />
+            </Link>
         </BoxReveal>
       </div>
       

@@ -130,9 +130,9 @@ export default function Page() {
         </div>
       </div>
       <div className="mt-36">
-        <h1 className="text-white  text-[4.2rem] font-black font-antonio text-start p-4 px-12">
-          Welcome to{" "}
-          <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-extrabold">
+        <h1 className="text-white  text-[4rem] font-black font-antonio text-start p-4 px-12">
+          Welcome to
+          <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-black">
             XACTITUDE 
           </p>
         </h1>
