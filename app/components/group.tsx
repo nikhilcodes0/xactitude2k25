@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { StaticImageData } from 'next/image';
-import Select from './Select';
-import { validateTeam } from '@/src/utils/firestoreHelpers';
-// import { input } from 'framer-motion/client';
+import React, { useState, useEffect } from "react";
+import { StaticImageData } from "next/image";
+import Select from "./Select";
+import { validateTeam } from "@/src/utils/firestoreHelpers";
 
 interface Props {
   no: string;
   title: string;
   team: boolean;
   image: string | StaticImageData;
+  onTeamNameChange?: (teamName: string) => void; // New prop to notify parent of team name changes
 }
 
-const Group = ({ no, title, image }: Props) => {
-  const [teamName, setTeamName] = useState('');
+const Group = ({ no, title, image, onTeamNameChange }: Props) => {
+  const [teamName, setTeamName] = useState("");
   const [isTeamValid, setIsTeamValid] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<'create' | 'join'>('create'); // Track selected radio button
+  const [selectedOption, setSelectedOption] = useState<"create" | "join">(
+    "create"
+  ); // Track selected radio button
 
   // Use effect to validate the team name whenever it changes
   useEffect(() => {
     const validate = async () => {
       const isValid = await validateTeam(teamName);
-      if (selectedOption === 'join') {
+      if (selectedOption === "join") {
         setIsTeamValid(!!isValid); // Normal validation for "Join Team"
       } else {
         setIsTeamValid(!isValid); // Reverse validation for "Create Team"
@@ -33,6 +35,14 @@ const Group = ({ no, title, image }: Props) => {
       setIsTeamValid(false); // Reset if team name is empty
     }
   }, [teamName, selectedOption]); // Depend on both teamName and selectedOption
+
+  const handleTeamNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.value;
+    setTeamName(name);
+    if (onTeamNameChange) {
+      onTeamNameChange(name); // Notify parent of the team name change
+    }
+  };
 
   return (
     <div className="bg-black">
@@ -54,8 +64,8 @@ const Group = ({ no, title, image }: Props) => {
                   name={title}
                   id={`create-${title}`}
                   className="w-5 h-5 accent-[#2FFF60]"
-                  checked={selectedOption === 'create'}
-                  onChange={() => setSelectedOption('create')}
+                  checked={selectedOption === "create"}
+                  onChange={() => setSelectedOption("create")}
                 />
                 <label htmlFor={`create-${title}`} className="text-white mx-2">
                   Create Team
@@ -67,8 +77,8 @@ const Group = ({ no, title, image }: Props) => {
                   name={title}
                   id={`join-${title}`}
                   className="w-5 h-5 accent-[#2FFF60]"
-                  checked={selectedOption === 'join'}
-                  onChange={() => setSelectedOption('join')}
+                  checked={selectedOption === "join"}
+                  onChange={() => setSelectedOption("join")}
                 />
                 <label htmlFor={`join-${title}`} className="text-white mx-2">
                   Join Team
@@ -80,21 +90,21 @@ const Group = ({ no, title, image }: Props) => {
                 type="text"
                 placeholder="Team Name"
                 value={teamName}
-                onChange={(e) => setTeamName(e.target.value)}
+                onChange={handleTeamNameChange} // Call the new handler
                 className={`p-2 rounded-md border-b-[5px] outline-none text-black ${
-                  isTeamValid ? 'border-[#2FFF60]' : 'border-[#ff5050]'
+                  isTeamValid ? "border-[#2FFF60]" : "border-[#ff5050]"
                 }`}
               />
               <p
                 className={`${
-                  isTeamValid ? 'text-[#2FFF60]' : 'text-[#ff5050]'
+                  isTeamValid ? "text-[#2FFF60]" : "text-[#ff5050]"
                 } text-xl`}
               >
                 {isTeamValid
-                  ? 'Team Name Available'
-                  : selectedOption === 'create'
-                  ? 'Team Name Unavailable'
-                  : 'Team Name Unavailable'}
+                  ? "Team Name Available"
+                  : selectedOption === "create"
+                  ? "Team Name Unavailable"
+                  : "Team Name Unavailable"}
               </p>
             </div>
           </div>

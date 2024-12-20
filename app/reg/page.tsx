@@ -11,7 +11,7 @@ import {
   registerTeam,
   updateEventData,
 } from "../../src/utils/firestoreHelpers";
-import Group from '../components/group';
+import Group from "../components/group";
 
 const initialEvents = [
   { id: 1, title: "Weblynx", image: weblynx, selected: false },
@@ -36,39 +36,40 @@ const Reg = () => {
     );
   };
 
-  // const selectedCount = events.filter((event) => event.selected).length;
-  console.log('Selected Events:', events.filter((event) => event.selected)); // Log to see selected events
-
-  // Register handler
   const handleRegister = async () => {
     const selectedEvents = events
       .filter((event) => event.selected)
       .map((e) => e.title);
+
     if (!name || !college || !email || !wNo) {
       alert("Please fill all the fields!");
       return;
     }
 
-    // Register Participant
     const participantDetails = {
+      name,
+      college,
+      wNo,
+      email,
+      teamName,
       events: selectedEvents,
-      mail: email,
       id: `${name.replace(/\s+/g, "")}_${college}`,
       tId: Math.floor(Math.random() * 1000),
-      team: teamName,
-      wNo,
     };
 
     try {
-      // Update Registration data
+      // Save to sessionStorage
+      sessionStorage.setItem("registrationData", JSON.stringify(participantDetails));
+
+      // Register participant
       await registerParticipant(college, name, participantDetails);
 
-      // Update Event data
+      // Update event data
       selectedEvents.forEach(async (event) => {
         await updateEventData(event, name, participantDetails.id);
       });
 
-      // Register Team (if applicable)
+      // Register team if applicable
       if (teamName) {
         await registerTeam(college, teamName, name);
       }
@@ -153,13 +154,6 @@ const Reg = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="text"
-            placeholder="Team Name (if any)"
-            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
-          />
         </div>
       </div>
 
@@ -167,28 +161,37 @@ const Reg = () => {
       <div className="mx-3 mt-16 bg-black text-white">
         <h1 className="text-[2rem] font-bold mb-16 text-center">GROUP EVENTS</h1>
         <div className="flex flex-col gap-4 bg-black text-white">
-          <Group 
+          <Group
             no="01"
             title="Weblynx"
             image={weblynx}
             team={false}
+            onTeamNameChange={setTeamName} // Pass setTeamName as a prop
           />
-          <Group 
+          <Group
             no="02"
             title="Cinephoria"
             image={cine}
             team={false}
+            onTeamNameChange={setTeamName} // Pass setTeamName as a prop
           />
         </div>
       </div>
-      <hr className='mx-3 opacity-60 py-4' />
-      <div className='my-3 flex flex-col items-center justify-center'>
-            <div className='flex  gap-3 mx-3 items-center'>
-                <input type="checkbox" name="agree" id="" className='w-8 h-8 rounded-xl accent-[#2FFF60]'/>
-                <label htmlFor="agree" className='text-white text-l'>I confirm that I have read and accept the terms and conditions.</label>
-            </div>   
+      <hr className="mx-3 opacity-60 py-4" />
+      <div className="my-3 flex flex-col items-center justify-center">
+        <div className="flex gap-3 mx-3 items-center">
+          <input
+            type="checkbox"
+            name="agree"
+            id=""
+            className="w-8 h-8 rounded-xl accent-[#2FFF60]"
+          />
+          <label htmlFor="agree" className="text-white text-l">
+            I confirm that I have read and accept the terms and conditions.
+          </label>
         </div>
-      
+      </div>
+
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
         <button
