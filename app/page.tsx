@@ -115,7 +115,7 @@ export default function Page() {
             </div>
             <div className={`${meraPro.className} relative bottom-10`}>
               <VelocityScroll
-                text="Restructuring tech for tomorrow"
+                text="Revitalizing tech for tomorrow"
                 default_velocity={3}
                 className=" text-center text-lg font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] "
               />
@@ -126,18 +126,14 @@ export default function Page() {
             alt="background image"
             className=" object-fill z-0  mx-auto mt-14"
           />
-          <div className="absolute bottom-4 border-l-4 mx-2 border-opacity-60 p-2 border-white ">
-            <p className="text-white font-sans text-wrap w-20 opacity-60">
-              Start From Jan 21
-            </p>
-          </div>
+          
         </div>
       </div>
       <div className="mt-36">
         <h1 className="text-white  text-[4.2rem] font-black font-antonio text-start p-4 px-12">
           Welcome to{" "}
           <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-extrabold">
-            XACTITUDE -
+            XACTITUDE 
           </p>
         </h1>
       </div>

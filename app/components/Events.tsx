@@ -7,6 +7,7 @@ import bg3 from '../assets/codeshift.png'
 import bg4 from '../assets/fifa.png'
 import bg5 from '../assets/itm.png'
 import PulsatingButton from "@/components/ui/pulsating-button";
+import Link from 'next/link';
 
 
 const Events = () => {
@@ -61,9 +62,11 @@ const Events = () => {
         <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto'>STARTS FROM JAN 30</p>
         <div className='flex justify-between items-center mt-10 w-full'>
           <hr className='border-neutral-400 w-[8rem] '/>
-          <PulsatingButton className='block'>
-            <p className='text-white text-3xl font-antonio font-bold mx-auto'>REGISTER</p>
-          </PulsatingButton>
+          <Link href="/soon">
+            <PulsatingButton className='block'>
+              <p className='text-white text-3xl font-antonio font-bold mx-auto'>REGISTER</p>
+            </PulsatingButton>
+          </Link>
           <hr className='border-neutral-400 w-[8rem] '/>
         </div>
       </div>
