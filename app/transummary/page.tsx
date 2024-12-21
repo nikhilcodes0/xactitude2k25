@@ -8,7 +8,8 @@ import upload from '../assets/Uploadicon.png';
 import { useRouter } from 'next/navigation';
 import { updateEventData, registerParticipant, registerTeam } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
 
-const transummery = () => {
+const Transummery = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [file, setFile] = useState<File | null>(null);
   const [transactionId, setTransactionId] = useState('');
   const router = useRouter();
@@ -123,4 +124,4 @@ const transummery = () => {
   );
 };
 
-export default transummery;
+export default Transummery;

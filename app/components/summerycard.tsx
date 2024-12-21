@@ -2,15 +2,10 @@
 
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
-import localFont from "next/font/local";
 
 
-const inter = localFont({
-  src: "../fonts/Inter.otf",
-  weight: "100",
-  style: "thin",
-  variable: "--font-inter",
-});
+
+
 
 
 
