@@ -1,18 +1,24 @@
+"use client"
+
 import React from 'react'
 // import Image from 'next/image'
 import Card from './Card'
 import eventsData from '../events/eventsData'
 import PulsatingButton from "@/components/ui/pulsating-button";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 const Events = () => {
+  const router = useRouter();
   return (
     <>
     <div className="mt-48">
         <h1 className="relative z-10 text-[8rem] mt-5 md:text-7xl font-antonio bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] text-center font-bold tracking-tighter">EVENTS</h1>
 
-        <div className="mt-12 overflow-hidden h-[45rem]">
+        <div className="mt-20 overflow-hidden h-[45rem] cursor-pointer" onClick={() => {
+          router.push('/events')
+        }}>
           <Card 
             title={eventsData[0].name}
             description={eventsData[0].description}

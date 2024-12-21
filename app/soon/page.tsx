@@ -5,13 +5,15 @@ import HyperText from "@/components/ui/hyper-text";
 import BoxReveal from "@/components/ui/box-reveal";
 import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import Link from "next/link";
-
+import CountdownTimer from "@/app/components/CountdownTimer";
 const inter = Inter({ subsets: ["latin"] });
 
 const Soon = () => {
   return (
     <div className="dark relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <div className="relative bottom-48">
+      
+      <CountdownTimer />
+      <div className="relative bottom-32">
         <BoxReveal boxColor="#40E0D0">
           <p
             className={`z-10 flex gap-2 items-center whitespace-pre-wrap text-center text-lg font-medium tracking-tighter text-white relative ${inter.className}`}

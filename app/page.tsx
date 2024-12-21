@@ -105,7 +105,7 @@ export default function Page() {
             </div>
             <div className={`${meraPro.className} relative bottom-10`}>
               <VelocityScroll
-                text="Revitalizing tech for tomorrow"
+                text="Revitalizing tech for tomorrow. "
                 default_velocity={3}
                 className=" text-center text-lg font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] "
               />
@@ -140,9 +140,7 @@ export default function Page() {
       </div>
       <div className="mt-20">
         <p className="text-white  text-2xl font-medium font-sans text-start p-4 px-12">
-          <span className="font-black">Xactitude</span> is the premier stage
-          where tech enthusiasts from colleges across the region come together
-          to showcase their skills, creativity, and passion for technology.
+          <span className="font-black">XACTITUDE</span> is the ultimate stage for students to ignite their potential, unleash their skills, and shine before a dynamic crowd of colleges and fiercely spirited competitors.
         </p>
       </div>
       <div className="mt-32">

@@ -2,7 +2,7 @@ import React from "react";
 import eventsData from "../eventsData";
 import Image from "next/image";
 import localFont from "next/font/local";
-import calendar from "../../assets/calendar.png";
+
 import alarm from "../../assets/alarm.svg";
 
 import person from "../../assets/person.svg";
@@ -62,12 +62,7 @@ const EventPage = async ({ params }: PageProps) => {
           )}
           
         </div>
-        <div className="flex items-center gap-2 pt-10">
-          <Image src={calendar} alt="calendar" width={25} height={25} />
-          <p className="text-base text-gray-500 font-bold">
-            Starts at {event.date}
-          </p>
-        </div>
+        
       </div>
       <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
       <div className="p-4 py-10">
@@ -80,7 +75,7 @@ const EventPage = async ({ params }: PageProps) => {
       </div>
       <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
       <div className="p-4">
-        <div className="flex justify-around px-6">
+        <div className="flex justify-between px-2">
           <div className="flex items-center gap-2">
             <Image src={alarm} alt="alarm" width={25} height={25} />
             <p>{event.date}</p>

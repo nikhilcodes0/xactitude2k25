@@ -10,8 +10,8 @@ import xploit from "../assets/xploit.png";
 import hacknbuild from "../assets/hacknbuild.png";
 const eventsData = [
   {
-    no: "01",
-    name: "hack n build",
+    no: "I",
+    name: "Hack-N-Build",
     slug: "hacknbuild",
     date: "30th & 31st of Jan",
     image: hacknbuild,
@@ -31,7 +31,7 @@ const eventsData = [
       team: true,
   },
   {
-    no: "02",
+    no: "II",
     name: "IT Manager",
     slug: "itmanager",
     date: "30th & 31st of Jan",
@@ -49,7 +49,7 @@ const eventsData = [
       team: false,
   },
   {
-    no: "03",
+    no: "III",
     name: "codeshift",
     slug: "codeshift",
     date: "30th of Jan",
@@ -70,7 +70,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "04",
+    no: "IV",
     name: "weblynx",
     slug: "weblynx",
     date: "31st of Jan",
@@ -89,7 +89,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "05",
+    no: "V",
     name: "xploit",
     slug: "xploit",
     date: "30th of Jan",
@@ -99,6 +99,7 @@ const eventsData = [
     about: "We are pleased to announce the upcoming Xploit event, an engaging Capture-The-Flag (CTF) competition designed for budding hackers to showcase their skills. This event aims to simulate realistic cybersecurity scenarios, providing participants with an opportunity to showcase their hacking skills and techniques. Dare to Defy the Digital Darkness? Capture the Flag, Fortify Your Digital Fortress!",
     venue: "M5 Lab",
     guidelines: [
+      "Team Size: 2 members.",
       "Number of Rounds: 1 ",
       "Participants are allowed to use search engines while the challenge is going on. Participants are not allowed to use any kind of LLM chatbots or AI models. ", 
       "Participants are encouraged to bring their own laptops. ", 
@@ -107,11 +108,11 @@ const eventsData = [
       "Failure to abide by any of the mentioned rules will lead to severe consequences and disqualification from the event.",
 
     ],
-    team: false,
+    team: true,
   },
   {
-    no: "06",
-    name: "data quest",
+    no: "VI",
+    name: "DataQuest",
     slug: "dataquest",
     date: "31st of Jan",
     image: dataquest,
@@ -131,7 +132,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "07",
+    no: "VII",
     name: "agora",
     slug: "agora",
     date: "30th of Jan",
@@ -151,7 +152,7 @@ const eventsData = [
       team: true,
   },
   {
-    no: "08",
+    no: "VIII",
     name: "quiztacular",
     slug: "quiztacular",
     date: "30th of Jan",
@@ -170,7 +171,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "09",
+    no: "IX",
     name: "cinephoria",
     slug: "cinephoria",
     date: "30th of Jan",
@@ -191,7 +192,7 @@ const eventsData = [
     team: false,
   },
   {
-    no: "10",
+    no: "X",
     name: "BGX",
     slug: "bgx",
     date: "30th & 31st of Jan",
