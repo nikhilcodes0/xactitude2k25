@@ -8,6 +8,7 @@ import cine from "../assets/cine.png";
 import fc24 from "../assets/fc24.png";
 import quizz from "../assets/quizz.png";
 import { useRouter } from "next/navigation";
+import localFont from "next/font/local";
 
 const eventImages = {
   Weblynx: weblynx,
@@ -15,6 +16,23 @@ const eventImages = {
   FC24: fc24,
   "Quizz Buzz": quizz,
 };
+
+
+// fonts
+const anton = localFont({
+  src: "../fonts/Anton-Regular.ttf",
+  weight: "400",
+  style: "normal",
+  variable: "--font-anton",
+});
+
+const inter = localFont({
+  src: "../fonts/Inter.otf",
+  weight: "400",
+  style: "normal",
+  variable: "--font-inter",
+});
+///
 
 const RegSummery = () => {
   const [registrationData, setRegistrationData] = useState<any>(null);
@@ -39,16 +57,16 @@ const RegSummery = () => {
   const { name, college, wNo, email, teamName, events } = registrationData;
 
   return (
-    <div className="bg-black text-white font-sans">
+    <div className={`bg-black text-white font-sans `}>
       <Progressbar currentStep={2} totalSteps={3} />
 
       <div>
-        <p className="text-md text-center text-gray-200">
+        <p className={`text-md text-center text-gray-200 ${inter.className}`}>
           Great choice! Confirm and proceed
         </p>
       </div>
-      <h1 className="text-4xl font-bold text-white text-center mx-2 my-8">
-        Registration Summary
+      <h1 className={`text-[2.7rem] font-antonio font-bold text-white text-center mx-2 my-8 `}>
+        REGISTRATION SUMMARY
       </h1>
       <div>
         {events.map((event: string, index: number) => (
@@ -60,8 +78,8 @@ const RegSummery = () => {
           />
         ))}
       </div>
-      <div className="mx-3">
-        <h2 className="text-2xl font-bold my-6">Participant Details:</h2>
+      <div className={`mx-3 ${inter.className} my-6`}>
+        <h2 className="text-[2rem] font-bold my-6 font-antonio">Participant Details:</h2>
         <p className="text-lg">Name: {name}</p>
         <p className="text-lg">College: {college}</p>
         <p className="text-lg">WhatsApp No: {wNo}</p>
@@ -70,8 +88,8 @@ const RegSummery = () => {
       </div>
       <div>
         <div className="flex justify-between items-center my-4 mx-3">
-          <h1 className="text-2xl text-white font-bold">Total Amount</h1>
-          <p className="text-2xl text-white font-bold">Rs. {events.length * 100}</p>
+          <h1 className="text-3xl text-white font-bold font-antonio">Total Amount</h1>
+          <p className="text-3xl text-white font-bold font-antonio">Rs.300</p>
         </div>
         <hr className="opacity-50 mx-3" />
       </div>
@@ -84,18 +102,17 @@ const RegSummery = () => {
         />
         <label
           htmlFor="agree"
-          className="text-white text-lg"
-        >
+          className={`text-white text-lg ${inter.className}`}>
           I will take a screenshot of the payment and upload it in the following
           section.
         </label>
       </div>
       <div className="mx-3 flex flex-col gap-4">
-        <button className="bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer">
+        <button className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}>
           PAY NOW
         </button>
         <button 
-          className="bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer"
+          className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}
           onClick={() => router.push('/transummary')}
           >
           PROCEED
@@ -105,7 +122,7 @@ const RegSummery = () => {
         href="/reg"
         className="text-white text-xl font-semibold mx-3 my-4 cursor-pointer"
       >
-        ﹤<span className="underline underline-offset-4">Edit Events</span>
+        ﹤<span className={`underline underline-offset-4 font-inter`}>Edit Events</span>
       </a>
     </div>
   );

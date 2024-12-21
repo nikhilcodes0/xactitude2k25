@@ -8,7 +8,7 @@ const progressbar = ({ currentStep, totalSteps }: { currentStep: number; totalSt
 
   return (
     // This is the main wrapper for the progress bar. It has flexbox styling to layout the elements.
-    <div className="flex items-center justify-between px-3 pt-8 pb-4">
+    <div className="flex items-center justify-between px-2 pt-8 pb-4 font-inter">
       
       {/* Map through an array of length 'totalSteps' to generate the steps */}
       {[...Array(totalSteps)].map((_, index) => (
@@ -27,7 +27,7 @@ const progressbar = ({ currentStep, totalSteps }: { currentStep: number; totalSt
           {/* Connecting Line: Draw a line between the circles (except after the last circle) */}
           {index < totalSteps - 1 && (
             <div
-              className={`mx-2 h-[3px] w-[7rem] ${
+              className={`mx-3 h-[3px] w-[7rem] md:w-[18.5rem]  ${
                 currentStep > index ? 'bg-[#07B6B0]' : 'bg-gray-300'
               }`}
             ></div>

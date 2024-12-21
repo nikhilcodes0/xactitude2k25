@@ -7,12 +7,32 @@ import weblynx from "../assets/weblynx.png";
 import cine from "../assets/cine.png";
 import fc24 from "../assets/fc24.png";
 import quizz from "../assets/quizz.png";
+import localFont from "next/font/local";
+
 import {
   registerParticipant,
   registerTeam,
   updateEventData,
 } from "../../src/utils/firestoreHelpers";
 import Group from "../components/group";
+import { a } from "framer-motion/client";
+
+
+// fonts
+const anton = localFont({
+  src: "../fonts/Anton-Regular.ttf",
+  weight: "400",
+  style: "normal",
+  variable: "--font-anton",
+});
+
+const inter = localFont({
+  src: "../fonts/Inter.otf",
+  weight: "400",
+  style: "normal",
+  variable: "--font-inter",
+});
+///
 
 const initialEvents = [
   { id: 1, title: "Weblynx", image: weblynx, selected: false },
@@ -92,7 +112,7 @@ const Reg = () => {
   return (
     <div className="bg-black text-white font-sans">
       <div>
-        <h1 className="text-[2rem] font-bold pt-7 pb-3 px-3">
+        <h1 className={`${anton.className} text-[2.7rem] font-bold pt-12 pb-3 px-3`}>
           SELECT YOUR EVENTS -
         </h1>
         <hr className="mx-3 opacity-60" />
@@ -112,7 +132,7 @@ const Reg = () => {
       </div>
 
       {/* Selected Count */}
-      <div className="flex gap-2 mx-3 items-center my-4">
+      <div className={`flex gap-2 mx-3 items-center my-4 ${inter.className}`}>
         <input
           type="radio"
           checked={events.some((event) => event.selected)}
@@ -124,7 +144,7 @@ const Reg = () => {
             events.some((event) => event.selected)
               ? "text-[#2FFF60]"
               : "text-white"
-          }`}
+          } `}
         >
           {events.filter((event) => event.selected).length} events selected
         </label>
@@ -132,8 +152,8 @@ const Reg = () => {
 
       {/* User Details */}
       <div className="mx-3 mt-16 bg-black text-white">
-        <h1 className="text-[2rem] font-bold mb-16">ENTER YOUR DETAILS</h1>
-        <div className="flex flex-col gap-4 text-black">
+        <h1 className={`text-[2.7rem] font-bold mb-16 ${anton.className}`}>ENTER YOUR DETAILS</h1>
+        <div className={`flex flex-col gap-4 text-black ${inter.className} capitalize`}>
           <input
             type="text"
             placeholder="Full Name"
@@ -167,8 +187,8 @@ const Reg = () => {
 
       {/* Group Events */}
       <div className="mx-3 mt-16 bg-black text-white">
-        <h1 className="text-[2rem] font-bold mb-16 text-center">GROUP EVENTS</h1>
-        <div className="flex flex-col gap-4 bg-black text-white">
+        <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>GROUP EVENTS</h1>
+        <div className={`flex flex-col gap-4 bg-black text-white ${inter.className}`}>
           <Group
             no="01"
             title="Weblynx"
@@ -194,7 +214,7 @@ const Reg = () => {
             id=""
             className="w-8 h-8 rounded-xl accent-[#2FFF60]"
           />
-          <label htmlFor="agree" className="text-white text-l">
+          <label htmlFor="agree" className={`text-white text-lg ${inter.className}`}>
             I confirm that I have read and accept the terms and conditions.
           </label>
         </div>
@@ -203,7 +223,7 @@ const Reg = () => {
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
         <button
-          className="bg-[#07B6B0] text-xl font-bold py-3 rounded-lg w-[90%] my-6 cursor-pointer"
+          className={`bg-[#07B6B0] text-xl font-bold py-3 rounded-lg w-[90%] my-6 cursor-pointer font-inter`}
           onClick={handleRegister}
         >
           Proceed

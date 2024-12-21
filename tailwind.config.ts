@@ -58,6 +58,10 @@ export default {
   			antonio: [
   				'Antonio',
   				'sans-serif'
+  			],
+  			inter: [
+  				'Inter',
+  				'sans-serif'
   			]
   		},
   		borderRadius: {

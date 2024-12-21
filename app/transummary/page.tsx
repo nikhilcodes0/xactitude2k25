@@ -74,14 +74,14 @@ const transummery = () => {
     <div className="bg-black text-white font-sans">
       <Progressbar currentStep={2} totalSteps={3} />
       <div>
-        <p className='text-md text-center text-gray-200'>Finally, verify your payment!</p>
+        <p className='text-md text-center font-inter text-gray-200'>Finally, verify your payment!</p>
       </div>
       <div className='flex flex-col items-center justify-center mt-24'>
         <Image src={success} alt="Payment Success" />
-        <h1 className='text-2xl font-semibold text-white text-center mx-2 my-8'>Payment Success!</h1>
+        <h1 className='text-2xl font-semibold font-inter text-white text-center mx-2 my-8'>Payment Success!</h1>
       </div>
       <div
-        className='flex flex-col items-center justify-center gap-4 border-2 border-dashed border-[#07B6B0] rounded-md p-4 mx-6'
+        className='flex flex-col items-center font-inter justify-center gap-4 border-2 border-dashed border-[#07B6B0] rounded-md p-4 mx-6'
         onDrop={handleFileDrop}
         onDragOver={(e) => e.preventDefault()}
       >
@@ -102,18 +102,18 @@ const transummery = () => {
           accept=".jpeg, .png, .pdf, .psd, .ppt"
           onChange={handleFileChange}
         />
-        <p className='text-sm opacity-70'>Supported formats: JPEG, PNG, PDF, PSD, PPT</p>
+        <p className='text-[12px] opacity-70'>Supported formats: JPEG, PNG, PDF, PSD, PPT</p>
       </div>
       <div className='flex flex-col items-center justify-center mt-16 pb-16 gap-4'>
         <input
           type="text"
           placeholder='TRANSACTION ID'
-          className="p-2 rounded-md border-b-[5px] outline-none text-black w-[90%]"
+          className="p-2 rounded-md font-inter border-b-[5px] border-[#797a7a]  outline-none text-black w-[90%]"
           value={transactionId}
           onChange={handleTransactionIdChange}
         />
         <button
-          className='bg-[#07B6B0] text-white text-xl font-semibold rounded-md p-3 mt-4 w-[90%]'
+          className='bg-[#07B6B0] text-white font-inter font-semibold text-xl rounded-md p-3 mt-4 w-[90%]'
           onClick={handleFinish}
         >
           FINISH

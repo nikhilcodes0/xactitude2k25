@@ -109,7 +109,7 @@ export default function Page() {
               className="absolute  z-0 bottom-0 left-1/2 transform -translate-x-1/2"
             />
             <div className={humaneSemBd.className}>
-              <h1 className="absolute left-1/2 -top-28 transform -translate-x-1/2 -translate-y-1/2 text-center text-[10rem] font-humane bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] font-extrabold ">
+              <h1 className="absolute left-1/2 -top-28 transform -translate-x-1/2 -translate-y-1/2 text-center text-[10rem] font-humane bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] font-extrabold">
                 XACTITUDE
               </h1>
             </div>

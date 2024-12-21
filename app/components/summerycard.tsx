@@ -2,6 +2,15 @@
 
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
+import localFont from "next/font/local";
+
+
+const inter = localFont({
+  src: "../fonts/Inter.otf",
+  weight: "100",
+  style: "thin",
+  variable: "--font-inter",
+});
 
 
 
@@ -18,7 +27,7 @@ const summerycard: React.FC<SelectProps> = ({ no, title, image}) => {
       <div className="flex items-center gap-4 my-6">
         <h1 className='text-4xl text-white font-bold opacity-50'>{no}</h1>
         <Image src={image} alt="bg1" className="max-w-24" />
-        <p className="text-2xl text-gray-300">{title}</p>
+        <p className={`text-2xl font-extralight font-inter text-gray-300 `}>{title}</p>
       </div>
       <hr className='opacity-50' />
     </div>
