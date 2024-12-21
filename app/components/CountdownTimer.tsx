@@ -38,7 +38,7 @@ const CountdownTimer: React.FC = () => {
 
   return (
     <div className="relative bottom-52 font-sans">
-      <h1 className=" text-xl font-bold text-[#40E0D0] text-center">Registration Starts in</h1>
+      <h1 className=" text-xl font-bold text-[#40E0D0] text-center">Registration Starts In</h1>
       <div className="text-white text-lg font-bold mt-4 text-center">
         <span className="text-[#40E0D0]">{timeLeft.days} Days : </span>{timeLeft.hours} Hours : <span className="text-[#40E0D0]">{timeLeft.minutes} Minutes : </span>{timeLeft.seconds} Seconds
       </div>

@@ -31,7 +31,7 @@ const Soon = () => {
           <p
             className={`z-10 whitespace-pre-wrap text-center text-lg font-medium tracking-tighter text-white ${inter.className}`}
         >
-          Get ready to experience a <span className="text-[#40E0D0] font-bold">fest</span> like no other fun, friends, and
+          Get ready to experience a <span className="text-[#40E0D0] font-bold">fest</span> like no other with fun, friends, and
           festivity!
         </p>
         </BoxReveal>
@@ -39,7 +39,8 @@ const Soon = () => {
       <div className="relative bottom-24 w-[70%]">
         <BoxReveal boxColor="#40E0D0">
             <p className={`text-center text-xl font-medium tracking-tighter text-white ${inter.className}`}>
-            Mark your calendars on <span className="text-[#40E0D0] font-bold">30th and 31st</span> of January. It&apos;s gonna be lit <span className="text-[#40E0D0] font-bold">!</span>
+            Mark your calendars on <span className="text-[#40E0D0] font-bold">30th and 31st</span> of January. </p>
+            <p className={`text-center text-xl font-medium tracking-tighter text-white ${inter.className}`}>It&apos;s gonna be  <span className="text-[#40E0D0] font-bold">lit !</span>
             </p>
         </BoxReveal>
       </div>

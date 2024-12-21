@@ -105,7 +105,7 @@ export default function Page() {
             </div>
             <div className={`${meraPro.className} relative bottom-10`}>
               <VelocityScroll
-                text="Revitalizing tech for tomorrow. "
+                text="Revitalizing tech for tomorrow.  "
                 default_velocity={3}
                 className=" text-center text-lg font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] "
               />
