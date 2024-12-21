@@ -27,8 +27,8 @@ const Nav = () => {
               <Link href="/events" className={`mx-8 relative transition-all duration-1000 ease-in-out ${isOpen ? 'left-0' : '-left-48'}`}>
                 <p className=' font-sans text-5xl text-[#40E0D0] p-0'>Events</p>
               </Link>
-              <Link href="/about" className={`mx-8 relative transition-all duration-1000 ease-in-out ${isOpen ? 'left-0' : '-left-48'}`}>
-                <p className=' font-sans text-5xl text-[#40E0D0] p-0'>About</p>
+              <Link href="/reg" className={`mx-8 relative transition-all duration-1000 ease-in-out ${isOpen ? 'left-0' : '-left-48'}`}>
+                <p className=' font-sans text-5xl text-[#40E0D0] p-0'>Register</p>
               </Link>
               <Link href="/contact" className={`mx-8 relative transition-all duration-1000 ease-in-out ${isOpen ? 'left-0' : '-left-52'}`} >
                 <p className=' font-sans text-5xl text-[#40E0D0] p-0'>Contact</p>

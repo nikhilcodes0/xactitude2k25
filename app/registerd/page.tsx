@@ -6,7 +6,7 @@ import success from '../assets/Successicon.png';
 import Image from 'next/image';
 import copy from '../assets/content_copy.png';
 import whatsapp from '../assets/whatsapp_groups.png';
-
+import Link from 'next/link';
 interface ParticipantDetails {
   name: string;
   college: string;
@@ -70,10 +70,10 @@ const Registerd = () => {
           Copy to Clipboard
         </button>
       </div>
-      <a href="/" className="text-white text-2xl font-semibold mx-3 my-4 cursor-pointer opacity-70">
-        ﹤
+      <Link href="/" className="text-white text-2xl font-semibold mx-3 my-4 cursor-pointer opacity-70">
+        
         <span className="underline font-inter text-xl underline-offset-4">Home Page</span>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,9 +1,12 @@
+"use client"
+
 import { StaticImageData } from 'next/image';
 import React from 'react'
 import Image from 'next/image';
 import { Badge } from "@/components/ui/badge"
 import { Inter } from "next/font/google";
 import localFont from 'next/font/local';
+import { useRouter } from 'next/navigation';
 
 const inter = Inter({
     subsets: ["latin"],
@@ -23,11 +26,13 @@ interface Props {
     image: string | StaticImageData;
     description: string;
     chips: string[];
+    slug: string;
 }
 
-const EventsGroup = ({no, name, image, description, chips}: Props) => {
+const EventsGroup = ({no, name, image, description, chips, slug}: Props) => {
+  const router = useRouter();
   return (
-    <div className=' text-white'>
+    <div className=' text-white cursor-pointer' onClick={() => router.push(`/events/${slug}`)}>
         <div className="my-6 flex justify-between gap-8 p-4">
             <div>
                 <h1 className={`${inter.className} text-[3rem] text-white font-bold opacity-60 leading-none tracking-[0.03em]`}>{no}.</h1>
@@ -38,7 +43,7 @@ const EventsGroup = ({no, name, image, description, chips}: Props) => {
                 <p className={`${jersey.className} text-4xl font-bold capitalize`}>{name}</p>
                 <div className='flex gap-3'>
                     {chips.map((chip: string, index: number) => (
-                        <Badge key={index} variant="outline" className='text-white font-sans'>{chip}</Badge>
+                        <Badge key={index} variant="outline" className='text-white font-sans '>{chip}</Badge>
                     ))}
                 </div>
             </div>

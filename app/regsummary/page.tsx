@@ -19,12 +19,7 @@ const eventImages = {
 
 
 // fonts
-const anton = localFont({
-  src: "../fonts/Anton-Regular.ttf",
-  weight: "400",
-  style: "normal",
-  variable: "--font-anton",
-});
+
 
 const inter = localFont({
   src: "../fonts/Inter.otf",
@@ -35,7 +30,16 @@ const inter = localFont({
 ///
 
 const RegSummery = () => {
-  const [registrationData, setRegistrationData] = useState<any>(null);
+  interface RegistrationData {
+    name: string;
+    college: string;
+    wNo: string;
+    email: string;
+    teamName?: string;
+    events: string[];
+  }
+
+  const [registrationData, setRegistrationData] = useState<RegistrationData | null>(null);
   const router = useRouter();
 
   // Load registration data from sessionStorage

@@ -32,12 +32,12 @@ const Events = () => {
           <div className="flex gap-3 items-center">
             <p className={`text-7xl text-[#07B6B0]  ${inter.className}`}>*</p>
             <p className="text-black font-sans text-lg leading-tight">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Unleash Your Creativity and Skills by Picking an Event That Inspires You
             </p>
           </div>
           <div>
             <p className={`text-neutral-400 text-9xl ${inter.className} font-black tracking-[-0.03em] relative top-12 right-2`}>
-              12
+              10
             </p>
           </div>
         </div>

@@ -3,20 +3,23 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Select from "../components/Select";
-import weblynx from "../assets/weblynx.png";
-import cine from "../assets/cine.png";
-import fc24 from "../assets/fc24.png";
-import quizz from "../assets/quizz.png";
+
+import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
 
-import {
-  registerParticipant,
-  registerTeam,
-  updateEventData,
-} from "../../src/utils/firestoreHelpers";
+// import {
+//   registerParticipant,
+//   registerTeam,
+//   updateEventData,
+// } from "../../src/utils/firestoreHelpers";
 import Group from "../components/group";
-import { a } from "framer-motion/client";
 
+const initialEvents = eventsData.map((event) => ({
+  id: event.slug,
+  title: event.name,
+  image: event.image,
+  selected: false,
+}));
 
 // fonts
 const anton = localFont({
@@ -34,12 +37,7 @@ const inter = localFont({
 });
 ///
 
-const initialEvents = [
-  { id: 1, title: "Weblynx", image: weblynx, selected: false },
-  { id: 2, title: "Cinephoria", image: cine, selected: false },
-  { id: 3, title: "FC24", image: fc24, selected: false },
-  { id: 4, title: "Quizz Buzz", image: quizz, selected: false },
-];
+
 
 const Reg = () => {
   const [events, setEvents] = useState(initialEvents);
@@ -189,20 +187,18 @@ const Reg = () => {
       <div className="mx-3 mt-16 bg-black text-white">
         <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>GROUP EVENTS</h1>
         <div className={`flex flex-col gap-4 bg-black text-white ${inter.className}`}>
-          <Group
-            no="01"
-            title="Weblynx"
-            image={weblynx}
-            team={false}
-            onTeamNameChange={setTeamName} // Pass setTeamName as a prop
-          />
-          <Group
-            no="02"
-            title="Cinephoria"
-            image={cine}
-            team={false}
-            onTeamNameChange={setTeamName} // Pass setTeamName as a prop
-          />
+          {eventsData
+            .filter(event => event.team)
+            .map((event) => (
+              <Group
+                no={event.no}
+                title={event.name}
+                image={event.image}
+                team={event.team}
+                onTeamNameChange={setTeamName} // Pass setTeamName as a prop
+                key={event.slug}
+              />
+            ))}
         </div>
       </div>
       <hr className="mx-3 opacity-60 py-4" />

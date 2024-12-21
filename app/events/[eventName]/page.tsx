@@ -60,7 +60,7 @@ const EventPage = async ({ params }: PageProps) => {
               height={500}
             />
           )}
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          
         </div>
         <div className="flex items-center gap-2 pt-10">
           <Image src={calendar} alt="calendar" width={25} height={25} />

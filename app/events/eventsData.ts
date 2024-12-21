@@ -1,12 +1,20 @@
-import cine from "../assets/cine.png";
-
+import cinephoria from "../assets/cine.png";
+import bgx from "../assets/bgmi.png";
+import codeshift from "../assets/codeshift.png";
+import dataquest from "../assets/dataquest.png";
+import agora from "../assets/agora.png";
+import quiztacular from "../assets/quizz.png";
+import itmanager from "../assets/itm.png";
+import weblynx from "../assets/weblynx.png";
+import xploit from "../assets/xploit.png";
+import hacknbuild from "../assets/hacknbuild.png";
 const eventsData = [
   {
     no: "01",
     name: "hack n build",
     slug: "hacknbuild",
     date: "30th & 31st of Jan",
-    image: cine,
+    image: hacknbuild,
     description: "Create practical solutions for real-world problems within a limited timeframe, showcasing your ingenuity.",
     chips: ["Innovation", "Prototyping", "Collaboration"],
     about: "Welcome to Hack-n-Build, where your creativity, coding skills, and business acumen are put to the ultimate test! Start by crafting an innovative solution that addresses a real-world problem, ensuring its both feasible and impactful. Once your idea is locked in, you’ll dive into building the solution that works seamlessly and stands out. Finally, it will be time to pitch your creation, showcasing its market potential, scalability, and business value. Think fast, code smart, and pitch like a pro—Hack-n-Build is your stage to turn ideas into game-changing products!",
@@ -20,13 +28,14 @@ const eventsData = [
       "Participants need to bring their own laptops and equipments.", 
       "Topics: AI for Human Emotions/Mental Health, Fintech for Tech Nerds/Housemakers, Event Management/Crowd Management, Ease for Tourism, Web for Social and Environmental Well-Being.",
       ],
+      team: true,
   },
   {
     no: "02",
     name: "IT Manager",
     slug: "itmanager",
     date: "30th & 31st of Jan",
-    image: cine,
+    image: itmanager,
     description: "Step into the shoes of an IT Manager and tackle real-world scenarios with strategy and innovation.",
     chips: ["Leadership", "Team Management", "Decision Making"],
     about: "Step into the world of IT Manager, where quick thinking, sharp decision-making, and leadership under pressure are key! This event will test your ability to solve problems, make tough choices, and defend your strategy—all while staying cool under fire. Whether you're ditching any products, convincing skeptics of an issue in your company, or facing the hot seat, every round will push you to prove you are the kind of leader who thrives in the fast-paced world of IT. Ready to lead, innovate, and rise to the challenge? The spotlight’s on YOU!",
@@ -37,13 +46,14 @@ const eventsData = [
       "The rest of the guidelines are a surprise. Expect the unexpected.",
 
       ],
+      team: false,
   },
   {
     no: "03",
     name: "codeshift",
     slug: "codeshift",
     date: "30th of Jan",
-    image: cine,
+    image: codeshift,
     description: "Flex your coding skills to solve algorithmic challenges and eliminate bugs in this high-pressure event.",
     chips: ["Algorithms", "Problem Solving", "Debugging"],
     about: "Welcome to CodeShift, where speed, logic, and problem-solving reign supreme! Test your skills across two high-intensity phases, each demanding precision, quick thinking, and flawless execution. Race through fast-paced quizzes, guess tricky outputs, and dive deep into coding challenges. Whether you're solving or fixing, it’s all about making smart moves and fast decisions. Ready to outcode and outdebug the competition? Your time and wits will decide your fate in Codeshift!",
@@ -57,13 +67,14 @@ const eventsData = [
       "Both the rounds will be conducted in C, Java and Python languages.",
       
     ],
+    team: true,
   },
   {
     no: "04",
     name: "weblynx",
     slug: "weblynx",
     date: "31st of Jan",
-    image: cine,
+    image: weblynx,
     description: "Collaborate to build visually stunning and user-centric websites, blending creativity with technical expertise.",
     chips: ["Development", "UI/UX", "Design"],
     about: "Welcome to Weblynx, where your skills in design and development will be put to the test! First, you’ll demonstrate your knowledge of web design and development concepts. Next, it's time to craft a visually stunning design that balances creativity and usability, followed by bringing that design to life with pure code—no shortcuts allowed. To top it off, your website will need to be interactive, responsive, and spot-on with the design. It’s a perfect blend of creativity and technical precision. Ready to prove your web development chops in Weblynx? Let’s build something amazing!",
@@ -75,13 +86,14 @@ const eventsData = [
       "Teams must complete all assigned tasks within the stipulated time, including surprise tasks to earn brownie points.",
       "Plagiarism is strictly prohibited and will result in immediate disqualification."
     ],
+    team: true,
   },
   {
     no: "05",
     name: "xploit",
     slug: "xploit",
     date: "30th of Jan",
-    image: cine,
+    image: xploit,
     description: "Secure digital systems and demonstrate your team’s ability to identify vulnerabilities.",
     chips: ["Ethical Hacking", "CTF", "Strategy"],
     about: "We are pleased to announce the upcoming Xploit event, an engaging Capture-The-Flag (CTF) competition designed for budding hackers to showcase their skills. This event aims to simulate realistic cybersecurity scenarios, providing participants with an opportunity to showcase their hacking skills and techniques. Dare to Defy the Digital Darkness? Capture the Flag, Fortify Your Digital Fortress!",
@@ -95,13 +107,14 @@ const eventsData = [
       "Failure to abide by any of the mentioned rules will lead to severe consequences and disqualification from the event.",
 
     ],
+    team: false,
   },
   {
     no: "06",
     name: "data quest",
     slug: "dataquest",
     date: "31st of Jan",
-    image: cine,
+    image: dataquest,
     description: "Transform raw data into meaningful insights with impactful visualizations and analytical precision.",
     chips: ["Data Analytics", "Visualization Tools", "Statistical Modeling"],
     about: "Welcome to DataQuest – where data meets insight and storytelling! In this event, you will dive into complex datasets, transforming them through cleaning, analysis, and visualization to uncover meaningful insights and share compelling narratives. From addressing data quality challenges to creating visually striking, user-friendly dashboards, every step will test your analytical and presentation skills. Do you have what it takes to turn raw data into actionable insights? Show us your expertise at DataQuest!",
@@ -115,13 +128,14 @@ const eventsData = [
       "Participants may bring their own laptops or use systems provided by the organizers.", 
       "Any violation of the guidelines set by the event heads will lead to immediate disqualification.",
     ],
+    team: true,
   },
   {
     no: "07",
     name: "agora",
     slug: "agora",
     date: "30th of Jan",
-    image: cine,
+    image: agora,
     description: "Articulate your ideas on tech topics with clarity and confidence, engaging the audience and judges alike.",
     chips: ["Communication", "Critical Thinking", "Public Speaking"],
     about: "Welcome to Agora, where your wit, knowledge, and creativity collide! This event will have you on your toes as you listen closely, break down tech jargon for any audience, and debate like a prime time news reporter. From untangling complex ideas to defending your points with sharp precision (and a touch of sass), Agora is the ultimate test of how well you can explain, simplify, and argue in the world of IT. Ready to outsmart your opponents, impress with your clarity, and add a dash of snark? The stage is set—let the challenge begin!",
@@ -134,13 +148,14 @@ const eventsData = [
       "Participants must adhere to the code of conduct throughout the competition.",
 
       ],
+      team: true,
   },
   {
     no: "08",
     name: "quiztacular",
     slug: "quiztacular",
     date: "30th of Jan",
-    image: cine,
+    image: quiztacular,
     description: "Compete in a thrilling quiz on topics like AI, cybersecurity, programming, and emerging trends.",
     chips: ["Trivia", "Quick Thinking", "Knowledge"],
     about: "Step into the ultimate IT quiz where knowledge meets strategy. Your mission: Crack the Code and demonstrate your expertise in the ever-evolving world of technology. Test your intellect, outsmart the competition, and prove you have what it takes to be crowned the quiz champion. The stage is set—are you ready to lead the way?",
@@ -152,13 +167,14 @@ const eventsData = [
       "Time Limits: Adhere to time limits for each round.",
       "Participants must adhere to the code of conduct throughout the competition.",
     ],
+    team: true,
   },
   {
     no: "09",
     name: "cinephoria",
     slug: "cinephoria",
     date: "30th of Jan",
-    image: cine,
+    image: cinephoria,
     description: "Showcase your storytelling through visually stunning edits that captivate the audience.",
     chips: ["Creativity", "Storytelling", "Visual Communication"],
     about: "Lights, camera, action! Get ready to unleash your creativity with Cinephoria, an extraordinary event crafted for aspiring photographers, filmmakers, and editors. Step into a realm where every shot tells a story, and every edit adds a touch of magic. Whether it is capturing the perfect moment or transforming visuals through stunning edits, this event will challenge your imagination and push your artistic boundaries.",
@@ -172,13 +188,14 @@ const eventsData = [
       "The decisions made by the judges are final. No appeals or requests for re-evaluation will be entertained.",
 
     ],
+    team: false,
   },
   {
     no: "10",
     name: "BGX",
     slug: "bgx",
     date: "30th & 31st of Jan",
-    image: cine,
+    image: bgx,
     description: "Compete in an adrenaline-packed gaming experience where coordination and quick thinking decide the victor.",
     chips: ["Teamwork", "Strategy", "Reflexes"],
     about: "BattleGrounds Xtreme (BGX) will be an exciting e-sports event of Xactitude, bringing together the best players and squads for an adrenaline-fueled BGMI tournament. This event will be a true test of strategy, teamwork, and skill as participants battle it out on BGMI’s iconic maps such as Erangel, Miramar, Sanhok, and Arena Maps, offering a dynamic blend of long-range warfare and close-quarter combat.",
@@ -196,6 +213,7 @@ const eventsData = [
       "Use of any cheats, hacks, unauthorized mods, or exploits (such as glitching into inaccessible areas) will result in immediate disqualification of the player and/or team.",
 
     ],
+    team: true,
   },
 ];
 

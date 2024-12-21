@@ -3,12 +3,8 @@ import Image, { StaticImageData } from "next/image";
 // import Events from '../components/Events'
 import Nav from "./components/Nav";
 import backdrop from "./assets/X.png";
-import weblynx from "./assets/weblynx.png";
-import cine from "./assets/cine.png";
-import fc24 from "./assets/fc24.png";
-import quizz from "./assets/quizz.png";
+import eventsData from "./events/eventsData";
 import bgimg from "./assets/bg.png";
-import itm from "./assets/cine.png";
 import localFont from "next/font/local";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import Marquee from "@/components/ui/marquee";
@@ -29,13 +25,7 @@ const jersey = localFont({
   variable: "--font-jersey",
 });
 
-const events = [
-  { title: "IT Manager", image: itm },
-  { title: "Weblynx", image: weblynx },
-  { title: "Cinephoria", image: cine },
-  { title: "FC24", image: fc24 },
-  { title: "Quizz Buzz", image: quizz },
-];
+
 
 const meraPro = localFont({
   src: "./fonts/MeraPro.otf",
@@ -53,9 +43,9 @@ const EventCard = ({
 }) => {
   return (
     <div className=" rounded-md flex flex-col antialiased  justify-center  overflow-hidden ">
-      <Image src={image} alt={title} className="object-cover h-full" />
+      <Image src={image} alt={title} className="object-cover w-[200px] h-[200px] rounded-xl" />
       <p
-        className={`${jersey.className} text-neutral-950 text-3xl font-bold bg-green-400 w-full text-center`}
+        className={`${jersey.className} text-neutral-950 text-3xl font-bold bg-green-400 w-full text-center capitalize`}
       >
         {title}
       </p>
@@ -139,10 +129,10 @@ export default function Page() {
       </div>
       <div className=" rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Marquee pauseOnHover={true} className="[--duration:20s]">
-          {events.map((event) => (
+          {eventsData.map((event) => (
             <EventCard
-              key={event.title}
-              title={event.title}
+              key={event.name}
+              title={event.name}
               image={event.image}
             />
           ))}

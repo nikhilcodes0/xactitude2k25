@@ -1,11 +1,7 @@
 import React from 'react'
 // import Image from 'next/image'
 import Card from './Card'
-import bg1 from '../assets/cardbg-1.png'
-import bg2 from '../assets/bgmi.png'
-import bg3 from '../assets/codeshift.png'
-import bg4 from '../assets/fifa.png'
-import bg5 from '../assets/itm.png'
+import eventsData from '../events/eventsData'
 import PulsatingButton from "@/components/ui/pulsating-button";
 import Link from 'next/link';
 
@@ -18,43 +14,43 @@ const Events = () => {
 
         <div className="mt-12 overflow-hidden h-[45rem]">
           <Card 
-            title="Weblynx"
-            description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image={bg1}
+            title={eventsData[0].name}
+            description={eventsData[0].description}
+            image={eventsData[0].image}
             className="relative z-[9]"
-            date="30/1"
+            date={eventsData[0].date}
             duration="3 Hr"
           />
           <Card 
-            title="BGX"
-            description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image={bg2}
-            className="relative bottom-[24rem] -left-[7rem] -rotate-[20deg] z-[8]"
-            date="30/1"
+            title={eventsData[9].name}
+            description={eventsData[9].description}
+            image={eventsData[9].image}
+            className="relative bottom-[25rem] -left-[7rem] -rotate-[20deg] z-[8]"
+            date={eventsData[9].date}
             duration="3 Hr"
           />
           <Card 
-            title="Code Shift"
-            description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image={bg3}
-            className="relative bottom-[49rem] left-[7rem] rotate-[20deg] z-[8]"
-            date="30/1"
+            title={eventsData[2].name}
+            description={eventsData[2].description}
+            image={eventsData[2].image}
+            className="relative bottom-[50rem] left-[8rem] rotate-[20deg] z-[8]"
+            date={eventsData[2].date}
             duration="3 Hr"
           />
           <Card 
-            title="Fifa"
-            description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image={bg4}
-            className="relative bottom-[70rem] left-[15rem] rotate-[30deg] z-[7]"
-            date="30/1"
+            title={eventsData[3].name}
+            description={eventsData[3].description}
+            image={eventsData[3].image}
+            className="relative bottom-[74rem] left-[15rem] rotate-[30deg] z-[7]"
+            date={eventsData[3].date}
             duration="3 Hr"
           />
           <Card 
-            title="IT Manager"
-            description="lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image={bg5}
-            className="relative bottom-[96rem] -left-[14rem] -rotate-[30deg] z-[6]"
-            date="30/1"
+            title={eventsData[4].name}
+            description={eventsData[4].description}
+            image={eventsData[4].image}
+            className="relative bottom-[100rem] -left-[14rem] -rotate-[30deg] z-[6]"
+            date={eventsData[4].date}
             duration="3 Hr"
           />
         </div>
