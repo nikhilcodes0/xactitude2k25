@@ -1,4 +1,4 @@
-import { doc, collection, setDoc, updateDoc, getDoc } from "firebase/firestore";
+import { doc, collection, setDoc, updateDoc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Function to register a participant
@@ -91,3 +91,27 @@ export const validateTeam = async (teamName) => {
     console.error("Error validating team:", error);
   }
 }
+
+// Function for generating a unique participant ID
+export const generateParticipantId = async (collegeName) => {
+  try {
+    // Extract the first letter of each word in the college name
+    const collegeKey = collegeName
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase())
+      .join("");
+
+    const participantsRef = collection(db, "2025", collegeKey, "Participants");
+
+    // Get the number of existing participants
+    const participantsSnapshot = await getDocs(participantsRef);
+    const count = participantsSnapshot.size;
+
+    // Generate the ID
+    const paddedCount = String(count + 1).padStart(2, "0");
+    return `XACT${collegeKey}${paddedCount}`;
+  } catch (error) {
+    console.error("Error generating participant ID:", error);
+    throw new Error("Failed to generate participant ID");
+  }
+};

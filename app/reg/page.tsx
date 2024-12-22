@@ -12,6 +12,7 @@ import localFont from "next/font/local";
 //   registerTeam,
 //   updateEventData,
 // } from "../../src/utils/firestoreHelpers";
+import { generateParticipantId } from "../../src/utils/firestoreHelpers";
 import Group from "../components/group";
 
 const initialEvents = eventsData.map((event) => ({
@@ -74,7 +75,7 @@ const Reg = () => {
       email,
       teamName,
       events: selectedEvents,
-      id: `${name.replace(/\s+/g, "")}_${college}`,
+      id: await generateParticipantId(college),
       tId: Math.floor(Math.random() * 1000),
     };
 
