@@ -51,7 +51,7 @@ const Transummery = () => {
 
         // Update the event data for each event the participant is registered for
         for (const event of parsedSessionData.events) {
-          await updateEventData(event, parsedSessionData.name, parsedSessionData.id);
+          await updateEventData(event, parsedSessionData.name, parsedSessionData);
         }
 
         // If the participant is part of a team, register the team

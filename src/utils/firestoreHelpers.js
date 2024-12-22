@@ -52,15 +52,23 @@ export const registerTeam = async (collegeName, teamName, memberName) => {
   }
 };
 
-// Function to update event data
-export const updateEventData = async (eventName, participantName, participantId) => {
+export const updateEventData = async (eventName, participantName, participantDetails) => {
   try {
-    // const db = getFirestore();  // Initialize Firestore
+    const { id, teamName, wNo } = participantDetails; // Correctly extract teamName from participantDetails
+
     const eventRef = doc(db, "Events", eventName);
+
+    // Use participantName as the key and store the details as a map
     await setDoc(
       eventRef,
-      { [participantName]: participantId },
-      { merge: true }
+      {
+        [participantName]: {
+          id: id,      // Participant ID
+          team: teamName || null, // Use teamName or null if not provided
+          wNo: wNo || "Unknown Number", // Use a default value for wNo if undefined
+        },
+      },
+      { merge: true } // Merge with existing data
     );
 
     console.log(`Participant ${participantName} registered for ${eventName}`);
