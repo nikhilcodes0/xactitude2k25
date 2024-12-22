@@ -100,7 +100,7 @@ const EventPage = async ({ params }: PageProps) => {
       </div>
       <div className="p-4 py-10 pt-20">
         <PulsatingButton  className="w-full dark">
-          <Link href={`/reg`}>
+          <Link href={`/soon`}>
             Register Now
           </Link>
         </PulsatingButton>
