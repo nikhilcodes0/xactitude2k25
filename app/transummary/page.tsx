@@ -6,7 +6,7 @@ import Progressbar from '../components/progressbar';
 import success from '../assets/Successicon.png';
 import upload from '../assets/Uploadicon.png';
 import { useRouter } from 'next/navigation';
-import { updateEventData, registerParticipant, registerTeam } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
+import { updateEventData, registerParticipant, registerTeam, generateParticipantId } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
 
 const Transummery = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -41,6 +41,7 @@ const Transummery = () => {
     if (parsedSessionData && transactionId) {
       // Update the transaction ID in the session data
       parsedSessionData.tId = transactionId;
+      parsedSessionData.id = await generateParticipantId(parsedSessionData.college);
 
       // Update the session storage with the new registration data (including updated tId)
       sessionStorage.setItem('registrationData', JSON.stringify(parsedSessionData));

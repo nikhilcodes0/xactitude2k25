@@ -1,4 +1,4 @@
-import { doc, collection, setDoc, updateDoc, getDoc, getDocs } from "firebase/firestore";
+import { doc, collection, setDoc, updateDoc, getDoc, getDocs, increment } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Function to register a participant
@@ -92,26 +92,49 @@ export const validateTeam = async (teamName) => {
   }
 }
 
-// Function for generating a unique participant ID
+// Function to generate a unique participant ID
 export const generateParticipantId = async (collegeName) => {
   try {
-    // Extract the first letter of each word in the college name
-    const collegeKey = collegeName
-      .split(" ")
-      .map(word => word.charAt(0).toUpperCase())
-      .join("");
+    // Reference to the CollegeLetters collection
+    const collegeLettersRef = collection(db, 'CollegeLetters');
 
-    const participantsRef = collection(db, "2025", collegeKey, "Participants");
+    // Get all colleges and check if the college already has an assigned letter
+    const collegeSnapshot = await getDocs(collegeLettersRef);
+    let collegeLetter;
+    const usedLetters = collegeSnapshot.docs.map(doc => doc.data().letter);
 
-    // Get the number of existing participants
+    // If the college already has a letter, return it
+    const existingCollegeDoc = collegeSnapshot.docs.find(doc => doc.id === collegeName);
+    if (existingCollegeDoc) {
+      collegeLetter = existingCollegeDoc.data().letter;
+    } else {
+      // Assign the next available letter
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const availableLetters = letters.split('').filter(letter => !usedLetters.includes(letter));
+
+      if (availableLetters.length === 0) {
+        throw new Error('No available letters for new colleges');
+      }
+
+      collegeLetter = availableLetters[0];
+
+      // Assign the letter to the new college
+      const newCollegeRef = doc(collegeLettersRef, collegeName);
+      await setDoc(newCollegeRef, { letter: collegeLetter });
+    }
+
+    // Reference to the Participants collection for the specific college
+    const participantsRef = collection(db, '2025', collegeName, 'Participants');
+
+    // Get the current count of participants
     const participantsSnapshot = await getDocs(participantsRef);
     const count = participantsSnapshot.size;
 
-    // Generate the ID
-    const paddedCount = String(count + 1).padStart(2, "0");
-    return `XACT${collegeKey}${paddedCount}`;
+    // Generate the participant ID
+    const paddedCount = String(count + 1).padStart(2, '0');
+    return `XACT${collegeLetter}${paddedCount}`;
   } catch (error) {
-    console.error("Error generating participant ID:", error);
-    throw new Error("Failed to generate participant ID");
+    console.error('Error generating participant ID:', error);
+    throw new Error('Failed to generate participant ID');
   }
 };
