@@ -57,7 +57,7 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
               selected={false}
               onClick={() => {}}
             />
-            <div className="flex gap-3 text-xl my-8">
+            <div className="flex gap-3 text-base my-8">
               <div className="flex items-center">
                 <input
                   type="radio"

@@ -48,7 +48,7 @@ const EventPage = async ({ params }: PageProps) => {
   return (
     <div className="bg-white font-sans py-4">
       <div className="p-4">
-        <h1 className={`text-7xl font-black capitalize ${anton.className}`}>
+        <h1 className={`text-[3.9rem] font-black capitalize ${anton.className}`}>
           {event.name}
         </h1>
         <div className="flex mt-8 gap-7 items-center">
@@ -105,7 +105,7 @@ const EventPage = async ({ params }: PageProps) => {
           </RippleButton>
         </div>
         <div className="">
-          <PulsatingButton className="w-[14rem] dark">
+          <PulsatingButton className="w-[10rem] dark">
             <Link href={`/soon`} className="font-semibold">Register Now</Link>
           </PulsatingButton>
         </div>
