@@ -21,7 +21,7 @@ const jersey = localFont({
 
 const Select: React.FC<SelectProps> = ({ title, selected=false, image, onClick }) => {
   return (
-    <div onClick={onClick} className="cursor-pointer mt-5">
+    <div onClick={onClick} className="cursor-pointer ">
       <div className="max-w-[200px]">
         <Image src={image} alt="bg1" className="w-[200px] h-[200px] object-cover" />
         <div className={selected ? 'bg-[#2FFF60] text-black' : 'text-white'}>
