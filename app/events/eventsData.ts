@@ -10,7 +10,7 @@ import xploit from "../assets/xploit.png";
 import hacknbuild from "../assets/hacknbuild.png";
 const eventsData = [
   {
-    no: "I",
+    no: "01",
     name: "Hack-N-Build",
     slug: "hacknbuild",
     date: "30th & 31st Jan",
@@ -31,7 +31,7 @@ const eventsData = [
       team: true,
   },
   {
-    no: "II",
+    no: "02",
     name: "IT Manager",
     slug: "itmanager",
     date: "30th & 31st Jan",
@@ -49,7 +49,7 @@ const eventsData = [
       team: false,
   },
   {
-    no: "III",
+    no: "03",
     name: "codeshift",
     slug: "codeshift",
     date: "30th Jan",
@@ -70,7 +70,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "IV",
+    no: "04",
     name: "weblynx",
     slug: "weblynx",
     date: "31st Jan",
@@ -89,7 +89,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "V",
+    no: "05",
     name: "xploit",
     slug: "xploit",
     date: "30th Jan",
@@ -111,7 +111,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "VI",
+    no: "06",
     name: "DataQuest",
     slug: "dataquest",
     date: "31st Jan",
@@ -132,7 +132,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "VII",
+    no: "07",
     name: "agora",
     slug: "agora",
     date: "30th Jan",
@@ -152,7 +152,7 @@ const eventsData = [
       team: true,
   },
   {
-    no: "VIII",
+    no: "08",
     name: "quiztacular",
     slug: "quiztacular",
     date: "30th Jan",
@@ -171,7 +171,7 @@ const eventsData = [
     team: true,
   },
   {
-    no: "IX",
+    no: "09",
     name: "cinephoria",
     slug: "cinephoria",
     date: "30th Jan",
@@ -192,7 +192,7 @@ const eventsData = [
     team: false,
   },
   {
-    no: "X",
+    no: "10",
     name: "BGX",
     slug: "bgx",
     date: "30th & 31st Jan",
