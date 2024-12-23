@@ -17,9 +17,11 @@ import Group from "../components/group";
 
 const initialEvents = eventsData.map((event) => ({
   id: event.slug,
+  no: event.no,
   title: event.name,
   image: event.image,
   selected: false,
+  team: event.team,
 }));
 
 // fonts
@@ -38,8 +40,6 @@ const inter = localFont({
 });
 ///
 
-
-
 const Reg = () => {
   const [events, setEvents] = useState(initialEvents);
   const [name, setName] = useState("");
@@ -51,11 +51,13 @@ const Reg = () => {
   const router = useRouter();
 
   const handleSelectClick = (name: string) => {
-    setEvents((prevEvents) =>
-      prevEvents.map((event) =>
+    setEvents((prevEvents) => {
+      const updatedEvents = prevEvents.map((event) =>
         event.title === name ? { ...event, selected: !event.selected } : event
-      )
-    );
+      );
+      console.log(updatedEvents);
+      return updatedEvents;
+    });
   };
 
   const handleRegister = async () => {
@@ -81,7 +83,10 @@ const Reg = () => {
 
     try {
       // Save to sessionStorage
-      sessionStorage.setItem("registrationData", JSON.stringify(participantDetails));
+      sessionStorage.setItem(
+        "registrationData",
+        JSON.stringify(participantDetails)
+      );
 
       // Relaxxx, not updating any data yet
 
@@ -111,7 +116,9 @@ const Reg = () => {
   return (
     <div className="bg-black text-white font-sans">
       <div>
-        <h1 className={`${anton.className} text-[2.7rem] font-bold pt-12 pb-3 px-3`}>
+        <h1
+          className={`${anton.className} text-[2.7rem] font-bold pt-12 pb-3 px-3`}
+        >
           SELECT YOUR EVENTS -
         </h1>
         <hr className="mx-3 opacity-60" />
@@ -151,8 +158,12 @@ const Reg = () => {
 
       {/* User Details */}
       <div className="mx-3 mt-16 bg-black text-white">
-        <h1 className={`text-[2.7rem] font-bold mb-16 ${anton.className}`}>ENTER YOUR DETAILS</h1>
-        <div className={`flex flex-col gap-4 text-black ${inter.className} capitalize`}>
+        <h1 className={`text-[2.7rem] font-bold mb-16 ${anton.className}`}>
+          ENTER YOUR DETAILS
+        </h1>
+        <div
+          className={`flex flex-col gap-4 text-black ${inter.className} capitalize`}
+        >
           <input
             type="text"
             placeholder="Full Name"
@@ -186,36 +197,35 @@ const Reg = () => {
 
       {/* Group Events */}
       <div className="mx-3 mt-16 bg-black text-white">
-        <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>GROUP EVENTS</h1>
-        <div className={`flex flex-col gap-4 bg-black text-white ${inter.className}`}>
-          {eventsData
-            .filter(event => event.team)
-            .map((event) => (
-              <Group
-                no={event.no}
-                title={event.name}
-                image={event.image}
-                team={event.team}
-                onTeamNameChange={setTeamName} // Pass setTeamName as a prop
-                key={event.slug}
-              />
-            ))}
-        </div>
-      </div>
-      <hr className="mx-3 opacity-60 py-4" />
-      <div className="my-3 flex flex-col items-center justify-center">
-        <div className="flex gap-3 mx-3 items-center">
-          <input
-            type="checkbox"
-            name="agree"
-            id=""
-            className="w-8 h-8 rounded-xl accent-[#2FFF60]"
+        <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>
+          GROUP EVENTS
+        </h1>
+        <div
+          className={`flex flex-col gap-4 bg-black text-white ${inter.className}`}
+        >
+           {events
+      .filter((event) => event.selected)
+      .filter((event) => eventsData.find((e) => e.slug === event.id)?.team)
+      .length === 0 ? (
+      <p className="text-white text-left pl-1">No group event selected</p>
+    ) : (
+      events
+        .filter((event) => event.selected)
+        .filter((event) => eventsData.find((e) => e.slug === event.id)?.team)
+        .map((event) => (
+          <Group
+            key={event.id}
+            no={event.no}
+            title={event.title}
+            image={event.image}
+            team={event.team}
+            onTeamNameChange={setTeamName}
           />
-          <label htmlFor="agree" className={`text-white text-lg ${inter.className}`}>
-            I confirm that I have read and accept the terms and conditions.
-          </label>
+        ))
+    )}
         </div>
       </div>
+      <hr className="mx-3 opacity-60 py-4 mt-10" />
 
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
