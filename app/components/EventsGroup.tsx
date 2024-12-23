@@ -33,17 +33,17 @@ const EventsGroup = ({no, name, image, description, chips, slug}: Props) => {
   const router = useRouter();
   return (
     <div className=' text-white cursor-pointer' onClick={() => router.push(`/events/${slug}`)}>
-        <div className="my-6 flex justify-between gap-10 p-4">
+        <div className="my-6 flex justify-between gap-5 p-4">
             <div>
-                <h1 className={`${inter.className} text-[2.5rem] text-white font-bold opacity-60 leading-none tracking-[0.03em]`}>{no}.</h1>
+                <h1 className={`${inter.className} text-[4rem] text-white font-medium opacity-40 leading-none tracking-[0.03em]`}>{no}.</h1>
             </div>
             <div className='flex  gap-3 flex-col    '>
-                <Image src={image} alt={name} className='w-[500px] h-[350px] object-cover rounded-lg' />
-                <p className={`${inter.className} text-base`}>{description}</p>
-                <p className={`${jersey.className} text-4xl font-bold capitalize`}>{name}</p>
+                <Image src={image} alt={name} className='w-[400px] h-[150px] object-cover ' />
+                <p className={`${inter.className} text-sm`}>{description}</p>
+                <p className={`${jersey.className} text-4xl font-bold capitalize text-stroke-black`}>{name}</p>
                 <div className='flex gap-3'>
                     {chips.map((chip: string, index: number) => (
-                        <Badge key={index} variant="outline" className='text-white font-sans '>{chip}</Badge>
+                        <Badge key={index} variant="outline" className='text-white font-sans text-center'>{chip}</Badge>
                     ))}
                 </div>
             </div>

@@ -40,14 +40,14 @@ const Events = () => {
         <div className="flex gap-10 items-center justify-around">
           <div className="flex gap-3 items-center w-[58%]">
             <p className={`text-7xl text-[#07B6B0]  ${inter.className}`}>*</p>
-            <p className="text-black font-sans text-base leading-tight">
+            <p className="text-black font-sans text-sm leading-tight">
               Unleash Your Creativity and Skills by Picking an Event That
               Inspires You
             </p>
           </div>
           <div>
             <p
-              className={`text-neutral-400 text-9xl ${inter.className} font-black tracking-[-0.03em] relative top-12 right-2`}
+              className={`text-neutral-400 text-[10rem] opacity-20 font-antonio font-black tracking-[-0.03em] relative top-12 right-2`}
             >
               10
             </p>

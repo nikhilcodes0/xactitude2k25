@@ -19,7 +19,7 @@ const Nav = () => {
   
   return (
     <div className='flex justify-center '>
-        <nav className='mx-auto px-6 fixed w-full top-1 py-2 z-[61] bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-transparent'>
+        <nav className='mx-auto px-6 fixed w-full top-0 py-2 z-[61] bg-black rounded-md '>
             <div className='flex m-2 gap-1 hover:cursor-pointer justify-between items-center w-[95%]' >
                 <Link href={'/'}>
                   <Image src={logo} alt='' className='w-[90px] h-full' />

@@ -76,3 +76,11 @@ body {
   -webkit-text-stroke: 2px #1ac4ba;  /* For webkit browsers */
 }
 
+.text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.596);  /* For webkit browsers */
+}
+
+.text-stroke-black {
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.596);  /* For webkit browsers */
+}
+

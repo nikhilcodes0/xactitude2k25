@@ -11,8 +11,8 @@ const Card = ({title, description, image, className, date, duration}: {title: st
         <Image src={image} alt="bg1" className="w-full h-full object-cover"/>
       </div>
       <div className="p-1 mt-1">
-        <h3 className="text-4xl text-neutral-950 font-jacquard capitalize">{title}</h3>
-        <p className="text-xs text-neutral-950 font-sans">{description}</p>
+        <h3 className="text-3xl text-neutral-950 font-jacquard capitalize">{title}</h3>
+        <p className="text-[0.6rem] text-neutral-950 font-sans">{description}</p>
       </div>
       <div className="text-neutral-950 font-antonio font-normal bg-[#F8F8F8] shadow-inner shadow-neutral-400 p-4 rounded-xl flex flex-col gap-2">
         <div className="flex justify-between">
@@ -20,8 +20,8 @@ const Card = ({title, description, image, className, date, duration}: {title: st
           <p>Time</p>
         </div>
         <div className="flex justify-between">
-          <p className="text-sm font-sans font-bold">{date}</p>
-          <p className="text-sm font-sans font-bold">{duration}</p>
+          <p className="text-xs font-sans font-bold">{date}</p>
+          <p className="text-xs font-sans font-bold">{duration}</p>
         </div>
       </div>
     </div>

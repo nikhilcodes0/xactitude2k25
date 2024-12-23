@@ -215,7 +215,7 @@ const Reg = () => {
         .map((event) => (
           <Group
             key={event.id}
-            no={event.no}
+            no={""}
             title={event.title}
             image={event.image}
             team={event.team}
