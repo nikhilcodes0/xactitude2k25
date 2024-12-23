@@ -1,4 +1,4 @@
-import { doc, collection, setDoc, updateDoc, getDoc, getDocs, increment } from "firebase/firestore";
+import { doc, collection, setDoc, updateDoc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Function to register a participant
