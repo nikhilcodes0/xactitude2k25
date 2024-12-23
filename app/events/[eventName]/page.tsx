@@ -4,7 +4,7 @@ import Image from "next/image";
 import localFont from "next/font/local";
 
 import alarm from "../../assets/alarm.svg";
-
+import RippleButton from "@/components/ui/ripple-button";
 import person from "../../assets/person.svg";
 import { Inter } from "next/font/google";
 import PulsatingButton from "@/components/ui/pulsating-button";
@@ -60,9 +60,7 @@ const EventPage = async ({ params }: PageProps) => {
               height={500}
             />
           )}
-          
         </div>
-        
       </div>
       <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
       <div className="p-4 py-10">
@@ -94,16 +92,23 @@ const EventPage = async ({ params }: PageProps) => {
         </h2>
         <ul className={`text-lg pl-4 text-black ${inter.className}`}>
           {event.guidelines?.map((guideline, index) => (
-            <li key={index} className="list-disc">{guideline}</li>
+            <li key={index} className="list-disc">
+              {guideline}
+            </li>
           ))}
         </ul>
       </div>
-      <div className="p-4 py-10 pt-20">
-        <PulsatingButton  className="w-full dark">
-          <Link href={`/soon`}>
-            Register Now
-          </Link>
-        </PulsatingButton>
+      <div className="flex px-6 py-4 gap-10 justify-center items-center">
+        <div className="">
+          <RippleButton  className="light w-full">
+            <Link href={`/events`} className="font-semibold">Go Back</Link>
+          </RippleButton>
+        </div>
+        <div className="">
+          <PulsatingButton className="w-[14rem] dark">
+            <Link href={`/soon`} className="font-semibold">Register Now</Link>
+          </PulsatingButton>
+        </div>
       </div>
     </div>
   );

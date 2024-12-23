@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
   		screens: {
-  			'sm': '320px'
+  			sm: '320px'
   		},
   		colors: {
   			background: 'hsl(var(--background))',
@@ -74,7 +74,8 @@ export default {
   			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-  			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite'
+  			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
+  			rippling: 'rippling var(--duration) ease-out'
   		},
   		keyframes: {
   			pulse: {
@@ -107,6 +108,15 @@ export default {
   				},
   				'50%': {
   					transform: 'translate(-50%, -50%) scale(0.9)'
+  				}
+  			},
+  			rippling: {
+  				'0%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'scale(2)',
+  					opacity: '0'
   				}
   			}
   		},

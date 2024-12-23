@@ -11,6 +11,7 @@ import Marquee from "@/components/ui/marquee";
 import { Timeline } from "@/components/ui/timeline";
 import Events from "./components/Events";
 
+
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
   weight: "600",
@@ -88,10 +89,11 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-black">
-      <div>
-        <Nav />
-        <div className="">
+    <div>
+    <div className="bg-black mt-32">
+      <Nav />
+      <div className="z-10 relative">
+        <div className="mt-20 z-10">
           <div className=" mt-[18rem] relative">
             <Image
               src={backdrop}
@@ -153,6 +155,7 @@ export default function Page() {
         <Timeline data={data} />
       </div>
       <Events />
+    </div>
     </div>
   );
 }
