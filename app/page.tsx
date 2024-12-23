@@ -44,7 +44,7 @@ const EventCard = ({
 }) => {
   return (
     <div className="  flex flex-col antialiased  justify-center  overflow-hidden ">
-      <Image src={image} alt={title} className="object-cover w-[200px] h-[150px] " />
+      <Image src={image} alt={title} className="object-cover w-[250px] h-[150px] " />
       <p
         className={`${jersey.className} text-black text-2xl tracking-tighter bg-green-400 w-full text-center uppercase `}
       >
