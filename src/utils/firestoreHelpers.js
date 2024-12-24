@@ -8,6 +8,16 @@ export const registerParticipant = async (
   participantDetails
 ) => {
   try {
+    // Reference to the college document in Firestore
+    const collegeRef = doc(db, "2025", collegeName);
+
+    // Check if the college document already exists
+    const collegeDoc = await getDoc(collegeRef);
+    if (!collegeDoc.exists()) {
+      // Create the college document with initial structure
+      await setDoc(collegeRef, {}); // Initialize empty college document
+    }
+
     // Reference to the participant document in Firestore
     const participantRef = doc(
       db,
@@ -17,17 +27,17 @@ export const registerParticipant = async (
       participantName
     );
 
-    // Check if the participant already exists in Firestore
+    // Check if the participant document already exists
     const participantDoc = await getDoc(participantRef);
-    
-    // If the participant exists, we append the new teamName and events to the existing arrays
+
     if (participantDoc.exists()) {
+      // Append new teamName and events to existing arrays
       await updateDoc(participantRef, {
-        teamName: arrayUnion(participantDetails.teamName),  // Add teamName to the existing array
-        events: arrayUnion(...participantDetails.events),  // Add events to the existing array
+        teamName: arrayUnion(participantDetails.teamName),
+        events: arrayUnion(...participantDetails.events),
       });
     } else {
-      // If the participant doesn't exist, create the document with the provided details
+      // Create a new participant document
       await setDoc(participantRef, participantDetails);
     }
 
