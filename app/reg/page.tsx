@@ -6,13 +6,6 @@ import Select from "../components/Select";
 
 import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
-
-// import {
-//   registerParticipant,
-//   registerTeam,
-//   updateEventData,
-// } from "../../src/utils/firestoreHelpers";
-// import { generateParticipantId } from "../../src/utils/firestoreHelpers";
 import Group from "../components/group";
 
 const initialEvents = eventsData.map((event) => ({
@@ -61,6 +54,14 @@ const Reg = () => {
   };
 
   const handleRegister = async () => {
+
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Number validation regex
+    const wNoRegex = /^\d{10}$/;
+    // Name validation regex
+    const nameRegex = /^[a-zA-Z\s]+$/;
+
     const selectedEvents = events
       .filter((event) => event.selected)
       .map((e) => e.title);
@@ -70,46 +71,45 @@ const Reg = () => {
       return;
     }
 
-    const participantDetails = {
-      name,
-      college,
-      wNo,
-      email,
-      teamName,
-      events: selectedEvents,
-      id: "",
-      tId: "",
-    };
+    else if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address!");
+      return;
+    }
+    
+    else if (!wNoRegex.test(wNo)) {
+      alert("Please enter a valid 10-digit WhatsApp number!");
+      return;
+    }
 
-    try {
-      // Save to sessionStorage
-      sessionStorage.setItem(
-        "registrationData",
-        JSON.stringify(participantDetails)
-      );
+    else if (!nameRegex.test(name)) {
+      alert("Please enter a valid name!");
+      return;
+    }
 
-      // Relaxxx, not updating any data yet
+    else {
+      const participantDetails = {
+        name,
+        college,
+        wNo,
+        email,
+        teamName,
+        events: selectedEvents,
+        id: "",
+        tId: "",
+      };
+  
+      try {
+        // Save to sessionStorage
+        sessionStorage.setItem(
+          "registrationData",
+          JSON.stringify(participantDetails)
+        );
 
-      // // Register participant
-      // await registerParticipant(college, name, participantDetails);
-
-      // // Update event data
-      // selectedEvents.forEach(async (event) => {
-      //   await updateEventData(event, name, participantDetails.id);
-      // });
-
-      // // Register team if applicable
-      // if (teamName) {
-      //   await registerTeam(college, teamName, name);
-      // }
-
-      // alert("Registration Successful!");
-
-      // Navigate to /regsummary
-      router.push("/regsummary");
-    } catch (error) {
-      console.error("Error during registration:", error);
-      alert("An error occurred during registration. Please try again.");
+        router.push("/regsummary");
+      } catch (error) {
+        console.error("Error during registration:", error);
+        alert("An error occurred during registration. Please try again.");
+      }
     }
   };
 
@@ -176,7 +176,6 @@ const Reg = () => {
               name="colleges"
               id="colleges"
               className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
-              defaultValue=""
               value={college}
               onChange={(e) => setCollege(e.target.value)}
             >
