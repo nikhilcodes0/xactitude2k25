@@ -1,4 +1,4 @@
-import { doc, collection, setDoc, updateDoc, getDoc, getDocs } from "firebase/firestore";
+import { doc, collection, setDoc, updateDoc, getDoc, getDocs, arrayUnion } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Function to register a participant
@@ -8,7 +8,7 @@ export const registerParticipant = async (
   participantDetails
 ) => {
   try {
-    // Dynamically set the document ID to the participant's name
+    // Reference to the participant document in Firestore
     const participantRef = doc(
       db,
       "2025",
@@ -16,7 +16,20 @@ export const registerParticipant = async (
       "Participants",
       participantName
     );
-    await setDoc(participantRef, participantDetails);
+
+    // Check if the participant already exists in Firestore
+    const participantDoc = await getDoc(participantRef);
+    
+    // If the participant exists, we append the new teamName to the existing array
+    if (participantDoc.exists()) {
+      await updateDoc(participantRef, {
+        teamName: arrayUnion(participantDetails.teamName), // Add teamName to the existing array
+      });
+    } else {
+      // If the participant doesn't exist, create the document with the provided details
+      await setDoc(participantRef, participantDetails);
+    }
+
     console.log("Participant registered successfully!");
   } catch (error) {
     console.error("Error registering participant:", error);
