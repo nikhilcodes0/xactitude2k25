@@ -7,6 +7,8 @@ import success from '../assets/Successicon.png';
 import upload from '../assets/Uploadicon.png';
 import { useRouter } from 'next/navigation';
 import { updateEventData, registerParticipant, registerTeam, generateParticipantId } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
+import { db } from "../../src/firebase";
+import { doc, getDoc } from "firebase/firestore"
 
 const Transummery = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -37,32 +39,48 @@ const Transummery = () => {
     // Get the session data
     const sessionData = sessionStorage.getItem('registrationData');
     const parsedSessionData = sessionData ? JSON.parse(sessionData) : null;
-
+  
     if (parsedSessionData && transactionId) {
-      // Update the transaction ID in the session data
-      parsedSessionData.tId = transactionId;
-      parsedSessionData.id = await generateParticipantId(parsedSessionData.college);
-
-      // Update the session storage with the new registration data (including updated tId)
-      sessionStorage.setItem('registrationData', JSON.stringify(parsedSessionData));
-
       try {
-        // Register the participant in Firebase
+        // Check if the participant exists
+        const participantRef = doc(
+          db,
+          '2025',
+          parsedSessionData.college,
+          'Participants',
+          parsedSessionData.name
+        );
+  
+        const participantSnapshot = await getDoc(participantRef);
+  
+        // If the participant exists, use their existing ID, else generate a new ID
+        if (participantSnapshot.exists()) {
+          parsedSessionData.id = participantSnapshot.data().id;
+        } else {
+          // If the participant doesn't exist, generate a new ID
+          parsedSessionData.id = await generateParticipantId(parsedSessionData.college);
+        }
+  
+        // Update the transaction ID in the session data
+        parsedSessionData.tId = transactionId;
+  
+        // Update session storage with the new registration data (including updated tId)
+        sessionStorage.setItem('registrationData', JSON.stringify(parsedSessionData));
+  
+        // Proceed with registering the participant and updating event data
         await registerParticipant(parsedSessionData.college, parsedSessionData.name, parsedSessionData);
-
-        // Update the event data for each event the participant is registered for
+  
         for (const event of parsedSessionData.events) {
           await updateEventData(event, parsedSessionData.name, parsedSessionData);
         }
-
+  
         // If the participant is part of a team, register the team
         if (parsedSessionData.teamName) {
           await registerTeam(parsedSessionData.college, parsedSessionData.teamName, parsedSessionData.name);
         }
-
-        // Success message
+  
         alert("Registration Successful!");
-        router.push('/registerd'); // Navigate to the success page or appropriate destination
+        router.push('/registerd'); // Navigate to success page
       } catch (error) {
         console.error("Error during registration:", error);
         alert("There was an error during registration. Please try again.");
