@@ -171,13 +171,25 @@ const Reg = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <input
-            type="text"
-            placeholder="Institution"
-            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
-            value={college}
-            onChange={(e) => setCollege(e.target.value)}
-          />
+          <div>
+            <select
+              name="colleges"
+              id="colleges"
+              className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
+              defaultValue=""
+              value={college}
+              onChange={(e) => setCollege(e.target.value)}
+            >
+              <option value="" disabled>
+                Select your college
+              </option>
+              <option value="Kristu Jayanti College">Kristu Jayanti College</option>
+              <option value="Saint Joseph's College of Commerce">Saint Joseph's College of Commerce</option>
+              <option value="Saint Joseph's College">Saint Joseph's College</option>
+              <option value="Christ University Central Campus">Christ University Central Camus</option>
+              <option value="Jain University">Jain University</option>
+            </select>
+          </div>
           <input
             type="text"
             placeholder="WhatsApp Number"
