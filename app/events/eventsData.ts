@@ -11,7 +11,7 @@ import hacknbuild from "../assets/hacknbuild.png";
 const eventsData = [
   {
     no: "01",
-    name: "Hack-N-Build",
+    name: "Hack-N-Bu!ld",
     slug: "hacknbuild",
     date: "30th & 31st Jan",
     image: hacknbuild,
@@ -50,7 +50,7 @@ const eventsData = [
   },
   {
     no: "03",
-    name: "CodeShift",
+    name: "CodeSh!ft",
     slug: "codeshift",
     date: "30th Jan",
     image: codeshift,
@@ -71,7 +71,7 @@ const eventsData = [
   },
   {
     no: "04",
-    name: "weblynx",
+    name: "Weblynx",
     slug: "weblynx",
     date: "31st Jan",
     image: weblynx,
@@ -90,7 +90,7 @@ const eventsData = [
   },
   {
     no: "05",
-    name: "xploit",
+    name: "Xplo!t",
     slug: "xploit",
     date: "30th Jan",
     image: xploit,
@@ -133,7 +133,7 @@ const eventsData = [
   },
   {
     no: "07",
-    name: "agora",
+    name: "Agora",
     slug: "agora",
     date: "30th Jan",
     image: agora,
@@ -153,7 +153,7 @@ const eventsData = [
   },
   {
     no: "08",
-    name: "quiztacular",
+    name: "Qu!ztacular",
     slug: "quiztacular",
     date: "30th Jan",
     image: quiztacular,
@@ -172,7 +172,7 @@ const eventsData = [
   },
   {
     no: "09",
-    name: "cinephoria",
+    name: "C!nephor!a",
     slug: "cinephoria",
     date: "30th Jan",
     image: cinephoria,
