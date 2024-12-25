@@ -30,24 +30,24 @@ const Events = () => {
           </div>
         </RippleButton>
       </div>
-      <div className="bg-white w-full h-80 rounded-b-2xl pl-5 z-10 flex flex-col justify-around overflow-hidden pt-10">
-        <div className="flex gap-3 items-center">
-          <h1 className="text-black text-8xl font-antonio tracking-[-0.03em] font-black ">
+      <div className="bg-white w-full h-80 rounded-b-2xl pl-5 z-10 flex flex-col justify-around overflow-hidden pt-10 lg:relative lg:z-[81] lg:gap-[3rem] 2xl:h-[27rem]">
+        <div className="flex gap-3 items-center md:mt-[4rem] lg:mt-0">
+          <h1 className="text-black text-8xl font-antonio tracking-[-0.03em] font-black md:text-[9rem] lg:text-[10rem] 2xl:text-[12rem] ">
             Events
           </h1>
-          <Image src={arrow} alt="arrow" className="w-14 h-14 pt-4" />
+          <Image src={arrow} alt="arrow" className="w-14 h-14 pt-4 md:w-[5.5rem] md:h-[5.5rem] md:pl-5" />
         </div>
-        <div className="flex gap-10 items-center justify-around">
+        <div className="flex gap-10 items-center justify-around md:justify-between">
           <div className="flex gap-3 items-center w-[58%]">
-            <p className={`text-7xl text-[#07B6B0]  ${inter.className}`}>*</p>
-            <p className="text-black font-sans text-sm leading-tight">
+            <p className={`text-7xl text-[#07B6B0] md:text-[7rem] 2xl:text-[11rem] ${inter.className}`}>*</p>
+            <p className="text-black font-sans text-sm leading-tight md:text-[1rem] md:w-[76%] md:pb-8 2xl:w-1/2 2xl:text-[1.2rem]">
               Unleash Your Creativity and Skills by Picking an Event That
               Inspires You
             </p>
           </div>
           <div>
             <p
-              className={`text-neutral-400 text-[10rem] opacity-20 font-antonio font-black tracking-[-0.03em] relative top-12 right-2`}
+              className={`text-neutral-400 text-[10rem] opacity-20 font-sans font-black tracking-[-0.03em] relative top-12 right-2 md:top-0 lg:absolute lg:text-[27rem] lg:z-[60 lg:top-[-2rem]`}
             >
               10
             </p>
