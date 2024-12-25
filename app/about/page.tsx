@@ -74,12 +74,12 @@ const About = () => {
               Contact event organizer?
             </p>
             <p className="my-2 font-inter">Give us a ring</p>
-            <p
+            <a href="tel:+918073243278"
               className="text-2xl font-bold my-2 text-[#40E0D0] cursor-pointer"
               onClick={copyPhoneNumber}
             >
-              +919988776655
-            </p>
+              +918073243278
+            </a>
           </div>
           <div className="flex flex-col  ">
             <a href="" className="my-2 font-inter flex gap-1 ">

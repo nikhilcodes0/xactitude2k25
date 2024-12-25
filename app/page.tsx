@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 // import Events from '../components/Events'
@@ -10,6 +12,7 @@ import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import Marquee from "@/components/ui/marquee";
 import { Timeline } from "@/components/ui/timeline";
 import Events from "./components/Events";
+import { useRouter } from "next/navigation";
 
 
 const humaneSemBd = localFont({
@@ -87,8 +90,10 @@ export default function Page() {
       ),
     },
   ];
+  const router = useRouter();
 
   return (
+    
     <div>
     <div className="bg-black mt-32">
       <Nav />
@@ -129,7 +134,9 @@ export default function Page() {
           </p>
         </h1>
       </div>
-      <div className="  flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="  flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden" onClick={() => {
+          router.push('/events')
+        }}>
         <Marquee pauseOnHover={true} className="[--duration:50s]">
           {eventsData.map((event) => (
             <EventCard

@@ -3,7 +3,7 @@ import eventsData from "../eventsData";
 import Image from "next/image";
 import localFont from "next/font/local";
 
-import alarm from "../../assets/alarm.svg";
+import calendar from "../../assets/calendar.png";
 import RippleButton from "@/components/ui/ripple-button";
 import person from "../../assets/person.png";
 import { Inter } from "next/font/google";
@@ -75,7 +75,7 @@ const EventPage = async ({ params }: PageProps) => {
       <div className="p-4">
         <div className="flex justify-between px-2">
           <div className="flex items-center gap-2">
-            <Image src={alarm} alt="alarm" width={20} height={20} />
+            <Image src={calendar} alt="alarm" width={25} height={25} />
             <p className="text-[15px]">{event.date}</p>
           </div>
           <div className="flex items-center gap-2">

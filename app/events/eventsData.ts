@@ -50,7 +50,7 @@ const eventsData = [
   },
   {
     no: "03",
-    name: "codeshift",
+    name: "CodeShift",
     slug: "codeshift",
     date: "30th Jan",
     image: codeshift,
