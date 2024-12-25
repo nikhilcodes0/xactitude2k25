@@ -7,6 +7,10 @@ import Select from "../components/Select";
 import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
 import Group from "../components/group";
+import RippleButton from "@/components/ui/ripple-button";
+import Image from "next/image";
+import home from "../assets/home-light.svg";
+import Link from "next/link";
 
 const initialEvents = eventsData.map((event) => ({
   id: event.slug,
@@ -115,6 +119,14 @@ const Reg = () => {
 
   return (
     <div className="bg-black text-white font-sans">
+      <div className="w-full bg-black text-black font-sans pl-4 pt-4">
+        <RippleButton rippleColor="#ADD8E6" className="dark">
+          <div className="flex items-center gap-2">
+            <Image src={home} className="w-4 inline" alt="home" />
+            <Link href="/events"> Go Back</Link>
+          </div>
+        </RippleButton>
+      </div>
       <div>
         <h1
           className={`${anton.className} text-[2.7rem] font-bold pt-12 pb-3 px-3`}
@@ -183,8 +195,8 @@ const Reg = () => {
                 Select your college
               </option>
               <option value="Kristu Jayanti College">Kristu Jayanti College</option>
-              <option value="Saint Joseph's College of Commerce">Saint Joseph's College of Commerce</option>
-              <option value="Saint Joseph's College">Saint Joseph's College</option>
+              <option value="Saint Joseph's College of Commerce">Saint Joseph&apos;s College of Commerce</option>
+              <option value="Saint Joseph's College">Saint Joseph&apos;s College</option>
               <option value="Christ University Central Campus">Christ University Central Camus</option>
               <option value="Jain University">Jain University</option>
             </select>
