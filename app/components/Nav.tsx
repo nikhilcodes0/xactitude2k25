@@ -19,12 +19,33 @@ const Nav = () => {
   
   return (
     <div className='flex justify-center '>
-        <nav className='mx-auto px-6 fixed w-full top-0 py-2 z-[61] bg-black rounded-md '>
-            <div className='flex m-2 gap-1 hover:cursor-pointer justify-between items-center w-[95%]' >
-                <Link href={'/'}>
-                  <Image src={logo} alt='' className='w-[90px] h-full' />
+        <nav className='mx-auto px-6 fixed w-full top-0 py-2 z-[61] bg-black rounded-md md:px-20 xl:px-32 xl:text-lg'>
+            <div className='flex m-2 gap-1  justify-between items-center w-[95%]' >
+                <Link href={'/'} className=' hover:cursor-pointer'>
+                  <Image src={logo} alt='' className='w-[90px] h-full xl:h-[50px] xl:w-full' />
                 </Link>
-                <Image src={isOpen ? cancel : menu_01} alt="" className='w-8 z-[62]' onClick={toggleMenu}/>
+                <ul className='text-white font-inter mr-13 md:flex gap-6 hidden items-center  xl:gap-10'>
+                  <li className='hover:cursor-pointer'>
+                    <Link href={'/about'}>About
+                    </Link>
+                  </li>
+                  <li className='hover:cursor-pointer'>
+                    <Link href={'/events'}>
+                      Events
+                    </Link>
+                  </li>
+                  <li className='hover:cursor-pointer'>
+                    <Link href={'/faq'}>
+                      FAQ's
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={'/soon'}>
+                    <button className=' border-[2px] border-solid border-white py-[2px] px-2 rounded-3xl hover:cursor-pointer '>Register</button>
+                    </Link>
+                  </li>
+                </ul>
+                <Image src={isOpen ? cancel : menu_01} alt="" className='w-8 z-[62] md:hidden' onClick={toggleMenu}/>
             </div>
             <div className={`flex absolute gap-20 flex-col bg-black -top-2 overflow-hidden z-[61] w-full h-screen pt-32 -left-full transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-full' : ''}`}>
               <Link href="/" className={`mx-8 relative transition-all duration-1000 ease-in-out ${isOpen ? 'left-0' : '-left-40'}`}>

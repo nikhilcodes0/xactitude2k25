@@ -103,14 +103,14 @@ export default function Page() {
             <Image
               src={backdrop}
               alt="backdrop"
-              className="absolute  z-0 top-[7rem] left-1/2 transform -translate-x-1/2 w-[70%]"
+              className="absolute md:hidden  z-0 top-[7rem] left-1/2 transform -translate-x-1/2 w-[70%]"
             />
             <div className={humaneSemBd.className}>
-              <h1 className="absolute left-1/2 top-[16rem] transform -translate-x-1/2 -translate-y-1/2 text-center text-[10rem] font-humane bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] font-extrabold">
+              <h1 className="absolute left-1/2 top-[16rem] transform -translate-x-1/2 -translate-y-1/2 text-center text-[10rem] font-humane bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] font-extrabold md:text-[15rem] md:mt-7 xl:text-[20rem] xl:mt-16">
                 XACTITUDE
               </h1>
             </div>
-            <div className={`${meraPro.className} relative bottom-[6rem]`}>
+            <div className={`${meraPro.className} relative bottom-[6rem] md:hidden `}>
               <VelocityScroll
                 text="Revitalizing tech for tomorrow ○"
                 default_velocity={2}
@@ -118,21 +118,25 @@ export default function Page() {
               />
             </div>
           </div>
-          <Image
-            src={bgimg}
-            alt="background image"
-            className=" object-fill z-0  mx-auto w-[75%] absolute bottom-0 left-[15%]"
-          />
-          
+          <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[16rem]">
+            <button className="bg-[#181818] hidden md:block relative rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 z-10 lg:w-48  bottom-[-16rem] xl:bottom-[-20rem]">Brochure</button>
+            <Image
+              src={bgimg}
+              alt="background image"
+              className=" object-fill z-0  mx-auto w-[75%] max-w-[400px] absolute bottom-[9rem] md:bottom-0 left-1/2 transform -translate-x-1/2"
+            />
+            <button className="bg-[#181818] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 relative bottom-[-16rem] xl:bottom-[-20rem]">Rules & Regulation</button>
+          </div>
         </div>
       </div>
-      <div className="mt-[32rem]">
-        <h1 className="text-white  text-[3rem] font-black font-antonio text-start p-4 px-12">
+      <div className="mt-[20rem] md:mt-[20rem] xl:mt-[25rem]">
+        <h1 className="text-white  text-[3rem] font-black font-antonio text-start p-4 px-3 md:flex md:text-[5rem] xl:text-[7rem]">
           Welcome to
-          <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-black">
+          <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0]  text-[3.5rem] md:text-[5rem] xl:text-[7rem] md:ml-4 font-black">
             XACTITUDE&#39;25
           </p>
         </h1>
+        
       </div>
       <div className="  flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden" onClick={() => {
           router.push('/events')
@@ -146,14 +150,19 @@ export default function Page() {
             />
           ))}
         </Marquee>
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-[95%] relative left-[-25px] lg:left-[-30px] xl:left-[-40px] opacity-50"/>
+        <div className="text-white opacity-50 text-xl font-inter mt-14 mb-8 flex flex-col border-r-[3px] right-[-26%] relative md:right-[-35%] lg:right-[-37%] xl:right-[-41%] pr-4">
+          <p>Starts From </p>
+          <p className="">Jan 21</p>
+        </div>
       </div>
-      <div className="mt-20">
-        <p className="text-white  text-xl font-medium font-sans text-start p-4 px-12">
+      <div className="mt-28 md:w-[80%] lg:w-[55%]">
+        <p className="text-white text-xl md:text-2xl font-medium font-sans text-start p-4 px-4 md:px-16">
           <span className="font-black">XACTITUDE</span> is the ultimate stage for students to ignite their potential, unleash their skills, and shine before a dynamic crowd of colleges and fiercely spirited competitors.
         </p>
       </div>
       <div className="mt-32">
-        <p className="text-white  text-5xl font-black font-antonio text-start p-4 px-12">
+        <p className="text-white  text-5xl md:text-[5rem] font-black font-antonio text-start p-4 px-12">
           The Process
         </p>
         <hr className="border-white border-1 w-[95%] mx-auto opacity-50 my-2" />
