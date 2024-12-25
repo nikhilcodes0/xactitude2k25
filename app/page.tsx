@@ -119,13 +119,13 @@ export default function Page() {
             </div>
           </div>
           <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[16rem]">
-            <button className="bg-[#181818] hidden md:block relative rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 z-10 lg:w-48  bottom-[-16rem] xl:bottom-[-20rem]">Brochure</button>
+            <button className="bg-[#181818] hidden md:block relative rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48  bottom-[-20rem]">Brochure</button>
             <Image
               src={bgimg}
               alt="background image"
               className=" object-fill z-0  mx-auto w-[75%] max-w-[400px] absolute bottom-[9rem] md:bottom-0 left-1/2 transform -translate-x-1/2"
             />
-            <button className="bg-[#181818] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 relative bottom-[-16rem] xl:bottom-[-20rem]">Rules & Regulation</button>
+            <button className="bg-[#181818] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 relative bottom-[-20rem] ">Rules & Regulation</button>
           </div>
         </div>
       </div>
