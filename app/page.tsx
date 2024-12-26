@@ -10,7 +10,7 @@ import bgimg from "./assets/bg.png";
 import localFont from "next/font/local";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import Marquee from "@/components/ui/marquee";
-import { Timeline } from "@/components/ui/timeline";
+import Steps from "./components/Steps";
 import Events from "./components/Events";
 import { useRouter } from "next/navigation";
 
@@ -58,38 +58,6 @@ const EventCard = ({
 };
 
 export default function Page() {
-  const data = [
-    {
-      title: "Register and Gear Up",
-      content: (
-        <div>
-          <p className="text-neutral-200 text-base md:text-lg font-normal mb-8 mt-4 w-[70%] md:w-full lg:text-2xl">
-            Sign up for the fest and select your favorite events.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Connect and Compete",
-      content: (
-        <div>
-          <p className="text-neutral-200 text-base md:text-lg font-normal mb-8 mt-4 w-[70%] md:w-full lg:text-2xl">
-            Dive into exciting challenges, solve problems
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Win and Celebrate",
-      content: (
-        <div>
-          <p className="text-neutral-200 text-base md:text-lg font-normal mb-8 mt-4 w-[70%] md:w-full lg:text-2xl">
-            Claim your prizes, earn recognition, and celebrate your achievements
-          </p>
-        </div>
-      ),
-    },
-  ];
   const router = useRouter();
 
   return (
@@ -167,8 +135,8 @@ export default function Page() {
         </p>
         <hr className="border-white border-1 w-[95%] mx-auto opacity-50 my-2" />
       </div>
-      <div>
-        <Timeline data={data} />
+      <div className="mt-[8rem]">
+        <Steps />
       </div>
       <Events />
     </div>
