@@ -46,9 +46,9 @@ const EventPage = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className="bg-white font-sans py-4">
+    <div className="bg-white font-sans py-4 lg:px-10">
       <div className="p-4">
-        <h1 className={`text-[3.9rem] font-black capitalize ${anton.className}`}>
+        <h1 className={`text-[3.9rem] font-black  md:text-[7rem] lg:text-[8rem] xl:text-[9rem] ${anton.className}`}>
           {event.name}
         </h1>
         <div className="flex mt-8 gap-7 items-center">
@@ -58,6 +58,7 @@ const EventPage = async ({ params }: PageProps) => {
               alt={event?.name ?? ""}
               width={500}
               height={500}
+              className="lg:w-[600px] lg:h-[600px]"
             />
           )}
         </div>
@@ -65,34 +66,34 @@ const EventPage = async ({ params }: PageProps) => {
       <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
       <div className="p-4 py-10">
         <h2
-          className={`text-4xl font-semibold capitalize mb-10 ${inter.className}`}
+          className={`text-4xl font-semibold capitalize mb-10 lg:text-5xl xl:text-6xl ${inter.className}`}
         >
           About the Event
         </h2>
-        <p className={`text-lg text-black ${inter.className}`}>{event.about}</p>
+        <p className={`text-lg text-black ${inter.className} lg:text-xl xl:text-2xl`}>{event.about}</p>
       </div>
       <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
       <div className="p-4">
-        <div className="flex justify-between px-2">
+        <div className="flex justify-between md:justify-around px-2">
           <div className="flex items-center gap-2">
-            <Image src={calendar} alt="alarm" width={25} height={25} />
-            <p className="text-[15px]">{event.date}</p>
+            <Image src={calendar} alt="alarm" width={25} height={25} className="lg:w-[30px]"/>
+            <p className="text-[15px] md:text-[20px] lg:text-[30px]">{event.date}</p>
           </div>
           <div className="flex items-center gap-2">
-            <Image src={person} alt="person" width={19} height={19} />
-            <p>{event.venue}</p>
+            <Image src={person} alt="person" width={19} height={19} className="lg:w-[30px]"/>
+            <p className="md:text-[20px] lg:text-[30px]">{event.venue}</p>
           </div>
         </div>
       </div>
       <div className="p-4 py-10 pt-20">
         <h2
-          className={`text-4xl font-semibold capitalize mb-10 ${inter.className}`}
+          className={`text-4xl font-semibold capitalize mb-10 lg:text-5xl ${inter.className}`}
         >
           Guidelines
         </h2>
-        <ul className={`text-lg pl-4 text-black ${inter.className}`}>
+        <ul className={`text-lg lg:text-xl pl-4 text-black ${inter.className}`}>
           {event.guidelines?.map((guideline, index) => (
-            <li key={index} className="list-disc">
+            <li key={index} className="list-disc lg:mt-4">
               {guideline}
             </li>
           ))}
@@ -100,13 +101,13 @@ const EventPage = async ({ params }: PageProps) => {
       </div>
       <div className="flex px-6 py-4 gap-10 justify-center items-center">
         <div className="">
-          <RippleButton  className="light w-full">
-            <Link href={`/events`} className="font-semibold">Go Back</Link>
+          <RippleButton  className="light w-full md:w-[12rem] lg:w-[13rem] lg:p-4">
+            <Link href={`/events`} className="font-semibold lg:text-lg">Go Back</Link>
           </RippleButton>
         </div>
         <div className="">
-          <PulsatingButton className="w-[10rem] dark">
-            <Link href={`/soon`} className="font-semibold">Register Now</Link>
+          <PulsatingButton className="w-[10rem] dark md:w-[15rem] lg:w-[20rem] lg:p-4">
+            <Link href={`/soon`} className="font-semibold lg:text-lg">Register Now</Link>
           </PulsatingButton>
         </div>
       </div>
