@@ -36,12 +36,12 @@ const Nav = () => {
                   </li>
                   <li className='hover:cursor-pointer'>
                     <Link href={'/faq'}>
-                      FAQ's
+                      FAQ&apos;s
                     </Link>
                   </li>
                   <li>
                     <Link href={'/soon'}>
-                    <button className=' border-[2px] border-solid border-white py-[2px] px-2 rounded-3xl hover:cursor-pointer '>Register</button>
+                    <button className=' border-[2px] border-solid border-white py-[2px] px-2 rounded-3xl hover:cursor-pointer w-[8rem]'>Register</button>
                     </Link>
                   </li>
                 </ul>

@@ -33,7 +33,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-[80%] mx-auto bg-black dark:bg-neutral-950 font-sans md:px-10"
+      className="w-[80%] mx-auto bg-black dark:bg-neutral-950 font-sans  md:w-[95%]"
       ref={containerRef}
     >
       
@@ -42,7 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-10 md:pt-[15rem] md:gap-[5rem] xl:pt-[20rem]"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full mt-[2.2rem]">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
@@ -53,11 +53,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full mt-8">
+            <div className="relative pl-20 pr-4 md:pl-4 w-full mt-8 text-right">
               <h3 className="md:hidden block text-4xl mb-4 text-stroke text-left font-bold text-transparent dark:text-neutral-500">
                 {item.title}
               </h3>
-              <hr className="border-neutral-500 w-[50%]" />
+              <hr className="border-neutral-500 w-[50%] md:w-[100%]" />
               {item.content}{" "}
             </div>
           </div>
