@@ -29,7 +29,7 @@ const About = () => {
           About College
         </h1>
         <div>
-          <Image src={college} alt="bg1" className="h-[300px] w-[1200px] lg:h-[500px] mx-auto my-20" />
+          <Image src={college} alt="bg1" className="sm:h-[400px] w-[1200px] md:h-[600px] lg:h-[600px] mx-auto my-20" />
           <p className="text-justify mt-3 mb-7 font-inter lg:text-2xl">
             Kristu Jayanti College, founded in 1999, is managed by &quot;BODHI
             NIKETAN TRUST&quot; formed by the members of St. Joseph Province of
@@ -53,7 +53,7 @@ const About = () => {
         <hr className="opacity-30" />
         <h1 className="text-4xl text-center my-7 font-bold md:text-[4rem] lg:my-[4rem]">About Xactitude</h1>
         <div>
-          <Image src={xact} alt="bg1" className="h-[300px] w-[1200px] lg:h-[500px] mx-auto " />
+          <Image src={xact} alt="bg1" className="sm:h-[450px] md:h-[600px] w-[1200px] lg:h-[800px] mx-auto my-10" />
           <p className="text-justify my-3 font-inter lg:text-2xl">
             Xactitude is the flagship National IT Fest of Department of Computer
             Science (UG), hosted annually as a stage for colleges to compete in a

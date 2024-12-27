@@ -47,18 +47,18 @@ const EventPage = async ({ params }: PageProps) => {
 
   return (
     <div className="bg-white font-sans py-4 lg:px-10">
-      <div className="p-4">
-        <h1 className={`text-[3.9rem] font-black  md:text-[7rem] lg:text-[8rem] xl:text-[9rem] ${anton.className}`}>
+      <div className="p-4 md:flex md:justify-between md:items-center">
+        <h1 className={`text-[3.9rem] font-black  md:text-[6rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[9rem] ${anton.className}`}>
           {event.name}
         </h1>
-        <div className="flex mt-8 gap-7 items-center">
+        <div className="flex mt-8 gap-7 items-center md:justify-center">
           {event?.image && (
             <Image
               src={event.image}
               alt={event?.name ?? ""}
               width={500}
               height={500}
-              className="lg:w-[600px] lg:h-[600px]"
+              className="md:w-[400px] lg:w-[500px] lg:h-[500px] xl:w-[80%] xl:object-cover 2xl:w-full"
             />
           )}
         </div>

@@ -31,7 +31,7 @@ const Events = () => {
             title={eventsData[9].name}
             description={eventsData[9].description}
             image={eventsData[9].image}
-            className="relative bottom-[22rem] -left-[7rem] -rotate-[20deg] z-[8] md:bottom-[30.5rem] md:-left-[8rem]"
+            className="relative bottom-[22rem] -left-[7rem] -rotate-[20deg] z-[8] md:bottom-[26rem] md:-left-[8rem]"
             date={eventsData[9].date}
             duration="3 Hr"
           />
@@ -39,7 +39,7 @@ const Events = () => {
             title={eventsData[2].name}
             description={eventsData[2].description}
             image={eventsData[2].image}
-            className="relative bottom-[46rem] left-[8rem] rotate-[20deg] z-[8] md:bottom-[63rem] md:left-[10rem]"
+            className="relative bottom-[46rem] left-[8rem] rotate-[20deg] z-[8] md:bottom-[52.5rem] md:left-[10rem]"
             date={eventsData[2].date}
             duration="3 Hr"
           />
@@ -47,7 +47,7 @@ const Events = () => {
             title={eventsData[3].name}
             description={eventsData[3].description}
             image={eventsData[3].image}
-            className="relative bottom-[66rem] left-[15rem] rotate-[30deg] z-[7] md:bottom-[91rem] md:left-[18rem]"
+            className="relative bottom-[66rem] left-[15rem] rotate-[30deg] z-[7] md:bottom-[77rem] md:left-[18rem]"
             date={eventsData[3].date}
             duration="3 Hr"
           />
@@ -55,21 +55,21 @@ const Events = () => {
             title={eventsData[4].name}
             description={eventsData[4].description}
             image={eventsData[4].image}
-            className="relative bottom-[90rem] -left-[14rem] -rotate-[30deg] z-[6] md:bottom-[125rem] md:-left-[16rem]"
+            className="relative bottom-[90rem] -left-[14rem] -rotate-[30deg] z-[6] md:bottom-[106.7rem] md:-left-[16rem]"
             date={eventsData[4].date}
             duration="3 Hr"
           />
         </div>
       <div className='flex flex-col items-center  pb-12'>
-        <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto lg:text-3xl'>ON 30th & 31st JAN</p>
+        <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto md:text-3xl'>ON 30th & 31st JAN</p>
         <div className='flex justify-between items-center mt-10 w-full'>
-          <hr className='border-neutral-400 w-[6rem] lg:w-[17rem]'/>
+          <hr className='border-neutral-400 w-[6rem] md:w-[17rem]'/>
           <Link href="/soon">
             <PulsatingButton className='block'>
               <p className='text-white text-3xl font-antonio font-bold mx-auto lg:text-4xl'>REGISTER</p>
             </PulsatingButton>
           </Link>
-          <hr className='border-neutral-400 w-[6rem] lg:w-[17rem]'/>
+          <hr className='border-neutral-400 w-[6rem] md:w-[17rem]'/>
         </div>
       </div>
     </div>

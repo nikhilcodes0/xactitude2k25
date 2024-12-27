@@ -6,7 +6,7 @@ import Image, { StaticImageData } from 'next/image'
 
 const Card = ({title, description, image, className, date, duration}: {title: string, description: string, image: string | StaticImageData, className: string, date: string, duration: string}) => {
   return (
-    <div className={`bg-white rounded-xl shadow-xl  shadow-neutral-950  flex flex-col font-black w-[220px] p-[0.5rem] mx-auto md:w-[360px] ${className}`}>
+    <div className={`bg-white rounded-xl shadow-xl  shadow-neutral-950  flex flex-col font-black w-[220px] p-[0.5rem] mx-auto md:w-[270px] ${className}`}>
       <div>
         <Image src={image} alt="bg1" className="w-full h-full object-cover"/>
       </div>
