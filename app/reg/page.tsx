@@ -118,8 +118,8 @@ const Reg = () => {
   };
 
   return (
-    <div className="bg-black text-white font-sans">
-      <div className="w-full bg-black text-black font-sans pl-4 pt-4">
+    <div className="bg-[#0D0D0D] text-white font-sans">
+      <div className="w-full bg-[#0D0D0D] text-[#0D0D0D] font-sans pl-4 pt-4">
         <RippleButton rippleColor="#ADD8E6" className="dark">
           <div className="flex items-center gap-2">
             <Image src={home} className="w-4 inline" alt="home" />
@@ -137,7 +137,7 @@ const Reg = () => {
       </div>
 
       {/* Event Cards */}
-      <div className="grid grid-cols-2 gap-3 mx-3 my-6 bg-black text-white">
+      <div className="grid grid-cols-2 gap-3 mx-3 my-6 bg-[#0D0D0D] text-white">
         {events.map((event) => (
           <Select
             key={event.id}
@@ -169,7 +169,7 @@ const Reg = () => {
       </div>
 
       {/* User Details */}
-      <div className="mx-3 mt-16 bg-black text-white">
+      <div className="mx-3 mt-16 bg-[#0D0D0D] text-white">
         <h1 className={`text-[2.7rem] font-bold mb-16 ${anton.className}`}>
           ENTER YOUR DETAILS
         </h1>
@@ -219,12 +219,12 @@ const Reg = () => {
       </div>
 
       {/* Group Events */}
-      <div className="mx-3 mt-16 bg-black text-white">
+      <div className="mx-3 mt-16 bg-[#0D0D0D] text-white">
         <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>
           GROUP EVENTS
         </h1>
         <div
-          className={`flex flex-col gap-4 bg-black text-white ${inter.className}`}
+          className={`flex flex-col gap-4 bg-[#0D0D0D] text-white ${inter.className}`}
         >
            {events
       .filter((event) => event.selected)

@@ -5,6 +5,8 @@ import Image from "next/image";
 import insta from "../assets/insta.png";
 import mail from "../assets/mail.png";
 import Nav from "../components/Nav";
+import college from "../assets/college.png";
+import xact from "../assets/xact.png";
 
 function copyPhoneNumber() {
   const phoneNumber = "+919988776655";
@@ -22,11 +24,12 @@ const About = () => {
   return (
     <div>
       <Nav/>
-      <div className="bg-black text-white font-sans mx-6 mt-32">
-        <h1 className="text-4xl text-center mt-16 mb-10 font-bold">
+      <div className="bg-[#0d0d0d] text-white font-sans mx-6 mt-32 lg:mx-32">
+        <h1 className="text-4xl md:text-[4rem] lg:my-[4rem] text-center mt-16 mb-10 font-bold">
           About College
         </h1>
-        <p className="text-justify mt-3 mb-7 font-inter">
+        <Image src={college} alt="bg1" className="h-[300px] w-[1200px] lg:h-[500px] mx-auto my-20" />
+        <p className="text-justify mt-3 mb-7 font-inter lg:text-2xl">
           Kristu Jayanti College, founded in 1999, is managed by &quot;BODHI
           NIKETAN TRUST&quot; formed by the members of St. Joseph Province of
           the Carmelites of Mary Immaculate (CMI).
@@ -46,8 +49,9 @@ const About = () => {
           colleges in Bengaluru.
         </p>
         <hr className="opacity-30" />
-        <h1 className="text-4xl text-center my-7 font-bold">About Xactitude</h1>
-        <p className="text-justify my-3 font-inter">
+        <h1 className="text-4xl text-center my-7 font-bold md:text-[4rem] lg:my-[4rem]">About Xactitude</h1>
+        <Image src={xact} alt="bg1" className="h-[300px] w-[1200px] lg:h-[500px] mx-auto " />
+        <p className="text-justify my-3 font-inter lg:text-2xl">
           Xactitude is the flagship National IT Fest of Department of Computer
           Science (UG), hosted annually as a stage for colleges to compete in a
           wide array of events celebrating technological innovation and
@@ -68,7 +72,7 @@ const About = () => {
           tomorrow&apos;s tech revolution!
         </p>
         <hr className="my-7 opacity-30" />
-        <div className="flex justify-between my-16">
+        <div className="flex justify-between my-16 md:max-w-[60%] lg:max-w-[50%] mx-auto lg:text-2xl">
           <div className="">
             <p className="font-bold my-2 font-inter">
               Contact event organizer?

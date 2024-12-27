@@ -26,7 +26,7 @@ const Soon = () => {
           </p>
         </BoxReveal>
       </div>
-      <div className="relative top-36 w-[90%]">
+      <div className="relative top-36 ">
         <BoxReveal boxColor="#40E0D0">
           <p
             className={`z-10 whitespace-pre-wrap text-center text-lg font-medium tracking-tighter text-white ${inter.className}`}
@@ -36,7 +36,7 @@ const Soon = () => {
         </p>
         </BoxReveal>
       </div>
-      <div className="relative bottom-24 w-[70%]">
+      <div className="relative bottom-24 ">
         <BoxReveal boxColor="#40E0D0">
             <p className={`text-center text-xl font-medium tracking-tighter text-white ${inter.className}`}>
             Mark your calendars on <span className="text-[#40E0D0] font-bold">30th and 31st</span> of January. </p>

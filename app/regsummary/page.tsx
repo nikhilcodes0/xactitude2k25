@@ -52,7 +52,7 @@ const RegSummery = () => {
 
   if (!registrationData) {
     return (
-      <div className="bg-black text-white font-sans p-6">
+      <div className="bg-[#0d0d0d] text-white font-sans p-6">
         <h1 className="text-2xl font-bold text-center">Loading...</h1>
       </div>
     );
@@ -61,7 +61,7 @@ const RegSummery = () => {
   const { name, college, wNo, email, teamName, events } = registrationData;
 
   return (
-    <div className={`bg-black text-white font-sans `}>
+    <div className={`bg-[#0d0d0d] text-white font-sans `}>
       <Progressbar currentStep={2} totalSteps={3} />
 
       <div>

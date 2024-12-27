@@ -45,7 +45,7 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#0D0D0D]">
       <div className="my-6">
         <hr className="opacity-50 py-4" />
         <div className="flex gap-6">

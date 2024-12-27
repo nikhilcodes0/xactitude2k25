@@ -63,7 +63,7 @@ export default function Page() {
   return (
     
     <div>
-    <div className="bg-black mt-32">
+    <div className="bg-[0d0d0d] mt-32">
       <Nav />
       <div className="z-10 ">
         <div className="mt-[22rem] z-10">
@@ -87,13 +87,13 @@ export default function Page() {
             </div>
           </div>
           <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
-            <button className="bg-[#181818] hidden md:block relative rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48  bottom-[-20rem]">Brochure</button>
+            <button className="bg-[#0d0d0d] hidden md:block relative rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48  bottom-[-20rem]">Brochure</button>
             <Image
               src={bgimg}
               alt="background image"
               className=" object-fill z-0  mx-auto w-[65%] max-w-[300px] md:max-w-[500px] md:w-[45%] absolute bottom-0 left-1/2 transform -translate-x-1/2"
             />
-            <button className="bg-[#181818] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 relative bottom-[-20rem] ">Rules & Regulation</button>
+            <button className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 relative bottom-[-20rem] ">Rules & Regulation</button>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function Page() {
         </h1>
         
       </div>
-      <div className="  flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden lg:mt-10" onClick={() => {
+      <div className="  flex flex-col antialiased  dark:bg-[#0d0d0d] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden lg:mt-10" onClick={() => {
           router.push('/events')
         }}>
         <Marquee pauseOnHover={true} className="[--duration:50s]">
