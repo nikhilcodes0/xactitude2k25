@@ -13,6 +13,7 @@ import Marquee from "@/components/ui/marquee";
 import Steps from "./components/Steps";
 import Events from "./components/Events";
 import { useRouter } from "next/navigation";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
@@ -64,8 +65,9 @@ export default function Page() {
   return (
     <div>
       <div className="bg-[0d0d0d] mt-32">
-        <Nav />
+        
         <div className="z-10 ">
+          <Nav />
           <div className="mt-[22rem] z-10">
             <div className=" mt-[18rem] ">
               <Image
@@ -106,6 +108,7 @@ export default function Page() {
               </a>
             </div>
           </div>
+          <BackgroundBeams className=" z-[-1]" />
         </div>
         <div className="mt-[25rem] md:mt-[40rem] lg:pl-8">
           <h1 className="text-white  text-[3rem]  font-black font-sans text-start p-4 px-3 md:flex md:text-[3rem] lg:text-[4rem] xl:text-[5rem]  ">

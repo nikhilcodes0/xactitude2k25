@@ -6,17 +6,37 @@ import menu_01 from "../assets/menu-01.png";
 import logo from "../assets/logo.png";
 import cancel from "../assets/cancel.png";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+
+
+  const Nav = () => {
+    const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 10) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);  
 
   return (
     <div className="flex  justify-center ">
-      <nav className="mx-auto px-6 fixed w-full top-0 py-2 z-[61] bg-[#0d0d0d] rounded-md md:px-20 xl:px-32 xl:text-lg">
+      <nav className={`mx-auto px-6 fixed w-full top-0 py-2 z-[61]  rounded-md md:px-20 xl:px-32 xl:text-lg ${scrolled ? 'bg-[#0d0d0d]' : 'bg-transparent'}`}>
         <div className="flex m-2 gap-1  justify-between items-center w-[95%]">
           <Link href={"/"} className=" hover:cursor-pointer">
             <Image

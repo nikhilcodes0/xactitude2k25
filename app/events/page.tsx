@@ -7,12 +7,8 @@ import EventsGroup from "../components/EventsGroup";
 import home from "../assets/home.svg";
 import eventsData from "./eventsData";
 import RippleButton from "@/components/ui/ripple-button";
-// const jersey = localFont({
-//     src: "../fonts/Jersey10-Regular.ttf",
-//     weight: "400",
-//     style: "normal",
-//     variable: "--font-jersey",
-//   });
+
+
 
 const inter = Inter({
   subsets: ["latin"],
