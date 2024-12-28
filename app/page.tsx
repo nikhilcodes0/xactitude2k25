@@ -16,6 +16,8 @@ import Events from "./components/Events";
 import Cursor from "./components/Cursor";
 import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import Footer from "./components/Footer";
+
 
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
@@ -168,6 +170,7 @@ export default function Page() {
         </div>
         <Events />
       </div>
+      <Footer />
     </div>
   );
 }
