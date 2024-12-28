@@ -38,7 +38,7 @@ const EventsGroup = ({no, name, image, description, chips, slug}: Props) => {
                 <h1 className={`${inter.className} text-[3rem] text-white font-medium opacity-40 md:text-[6rem] leading-none tracking-[0.03em] xl:text-[10rem] xl:font-black 2xl:text-[17rem]`}>{no}.</h1>
             </div>
             <div className='flex  gap-3 flex-col md:gap-[2rem] w-[65%] lg:w-[40%] xl:w-[45%] 2xl:w-[35%]  '>
-                <Image src={image} alt={name} className='w-[400px] h-[150px] object-cover md:h-[55%] md:w-full xl:w-[60%] xl:h-[65%] 2xl:w-full 2xl:h-[50%]' />
+                <Image src={image} alt={name} className='w-[400px] h-[150px] object-cover md:h-[20rem] md:w-full xl:h-[25rem]' />
                 <p className={`${inter.className} text-sm md:text-[1rem] lg:text-[1.2rem] md:opacity-60 w-fit`}>{description}</p>
                 <p className={`${jersey.className} text-4xl font-bold w-fit text-stroke-black md:text-[3.5rem] lg:text-[4.4rem] xl:text-[5.5rem] 2xl:text-[6.5rem]`}>{name}</p>
                 <div className='flex gap-3 lg:pt-10 w-fit'>

@@ -16,7 +16,7 @@ const Events = () => {
     <div className="mt-48">
         <h1 className="relative z-10 text-[8rem] mt-5 md:text-[11rem] xl:text-[18rem] font-antonio bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#40E0D0] text-center font-bold tracking-tighter ">EVENTS</h1>
 
-        <div className="mt-20 md:-mt-16 xl:-mt-[10rem] z-[11] relative overflow-hidden h-[45rem] md:h-[50rem] cursor-pointer shadow-2xl" onClick={() => {
+        <div className="mt-20 md:-mt-16 xl:-mt-[10rem] z-[11] relative overflow-hidden h-[45rem] md:h-[50rem] cursor-pointer " onClick={() => {
           router.push('/events')
         }}>
           <Card 
@@ -61,7 +61,7 @@ const Events = () => {
           />
         </div>
       <div className='flex flex-col items-center  pb-12'>
-        <p className='text-neutral-400 text-2xl font-antonio font-bold mx-auto md:text-3xl'>ON 30th & 31st JAN</p>
+        <p className='text-neutral-400 text-2xl font-antonio  font-bold mx-auto md:text-3xl'>ON 30th & 31st JAN</p>
         <div className='flex justify-between items-center mt-10 w-full'>
           <hr className='border-neutral-400 w-[6rem] md:w-[17rem]'/>
           <Link href="/soon">

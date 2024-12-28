@@ -15,7 +15,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex justify-center ">
+    <div className="flex  justify-center ">
       <nav className="mx-auto px-6 fixed w-full top-0 py-2 z-[61] bg-[#0d0d0d] rounded-md md:px-20 xl:px-32 xl:text-lg">
         <div className="flex m-2 gap-1  justify-between items-center w-[95%]">
           <Link href={"/"} className=" hover:cursor-pointer">
@@ -53,7 +53,7 @@ const Nav = () => {
           />
         </div>
         <div
-          className={`flex absolute gap-20 flex-col bg-[#0d0d0d] -top-2 overflow-hidden z-[61] w-full h-screen pt-32 -left-full transition-all duration-300 ease-in-out ${
+          className={`flex absolute gap-20 flex-col bg-[#0d0d0d]  overflow-hidden z-[61] w-full h-screen pt-32 -left-full transition-all duration-300 ease-in-out ${
             isOpen ? "translate-x-full" : ""
           }`}
         >
