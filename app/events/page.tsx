@@ -7,6 +7,7 @@ import EventsGroup from "../components/EventsGroup";
 import home from "../assets/home.svg";
 import eventsData from "./eventsData";
 import RippleButton from "@/components/ui/ripple-button";
+import Footer from "../components/Footer";
 
 
 
@@ -55,6 +56,7 @@ const Events = () => {
           <EventsGroup key={event.name} {...event} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

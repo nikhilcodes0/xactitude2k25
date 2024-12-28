@@ -8,35 +8,42 @@ import cancel from "../assets/cancel.png";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+interface NavbarProps {
+  setHoverType: (type: string | null) => void;
+}
+
+const Nav: React.FC<NavbarProps> = ({ setHoverType }) => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
 
-  const Nav = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 10) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);  
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="flex  justify-center ">
-      <nav className={`mx-auto px-6 fixed w-full top-0 py-2 z-[61]  rounded-md md:px-20 xl:px-32 xl:text-lg ${scrolled ? 'bg-[#0d0d0d]' : 'bg-transparent'}`}>
+      <nav
+        className={`mx-auto px-6 fixed w-full top-0 py-2 z-[61]  rounded-md md:px-20 xl:px-32 xl:text-lg ${
+          scrolled ? "bg-[#0d0d0d]" : "bg-transparent"
+        }`}
+      >
         <div className="flex m-2 gap-1  justify-between items-center w-[95%]">
           <Link href={"/"} className=" hover:cursor-pointer">
             <Image
@@ -47,10 +54,22 @@ import { useState, useEffect } from "react";
           </Link>
           <ul className="text-white font-inter mr-13 md:flex gap-6 hidden items-center  xl:gap-10">
             <li className="hover:cursor-pointer hover:text-[#40E0D0]">
-              <Link href={"/about"}>About</Link>
+              <Link
+                href={"/about"}
+                onMouseEnter={() => setHoverType("link")} // Set hover type to 'link'
+                onMouseLeave={() => setHoverType(null)} // Reset hover type
+              >
+                About
+              </Link>
             </li>
             <li className="hover:cursor-pointer hover:text-[#40E0D0]">
-              <Link href={"/events"}>Events</Link>
+              <Link
+                href={"/events"}
+                onMouseEnter={() => setHoverType("link")} // Set hover type to 'link'
+                onMouseLeave={() => setHoverType(null)} // Reset hover type
+              >
+                Events
+              </Link>
             </li>
             {/* <li className='hover:cursor-pointer'>
                     <Link href={'/faq'}>

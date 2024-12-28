@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 // import Events from '../components/Events'
 import Nav from "./components/Nav";
@@ -12,6 +13,7 @@ import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import Marquee from "@/components/ui/marquee";
 import Steps from "./components/Steps";
 import Events from "./components/Events";
+import Cursor from "./components/Cursor";
 import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
@@ -59,15 +61,23 @@ const EventCard = ({
   );
 };
 
+
 export default function Page() {
+  const [hoverType, setHoverType] = useState<string | null>(null);
   const router = useRouter();
 
   return (
     <div>
+      <Cursor 
+        hoverType={hoverType}
+        
+      />
       <div className="bg-[0d0d0d] mt-32">
         
         <div className="z-10 ">
-          <Nav />
+          <Nav
+            setHoverType={setHoverType}
+          />
           <div className="mt-[22rem] z-10">
             <div className=" mt-[18rem] ">
               <Image

@@ -2,16 +2,26 @@
 
 import React from "react";
 import Image from "next/image";
-
+import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import college from "../assets/college.png";
 import xact from "../assets/xact.png";
+import Cursor from "../components/Cursor";
 
 const About = () => {
+  const [hoverType, setHoverType] = useState<string | null>(null);
+
   return (
     <div>
-      <Nav />
+      <Cursor
+        hoverType={hoverType}
+      />
+      <Nav 
+        setHoverType={
+          setHoverType
+        }
+      />
       <div className="bg-[#0d0d0d] text-white font-sans mx-6 mt-32 lg:mx-32">
         <h1 className="text-4xl md:text-[4rem] lg:my-[4rem] text-center mt-16 mb-10 font-bold">
           About College
