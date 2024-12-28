@@ -1,4 +1,6 @@
 // import localFont from "next/font/local";
+'use client'
+
 import arrow from "../assets/arrow.svg";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -8,6 +10,8 @@ import home from "../assets/home.svg";
 import eventsData from "./eventsData";
 import RippleButton from "@/components/ui/ripple-button";
 import Footer from "../components/Footer";
+import Cursor from "../components/Cursor";
+import React, { useState } from "react";
 
 
 
@@ -17,8 +21,13 @@ const inter = Inter({
 });
 
 const Events = () => {
+  const [hoverType, setHoverType] = useState<string | null>(null);
+
   return (
     <div className="text-white">
+      <Cursor 
+        hoverType={hoverType}
+      />
       <div className="w-full bg-white text-black font-sans pl-4 pt-4">
         <RippleButton rippleColor="#ADD8E6">
           <div className="flex items-center gap-2">
@@ -53,7 +62,7 @@ const Events = () => {
       </div>
       <div>
         {eventsData.map((event) => (
-          <EventsGroup key={event.name} {...event} />
+          <EventsGroup key={event.name} {...event} setHoverType={setHoverType}/>
         ))}
       </div>
       <Footer />

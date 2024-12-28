@@ -18,7 +18,6 @@ import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Footer from "./components/Footer";
 
-
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
   weight: "600",
@@ -63,23 +62,28 @@ const EventCard = ({
   );
 };
 
-
 export default function Page() {
   const [hoverType, setHoverType] = useState<string | null>(null);
   const router = useRouter();
 
+  const handleMouseEnter = (type: string) => {
+    setHoverType(type);
+    console.log("Hovering over:", type); // Log to console
+  };
+
+  const handleMouseLeave = () => {
+    setHoverType(null);
+    console.log("Hovering stopped");
+  };
+
+  
+
   return (
     <div>
-      <Cursor 
-        hoverType={hoverType}
-        
-      />
+      <Cursor hoverType={hoverType} />
       <div className="bg-[0d0d0d] mt-32">
-        
         <div className="z-10 ">
-          <Nav
-            setHoverType={setHoverType}
-          />
+          <Nav setHoverType={setHoverType} />
           <div className="mt-[22rem] z-10">
             <div className=" mt-[18rem] ">
               <Image
@@ -104,7 +108,10 @@ export default function Page() {
             </div>
             <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
               <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
-                <button className="bg-[#0d0d0d] hidden md:block absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]">
+                <button className="bg-[#0d0d0d] hidden md:block absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]"
+                onMouseEnter={() => handleMouseEnter('link')}
+                onMouseLeave={() => handleMouseLeave()}
+                >
                   Brochure
                 </button>
               </a>
@@ -114,7 +121,10 @@ export default function Page() {
                 className=" object-fill z-0  mx-auto w-[65%] max-w-[300px] md:max-w-[430px] 2xl:max-w-[500px] md:w-[45%] absolute bottom-0 left-1/2 transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
-                <button className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] ">
+                <button className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] "
+                onMouseEnter={() => handleMouseEnter('link')}
+                onMouseLeave={() => handleMouseLeave()}
+                >
                   Schedule
                 </button>
               </a>
@@ -135,16 +145,22 @@ export default function Page() {
           onClick={() => {
             router.push("/events");
           }}
+          // Reset hover type
         >
-          <Marquee pauseOnHover={true} className="[--duration:50s]">
-            {eventsData.map((event) => (
-              <EventCard
-                key={event.name}
-                title={event.name}
-                image={event.image}
-              />
-            ))}
-          </Marquee>
+          <div
+            onMouseEnter={() => handleMouseEnter("card")} // Set hover type to 'text'
+            onMouseLeave={() => handleMouseLeave()}
+          >
+            <Marquee pauseOnHover={true} className="[--duration:50s]">
+              {eventsData.map((event) => (
+                <EventCard
+                  key={event.name}
+                  title={event.name}
+                  image={event.image}
+                />
+              ))}
+            </Marquee>
+          </div>
           <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-[#0d0d0d] w-[95%] relative left-[-25px] lg:left-[-30px] xl:left-[-40px] opacity-50 " />
           <div className="text-white opacity-50 text-xl font-inter mt-14 mb-8 flex flex-col border-r-[3px] right-[-26%] relative md:right-[-35%] lg:right-[-37%] lg:text-2xl xl:right-[-41%] pr-4">
             <p>Starts At </p>
@@ -168,7 +184,9 @@ export default function Page() {
         <div className="mt-[8rem]">
           <Steps />
         </div>
-        <Events />
+        <Events 
+          setHoverType={setHoverType}
+        />
       </div>
       <Footer />
     </div>
