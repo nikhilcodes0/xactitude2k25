@@ -38,15 +38,17 @@ const meraPro = localFont({
 const EventCard = ({
   title,
   image,
+  itmNum,
 }: {
   title: string;
   image: StaticImageData;
+  itmNum: number;
 }) => {
   return (
     <div className="  flex flex-col antialiased  justify-center  overflow-hidden ">
-      <Image src={image} alt={title} className="object-cover w-[250px] h-[150px] " />
+      <Image src={image} alt={title} className="object-cover w-[130px] h-[100px] " />
       <p
-        className={`${jersey.className} text-black text-2xl tracking-tighter bg-green-400 w-full text-center uppercase `}
+        className={`${jersey.className}  text-2xl tracking-tighter ${itmNum%2!=0?'bg-green-400 text-black text-left pl-3 ':'bg-inherit text-white text-left px-2'} w-full uppercase `}
       >
         {title}
       </p>
@@ -121,35 +123,40 @@ export default function Page() {
           
         </div>
       </div>
-      <div className="mt-[32rem]">
-        <h1 className="text-white  text-[3rem] font-black font-antonio text-start p-4 px-12">
+      <div className="mt-[38rem]">
+        <h1 className="text-white  text-[2.5rem] font-black font-inter text-start p-4 px-8">
           Welcome to
-          <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-black">
+          <p className="bg-gradient-to-b text-[4rem] font-antonio -mt-3 bg-clip-text text-transparent from-neutral-200 to-[#40E0D0] font-black">
             XACTITUDE&#39;25
           </p>
         </h1>
       </div>
-      <div className="  flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="  flex mt-[1rem] flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Marquee pauseOnHover={true} className="[--duration:50s]">
-          {eventsData.map((event) => (
+          {eventsData.map((event,i) => (
             <EventCard
               key={event.name}
               title={event.name}
               image={event.image}
+              itmNum={i}
             />
           ))}
         </Marquee>
       </div>
-      <div className="mt-20">
-        <p className="text-white  text-xl font-medium font-sans text-start p-4 px-12">
+      <hr className=" mt-5 opacity-20"/>
+      <div className="sidetxt text-white mt-12 font-inter w-[110px] ml-auto border-r pb-1 mr-8 opacity-40 px-1">
+        Starts from Jan 30
+      </div>
+      <div className="mt-10">
+        <p className="text-white text-[1rem] font-regular font-inter opacity-8 0 text-start p-4 px-8 pr-8">
           <span className="font-black">XACTITUDE</span> is the ultimate stage for students to ignite their potential, unleash their skills, and shine before a dynamic crowd of colleges and fiercely spirited competitors.
         </p>
       </div>
-      <div className="mt-32">
-        <p className="text-white  text-5xl font-black font-antonio text-start p-4 px-12">
+      <div className="mt-28">
+        <p className="text-white  text-7xl font-black font-antonio text-start p-4 px-8">
           The Process
         </p>
-        <hr className="border-white border-1 w-[95%] mx-auto opacity-50 my-2" />
+        <hr className=" opacity-20 my-2" />
       </div>
       <div>
         <Timeline data={data} />
