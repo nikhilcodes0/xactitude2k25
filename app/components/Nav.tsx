@@ -77,8 +77,11 @@ const Nav: React.FC<NavbarProps> = ({ setHoverType }) => {
                     </Link>
                   </li> */}
             <li>
-              <Link href={"/soon"}>
-                <button className=" border-[2px] border-solid border-white py-[2px] px-2 rounded-3xl hover:cursor-pointer w-[8rem] hover:text-[#40E0D0] hover:border-[#40E0D0]">
+              <Link href={"/soon"}
+              onMouseEnter={() => setHoverType("link")} // Set hover type to 'link'
+              onMouseLeave={() => setHoverType(null)} // Reset hover type
+              >
+                <button className=" border-[2px] border-solid py-[2px] px-2 rounded-3xl hover:cursor-pointer w-[8rem] hover:text-black hover:bg-[#40E0D0] hover:border-[#40E0D0]">
                   Register
                 </button>
               </Link>

@@ -17,6 +17,8 @@ import Cursor from "./components/Cursor";
 import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Footer from "./components/Footer";
+import ShimmerButton from "@/components/ui/shimmer-button";
+
 
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
@@ -108,12 +110,15 @@ export default function Page() {
             </div>
             <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
               <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
-                <button className="bg-[#0d0d0d] hidden md:block absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]"
+                <ShimmerButton className=" hidden md:block absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]"
+                background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
                 >
-                  Brochure
-                </button>
+                  <span className="">
+                    Brochure
+                  </span>
+                </ShimmerButton>
               </a>
               <Image
                 src={bgimg}
@@ -121,12 +126,15 @@ export default function Page() {
                 className=" object-fill z-0  mx-auto w-[65%] max-w-[300px] md:max-w-[430px] 2xl:max-w-[500px] md:w-[45%] absolute bottom-0 left-1/2 transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
-                <button className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] "
+                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] "
+                background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
                 >
-                  Schedule
-                </button>
+                  <span>
+                    Schedule
+                  </span>
+                </ShimmerButton>
               </a>
             </div>
           </div>
