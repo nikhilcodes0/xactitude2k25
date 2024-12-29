@@ -5,6 +5,12 @@ import insta from "../assets/insta.png";
 import phone from "../assets/phone.png";
 import ltree from "../assets/linktree.png";
 import Image from "next/image";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
 
 
 function copyPhoneNumber() {
@@ -22,7 +28,6 @@ function copyPhoneNumber() {
 const Footer = () => {
   return (
     <div>
-       
       <div className="flex justify-between my-16 md:max-w-[80%]  mx-auto lg:text-2xl text-white flex-col gap-10 px-6 md:flex-row ">
         <div className="">
           <p className="font-black my-2 font-inter text-2xl md:text-3xl">
@@ -79,55 +84,61 @@ const Footer = () => {
         </div>
       </div>
       <hr className='border-neutral-600 w-full'/>
-      <div className="bg-transparent flex justify-center items-center font-sans gap-[10rem] w-full mt-10 py-8">
-        <div className="flex flex-col ">
-          <p className="text-center mb-5 md:text-xl xl:text-2xl">Developed by:</p>
-          <div className="flex gap-4 flex-wrap px-4">
-            
-            <a
-              href="https://github.com/nikhilcodes0"
-              target="_blank"
-              className="inline text-[#40E0D0] md:text-lg xl:text-2xl"
-            >
-                Nikhil
-              
-            </a>
-            <a
-              href="https://github.com/4all3n"
-              target="_blank"
-              className="inline text-[#40E0D0] md:text-lg xl:text-2xl"
-            >
-              Harsh
-            </a>
-            <a
-              href="https://github.com/R3tr0gh057"
-              target="_blank"
-              className="inline text-[#40E0D0] md:text-lg xl:text-2xl"
-            >
-              Joe
-            </a>
-          </div>
+      <div className="bg-transparent flex justify-center items-center font-sans gap-[6rem] w-full mt-10 py-8">
+        <div className="text-white ">
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <button className="text-[#40E0D0] text-lg">Developer Team</button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">DEVELOPER TEAM</h4>
+                  <p className="text-sm">
+                    Want to know more about us? Check out our Linkedin!
+                  </p>
+                  <div className="flex items-center pt-2 underline">
+                    <span className="">
+                      <a href="https://www.linkedin.com/in/nikhil-kumar-408758202/" target="_blank">Nikhil</a>
+                    </span>
+                    <span className=" ml-4">
+                      <a href="https://www.linkedin.com/in/harsh-pratap-singh-4all3n/" target="_blank">Harsh Pratap Singh</a>
+                    </span>
+                    <span className="ml-4">
+                      <a href="https://www.linkedin.com/in/joe-sanjo-b0429a262/" target="_blank">Joe Sanjo</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
-        <div>
-          <p className="text-center mb-5 md:text-xl xl:text-2xl">Designed by:</p>
-          <div className="flex gap-4 flex-wrap px-4">
-            <a
-              href=""
-              target="_blank"
-              className="inline text-[#40E0D0] md:text-lg xl:text-2xl"
-            >
-              Fahad
-            </a>
-            <a
-              href=""
-              target="_blank"
-              className="inline text-[#40E0D0] md:text-lg xl:text-2xl"
-            >
-              Aditya
-            </a>
-          </div>
+        <div className="text-white ">
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <button className="text-[#40E0D0] text-lg">Designed Team</button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">DESIGNED TEAM</h4>
+                  <p className="text-sm">
+                    Want to know more about us? Check out our Linkedin!
+                  </p>
+                  <div className="flex items-center pt-2 underline">
+                    <span className="">
+                      <a href="https://www.linkedin.com/in/fahad-noufal-25109222b/" target="_blank">Fahad</a>
+                    </span>
+                    <span className=" ml-4">
+                      <a href="https://www.linkedin.com/in/aditya-kalbandhe-a220a2256/" target="_blank">Aditya</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
-        
+
       </div>
     </div>
   );
