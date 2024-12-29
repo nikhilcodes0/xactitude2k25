@@ -62,11 +62,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col  ">
+        <div className="flex flex-col justify-end gap-4 md:text-3xl ">
           <a
             href="https://linktr.ee/Xactitude_25"
             target="_blank"
-            className="my-2 mr-4 font-inter flex gap-1 text-[#40E0D0] cursor-pointer"
+            className="my-2 mr-4 font-inter flex gap-1 text-[#40E0D0] cursor-pointer items-center"
           >
             {""}
             <Image src={ltree} alt="" className="w-7" />
@@ -76,7 +76,7 @@ const Footer = () => {
           <a
             href="https://www.instagram.com/xactitude2025/"
             target="_blank"
-            className="my-2 mr-4 font-inter flex gap-1 text-[#40E0D0] cursor-pointer"
+            className="my-2 mr-4 font-inter flex gap-1 text-[#40E0D0] cursor-pointer items-center"
           >
             {" "}
             <Image src={insta} alt="" className="w-7" /> Instagram

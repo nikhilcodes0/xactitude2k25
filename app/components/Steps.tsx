@@ -24,7 +24,7 @@ const Steps = () => {
                     Gear Up</h1>
                     <hr className='mt-4 opacity-60 w-[80%] md:w-full'/>
                 </div>
-                <p className='px-4 text-sm w-[80%] md:text-xl md:w-full'>Sign up for the fest and select your favorite evnets.</p>
+                <p className='px-4 text-sm w-[80%] md:text-xl md:w-full'>Sign up for the fest and select your favorite events.</p>
             </div>
             <div className=' md:p-4 md:w-[80%] flex flex-col '>
                 <div className=' p-4'>
