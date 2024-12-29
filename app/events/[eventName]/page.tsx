@@ -103,7 +103,7 @@ const EventPage = async ({ params }: PageProps) => {
         >
           Guidelines
         </h2>
-        <ul className={`text-lg lg:text-xl pl-4 text-white ${inter.className}`}>
+        <ul className={`text-lg lg:text-xl lg:w-[70%] pl-4 text-white ${inter.className}`}>
           {event.guidelines?.map((guideline, index) => (
             <li key={index} className="list-disc lg:mt-4">
               {guideline}
@@ -111,7 +111,7 @@ const EventPage = async ({ params }: PageProps) => {
           ))}
         </ul>
       </div>
-      <div className="flex px-6 py-4 gap-10 justify-center items-center">
+      <div className="flex px-6 py-4  justify-evenly items-center">
         <div className="">
           <RippleButton  className="light w-full md:w-[12rem] lg:w-[13rem] lg:p-4">
             <Link href={`/events`} className="font-semibold lg:text-lg">Go Back</Link>
