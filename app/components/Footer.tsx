@@ -95,11 +95,11 @@ const Footer = () => {
                 <div className="space-y-1">
                   <h4 className="text-sm font-semibold">DEVELOPER TEAM</h4>
                   <p className="text-sm">
-                    Want to know more about us? Check out our Linkedin!
+                    Want to know more about us? Check out our profile!
                   </p>
                   <div className="flex items-center pt-2 underline">
                     <span className="">
-                      <a href="https://www.linkedin.com/in/nikhil-kumar-408758202/" target="_blank">Nikhil</a>
+                      <a href="https://github.com/nikhilcodes0" target="_blank">Nikhil</a>
                     </span>
                     <span className=" ml-4">
                       <a href="https://www.linkedin.com/in/harsh-pratap-singh-4all3n/" target="_blank">Harsh Pratap Singh</a>
@@ -116,18 +116,18 @@ const Footer = () => {
         <div className="text-white ">
           <HoverCard>
             <HoverCardTrigger asChild>
-              <button className="text-[#40E0D0] text-lg">Designed Team</button>
+              <button className="text-[#40E0D0] text-lg">Designer Team</button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">DESIGN TEAM</h4>
+                  <h4 className="text-sm font-semibold">DESIGNER TEAM</h4>
                   <p className="text-sm">
-                    Want to know more about us? Check out our Linkedin!
+                    Want to know more about us? Check out our Profile!
                   </p>
                   <div className="flex items-center pt-2 underline">
                     <span className="">
-                      <a href="https://www.linkedin.com/in/fahad-noufal-25109222b/" target="_blank">Fahad</a>
+                      <a href="https://github.com/fahadNoufal" target="_blank">Fahad</a>
                     </span>
                     <span className=" ml-4">
                       <a href="https://www.linkedin.com/in/aditya-kalbandhe-a220a2256/" target="_blank">Aditya</a>
