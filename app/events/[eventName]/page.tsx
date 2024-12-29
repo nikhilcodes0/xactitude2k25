@@ -10,6 +10,7 @@ import { Inter } from "next/font/google";
 import PulsatingButton from "@/components/ui/pulsating-button";
 import Link from "next/link";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import back from "../../assets/back.png";
 
 // Import custom font
 const anton = localFont({
@@ -48,10 +49,51 @@ const EventPage = async ({ params }: PageProps) => {
 
   return (
     <div className=" font-sans py-4 lg:px-10 dark text-white">
+      <div className="w-full text-black font-sans pl-4 pt-4 md:hidden">
+        <RippleButton rippleColor="#dd0000">
+          <div className="flex items-center gap-2">
+            <Image src={back} className="w-4 inline invert" alt="home" />
+            <Link href="/events"> Go Back</Link>
+          </div>
+        </RippleButton>
+      </div>
+      <nav className="hidden md:block m-4 text-xl">
+        <ul className="flex mx-4 justify-between">
+          <li>
+            <Link href="/" className="text-white hover:text-[#40E0D0]">
+              HOME
+            </Link>
+          </li>
+          <li>
+            <ul className="flex gap-10 mx-5">
+              <li>
+                <Link href="/events" className="text-white hover:text-[#40E0D0]">
+                  EVENTS
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-white hover:text-[#40E0D0]">
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link href="/reg" className="text-white hover:text-[#40E0D0]">
+                  REGISTER
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
       <div className="p-4 sm:flex sm:justify-between sm:items-center">
-        <h1 className={`text-[3.9rem] font-black  md:text-[6rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[9rem] ${anton.className}`}>
-          {event.name}
-        </h1>
+        <div>
+          <h1 className={`text-[3.9rem] font-black  md:text-[6rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[7rem] ${anton.className}`}>
+            {event.name}
+          </h1>
+          <div className="flex justify-end">
+            {/* <p className="text-lg hidden md:block text-end  w-[70%] ">Think fast, code smart, and pitch like a pro</p> */}
+          </div>
+        </div>
         <div className="flex mt-8 gap-7 items-center md:justify-center shadow-lg w-fit shadow-card">
           {event?.image && (
             <Image
@@ -75,18 +117,18 @@ const EventPage = async ({ params }: PageProps) => {
           "xl:[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
         )}
       />
-      <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
+      <hr className="my-10 mx-4 bg-slate-300 h-[2px] opacity-50" />
       <div className="p-4 py-10">
         <h2
-          className={`text-4xl font-semibold capitalize mb-10 lg:text-5xl xl:text-6xl ${inter.className}`}
+          className={`text-4xl font-extralight capitalize mb-10 lg:text-5xl xl:text-6xl ${inter.className}`}
         >
           About the Event
         </h2>
-        <p className={`text-lg text-white ${inter.className} lg:text-xl xl:text-2xl`}>{event.about}</p>
+        <p className={`text-lg text-white ${inter.className} lg:text-xl w-[95%] xl:text-2xl`}>{event.about}</p>
       </div>
-      <hr className="my-10 w-[93%] mx-auto bg-slate-300 h-[2px]" />
-      <div className="p-4">
-        <div className="flex justify-between md:justify-around px-2">
+      <hr className="my-10 mx-4  bg-slate-300 h-[2px] opacity-50" />
+      <div className="py-4 px-2 md:px-0">
+        <div className="flex justify-start gap-7 md:gap-52 md:px-10 px-2">
           <div className="flex items-center gap-2">
             <Image src={calendar} alt="alarm" width={25} height={25} className="lg:w-[30px] invert"/>
             <p className="text-[15px] md:text-[20px] lg:text-[30px]">{event.date}</p>
@@ -99,11 +141,11 @@ const EventPage = async ({ params }: PageProps) => {
       </div>
       <div className="p-4 py-10 pt-20">
         <h2
-          className={`text-4xl font-semibold capitalize mb-10 lg:text-5xl ${inter.className}`}
+          className={`text-4xl font-extralight capitalize mb-10 lg:text-7xl ${inter.className}`}
         >
           Guidelines
         </h2>
-        <ul className={`text-lg lg:text-xl lg:w-[70%] pl-4 text-white ${inter.className}`}>
+        <ul className={`text-lg lg:text-xl mx-4 lg:w-[70%] pl-4 text-white ${inter.className}`}>
           {event.guidelines?.map((guideline, index) => (
             <li key={index} className="list-disc lg:mt-4">
               {guideline}
@@ -111,13 +153,8 @@ const EventPage = async ({ params }: PageProps) => {
           ))}
         </ul>
       </div>
-      <div className="flex px-6 py-4  justify-evenly items-center">
-        <div className="">
-          <RippleButton  className="light w-full md:w-[12rem] lg:w-[13rem] lg:p-4">
-            <Link href={`/events`} className="font-semibold lg:text-lg">Go Back</Link>
-          </RippleButton>
-        </div>
-        <div className="">
+      <div className="flex px-4 py-4 mb-10 justify-start items-center">
+        <div className="mx-4">
           <PulsatingButton className="w-[10rem] dark md:w-[15rem] lg:w-[20rem] lg:p-4">
             <Link href={`/soon`} className="font-semibold lg:text-lg">Register Now</Link>
           </PulsatingButton>
