@@ -8,7 +8,7 @@ const progressbar = ({ currentStep, totalSteps }: { currentStep: number; totalSt
 
   return (
     // This is the main wrapper for the progress bar. It has flexbox styling to layout the elements.
-    <div className="flex items-center justify-between px-2 pt-8 pb-4 font-inter">
+    <div className="flex md:hidden items-center justify-between px-2 pt-8 pb-4 font-inter">
       
       {/* Map through an array of length 'totalSteps' to generate the steps */}
       {[...Array(totalSteps)].map((_, index) => (

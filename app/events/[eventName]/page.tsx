@@ -4,7 +4,6 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import calendar from "../../assets/calendar.png";
-import RippleButton from "@/components/ui/ripple-button";
 import person from "../../assets/person.png";
 import { Inter } from "next/font/google";
 import PulsatingButton from "@/components/ui/pulsating-button";
@@ -50,12 +49,10 @@ const EventPage = async ({ params }: PageProps) => {
   return (
     <div className=" font-sans py-4 lg:px-10 dark text-white">
       <div className="w-full text-black font-sans pl-4 pt-4 md:hidden">
-        <RippleButton rippleColor="#dd0000">
-          <div className="flex items-center gap-2">
-            <Image src={back} className="w-4 inline invert" alt="home" />
-            <Link href="/events"> Go Back</Link>
-          </div>
-        </RippleButton>
+        
+        <Link href="/events">
+          <button className=" items-center text-white text-center justify-center hover:bg-[#40E0D0]  flex gap-2 bg-[#0d0d0d] border-[#40E0D0] border-2 p-2 rounded-full "><Image src={back} className="w-4 invert inline" alt="back" /> Go Back</button>
+        </Link>
       </div>
       <nav className="hidden md:block m-4 text-xl">
         <ul className="flex mx-4 justify-between">
@@ -67,7 +64,10 @@ const EventPage = async ({ params }: PageProps) => {
           <li>
             <ul className="flex gap-10 mx-5">
               <li>
-                <Link href="/events" className="text-white hover:text-[#40E0D0]">
+                <Link
+                  href="/events"
+                  className="text-white hover:text-[#40E0D0]"
+                >
                   EVENTS
                 </Link>
               </li>
@@ -86,12 +86,14 @@ const EventPage = async ({ params }: PageProps) => {
         </ul>
       </nav>
       <div className="p-4 sm:flex sm:justify-between sm:items-center">
-        <div>
-          <h1 className={`text-[3.9rem] font-black  md:text-[6rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[7rem] ${anton.className}`}>
+        <div className="lg:text-end">
+          <h1
+            className={`text-[3.9rem] font-black  md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[7rem] ${anton.className}`}
+          >
             {event.name}
           </h1>
           <div className="flex justify-end">
-            {/* <p className="text-lg hidden md:block text-end  w-[70%] ">Think fast, code smart, and pitch like a pro</p> */}
+            {/* <p className="text-lg hidden md:block lg:text-end  w-[90%] ">{event.description}</p> */}
           </div>
         </div>
         <div className="flex mt-8 gap-7 items-center md:justify-center shadow-lg w-fit shadow-card">
@@ -124,17 +126,35 @@ const EventPage = async ({ params }: PageProps) => {
         >
           About the Event
         </h2>
-        <p className={`text-lg text-white ${inter.className} lg:text-xl w-[95%] xl:text-2xl`}>{event.about}</p>
+        <p
+          className={`text-lg text-white ${inter.className} lg:text-xl w-[95%] xl:text-2xl`}
+        >
+          {event.about}
+        </p>
       </div>
       <hr className="my-10 mx-4  bg-slate-300 h-[2px] opacity-50" />
       <div className="py-4 px-2 md:px-0">
         <div className="flex justify-start gap-7 md:gap-52 md:px-10 px-2">
           <div className="flex items-center gap-2">
-            <Image src={calendar} alt="alarm" width={25} height={25} className="lg:w-[30px] invert"/>
-            <p className="text-[15px] md:text-[20px] lg:text-[30px]">{event.date}</p>
+            <Image
+              src={calendar}
+              alt="alarm"
+              width={25}
+              height={25}
+              className="lg:w-[30px] invert"
+            />
+            <p className="text-[15px] md:text-[20px] lg:text-[30px]">
+              {event.date}
+            </p>
           </div>
           <div className="flex items-center gap-2">
-            <Image src={person} alt="person" width={19} height={19} className="lg:w-[30px] invert"/>
+            <Image
+              src={person}
+              alt="person"
+              width={19}
+              height={19}
+              className="lg:w-[30px] invert"
+            />
             <p className="md:text-[20px] lg:text-[30px]">{event.venue}</p>
           </div>
         </div>
@@ -145,7 +165,9 @@ const EventPage = async ({ params }: PageProps) => {
         >
           Guidelines
         </h2>
-        <ul className={`text-lg lg:text-xl mx-4 lg:w-[70%] pl-4 text-white ${inter.className}`}>
+        <ul
+          className={`text-lg lg:text-xl mx-4 lg:w-[70%] pl-4 text-white ${inter.className}`}
+        >
           {event.guidelines?.map((guideline, index) => (
             <li key={index} className="list-disc lg:mt-4">
               {guideline}
@@ -156,7 +178,9 @@ const EventPage = async ({ params }: PageProps) => {
       <div className="flex px-4 py-4 mb-10 justify-start items-center">
         <div className="mx-4">
           <PulsatingButton className="w-[10rem] dark md:w-[15rem] lg:w-[20rem] lg:p-4">
-            <Link href={`/soon`} className="font-semibold lg:text-lg">Register Now</Link>
+            <Link href={`/soon`} className="font-semibold lg:text-lg">
+              Register Now
+            </Link>
           </PulsatingButton>
         </div>
       </div>

@@ -224,7 +224,7 @@ const Reg = () => {
           GROUP EVENTS
         </h1>
         <div
-          className={`flex flex-col gap-4 bg-[#0D0D0D] text-white ${inter.className}`}
+          className={`grid grid-cols-3 gap-4 bg-[#0D0D0D] text-white ${inter.className}`}
         >
            {events
       .filter((event) => event.selected)

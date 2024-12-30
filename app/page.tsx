@@ -81,7 +81,7 @@ export default function Page() {
   
 
   return (
-    <div>
+    <div className="hover:cursor-none">
       <Cursor hoverType={hoverType} />
       <div className="bg-[0d0d0d] mt-32">
         <div className="z-10 ">
@@ -110,7 +110,7 @@ export default function Page() {
             </div>
             <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
               <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
-                <ShimmerButton className=" hidden md:block absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]"
+                <ShimmerButton className=" hidden md:block hover:cursor-none absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-16 z-10 left-[8rem]"
                 background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
@@ -126,7 +126,7 @@ export default function Page() {
                 className=" object-fill z-0  mx-auto w-[65%] max-w-[300px] md:max-w-[430px] 2xl:max-w-[500px] md:w-[45%] absolute bottom-0 left-1/2 transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
-                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] "
+                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-16 z-10 right-[8rem] "
                 background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
@@ -149,7 +149,7 @@ export default function Page() {
           </h1>
         </div>
         <div
-          className="  flex flex-col antialiased cursor-pointer  dark:bg-[#0d0d0d] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden lg:mt-10"
+          className="  flex flex-col antialiased   dark:bg-[#0d0d0d] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden lg:mt-10"
           onClick={() => {
             router.push("/events");
           }}
@@ -158,8 +158,9 @@ export default function Page() {
           <div
             onMouseEnter={() => handleMouseEnter("card")} // Set hover type to 'text'
             onMouseLeave={() => handleMouseLeave()}
+            className="hover:cursor-none"
           >
-            <Marquee pauseOnHover={true} className="[--duration:50s]">
+            <Marquee pauseOnHover={true} className="[--duration:50s] hover:cursor-none">
               {eventsData.map((event) => (
                 <EventCard
                   key={event.name}
@@ -169,8 +170,8 @@ export default function Page() {
               ))}
             </Marquee>
           </div>
-          <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-[#0d0d0d] w-[95%] relative left-[-25px] lg:left-[-30px] xl:left-[-40px] opacity-50 " />
-          <div className="text-white opacity-50 text-xl font-inter mt-14 mb-8 flex flex-col border-r-[3px] right-[-26%] relative md:right-[-35%] lg:right-[-37%] lg:text-2xl xl:right-[-41%] pr-4">
+          <hr className="h-px my-8 bg-gray-200 border-0 hover:cursor-none dark:bg-[#0d0d0d] w-[95%] relative left-[-25px] lg:left-[-30px] xl:left-[-40px] opacity-50 " />
+          <div className="text-white opacity-50 text-xl hover:cursor-none font-inter mt-14 mb-8 flex flex-col border-r-[3px] right-[-26%] relative md:right-[-35%] lg:right-[-37%] lg:text-2xl xl:right-[-41%] pr-4">
             <p>Starts At </p>
             <p className="">Jan 30 & 31</p>
           </div>

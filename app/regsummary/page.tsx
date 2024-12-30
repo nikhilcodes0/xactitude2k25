@@ -3,20 +3,23 @@
 import React, { useEffect, useState } from "react";
 import Progressbar from "../components/progressbar";
 import SummeryCard from "../components/summerycard";
-import weblynx from "../assets/weblynx.png";
-import cine from "../assets/cine.png";
-import fc24 from "../assets/fc24.png";
-import quizz from "../assets/quizz.png";
+import eventsData from "../events/eventsData";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
 
 const eventImages = {
-  Weblynx: weblynx,
-  Cinephoria: cine,
-  FC24: fc24,
-  "Quizz Buzz": quizz,
-};
+  "Hack-N-Build": eventsData[0].image,
+  "IT Manager": eventsData[1].image,
+  "CodeShift": eventsData[2].image,
+  "Weblynx": eventsData[3].image,
+  "Xploit": eventsData[4].image,
+  "DataQuest": eventsData[5].image,
+  "Agora": eventsData[6].image,
+  "Quiztacular": eventsData[7].image,
+  "Cinephoria": eventsData[8].image,
+  "BGX": eventsData[9].image,
 
+};
 
 // fonts
 
@@ -61,24 +64,24 @@ const RegSummery = () => {
   const { name, college, wNo, email, teamName, events } = registrationData;
 
   return (
-    <div className={`bg-[#0d0d0d] text-white font-sans `}>
+    <div className={`bg-[#0d0d0d] text-white font-sans md:mx-20`}>
       <Progressbar currentStep={2} totalSteps={3} />
 
       <div>
-        <p className={`text-md text-center text-gray-200 ${inter.className}`}>
+        <p className={`text-md text-center md:hidden text-gray-200 ${inter.className}`}>
           Great choice! Confirm and proceed
         </p>
       </div>
       <h1 className={`text-[2.7rem] font-antonio font-bold text-white text-center mx-2 my-8 `}>
         REGISTRATION SUMMARY
       </h1>
-      <div>
+      <div className="md:grid grid-cols-3 gap-4 mx-3">
         {events.map((event: string, index: number) => (
           <SummeryCard
             key={index}
             title={event}
             image={eventImages[event as keyof typeof eventImages] || ""}
-            no={`0${index + 1}`}
+            no={eventsData[index].no}
           />
         ))}
       </div>
@@ -111,7 +114,7 @@ const RegSummery = () => {
           section.
         </label>
       </div>
-      <div className="mx-3 flex flex-col gap-4">
+      <div className="mx-3 flex flex-col gap-4 ">
         <button className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}>
           PAY NOW
         </button>
