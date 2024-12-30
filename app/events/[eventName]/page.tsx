@@ -77,7 +77,7 @@ const EventPage = async ({ params }: PageProps) => {
                 </Link>
               </li>
               <li>
-                <Link href="/reg" className="text-white hover:text-[#40E0D0]">
+                <Link href="/soon" className="text-white hover:text-[#40E0D0]">
                   REGISTER
                 </Link>
               </li>
