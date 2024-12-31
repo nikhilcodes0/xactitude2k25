@@ -7,7 +7,7 @@ import Select from "../components/Select";
 import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
 import Group from "../components/group";
-import RippleButton from "@/components/ui/ripple-button";
+
 import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
@@ -57,7 +57,7 @@ const Reg = () => {
     });
   };
 
-  const no = 0
+  
 
   const handleRegister = async () => {
     // Email validation regex
