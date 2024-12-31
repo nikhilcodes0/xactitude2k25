@@ -49,7 +49,7 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
       <div className="my-6">
         <hr className="opacity-50 py-4 md:hidden" />
         <div className="flex gap-6">
-          <h1 className="text-4xl text-white font-bold opacity-60">{no}</h1>
+          <h1 className="text-4xl text-white font-bold opacity-60 lg:text-5xl">{no}</h1>
           <div>
             <Select
               title={title}

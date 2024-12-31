@@ -64,7 +64,7 @@ const RegSummery = () => {
   const { name, college, wNo, email, teamName, events } = registrationData;
 
   return (
-    <div className={`bg-[#0d0d0d] text-white font-sans md:mx-20`}>
+    <div className={`bg-[#0d0d0d] text-white font-sans md:mx-5`}>
       <Progressbar currentStep={2} totalSteps={3} />
 
       <div>
@@ -75,7 +75,7 @@ const RegSummery = () => {
       <h1 className={`text-[2.7rem] font-antonio font-bold text-white text-center mx-2 my-8 `}>
         REGISTRATION SUMMARY
       </h1>
-      <div className="md:grid grid-cols-3 gap-4 mx-3">
+      <div className="md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-3">
         {events.map((event: string, index: number) => (
           <SummeryCard
             key={index}
@@ -85,36 +85,38 @@ const RegSummery = () => {
           />
         ))}
       </div>
-      <div className={`mx-3 ${inter.className} my-6`}>
-        <h2 className="text-[2rem] font-bold my-6 font-antonio">Participant Details:</h2>
-        <p className="text-lg">Name: {name}</p>
-        <p className="text-lg">College: {college}</p>
-        <p className="text-lg">WhatsApp No: {wNo}</p>
-        <p className="text-lg">Email: {email}</p>
-        {teamName && <p className="text-lg">Team Name: {teamName}</p>}
+      <div className={`mx-3 md:mx-6 ${inter.className} my-6`}>
+        <h2 className="text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-bold my-6 font-antonio">Participant Details:</h2>
+        <div className="mx-1 text-lg md:text-xl xl:text-2xl">
+          <p className=""><span className="font-bold">Name:</span> {name}</p>
+          <p className=""><span className="font-bold">College:</span> {college}</p>
+          <p className=""><span className="font-bold">WhatsApp No:</span> {wNo}</p>
+          <p className=""><span className="font-bold">Email:</span> {email}</p>
+          {teamName && <p className=""><span className="font-bold">Team Name:</span> {teamName}</p>}
+        </div>
       </div>
       <div>
-        <div className="flex justify-between items-center my-4 mx-3">
-          <h1 className="text-3xl text-white font-bold font-antonio">Total Amount</h1>
-          <p className="text-3xl text-white font-bold font-antonio">Rs.300</p>
+        <div className="flex justify-between items-center my-4 mx-3 md:mx-6">
+          <h1 className="text-3xl lg:text-4xl text-white font-bold font-antonio">Total Amount</h1>
+          <p className="text-3xl lg:text-4xl text-white font-bold font-antonio">Rs.300</p>
         </div>
-        <hr className="opacity-50 mx-3" />
+        <hr className="opacity-50 mx-3 md:mx-6" />
       </div>
-      <div className="flex gap-3 mx-3 my-5 items-center">
+      <div className="flex gap-3 mx-3 md:mx-6 my-5 items-center">
         <input
           type="checkbox"
           name="agree"
           id="agree"
-          className="w-8 h-8 rounded-xl accent-[#2FFF60]"
+          className="w-8 h-8 md:w-7 md:h-7 xl:w-6 xl:h-6 rounded-xl accent-[#2FFF60]"
         />
         <label
           htmlFor="agree"
-          className={`text-white text-lg ${inter.className}`}>
+          className={`text-white text-lg xl:text-xl ${inter.className}`}>
           I will take a screenshot of the payment and upload it in the following
           section.
         </label>
       </div>
-      <div className="mx-3 flex flex-col gap-4 ">
+      <div className="mx-3 flex flex-col md:flex-row gap-4 lg:w-3/4 xl:w-[60%] lg:mx-auto lg:gap-8">
         <button className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}>
           PAY NOW
         </button>
@@ -129,7 +131,7 @@ const RegSummery = () => {
         href="/reg"
         className="text-white text-xl font-semibold mx-3 my-4 cursor-pointer"
       >
-        ﹤<span className={`underline underline-offset-4 font-inter`}>Edit Events</span>
+        ﹤<span className={`underline underline-offset-4 py-4 font-inter`}>Edit Events</span>
       </a>
     </div>
   );
