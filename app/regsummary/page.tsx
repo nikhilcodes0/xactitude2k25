@@ -68,11 +68,11 @@ const RegSummery = () => {
       <Progressbar currentStep={2} totalSteps={3} />
 
       <div>
-        <p className={`text-md text-center md:hidden text-gray-200 ${inter.className}`}>
+        <p className={`text-sm text-center md:hidden text-gray-200 ${inter.className}`}>
           Great choice! Confirm and proceed
         </p>
       </div>
-      <h1 className={`text-[2.7rem] font-antonio font-bold text-white text-center mx-2 my-8 `}>
+      <h1 className={`text-[1.7rem] font-antonio font-bold text-white text-center mx-2 my-12 `}>
         REGISTRATION SUMMARY
       </h1>
       <div className="md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-3">
@@ -86,19 +86,19 @@ const RegSummery = () => {
         ))}
       </div>
       <div className={`mx-3 md:mx-6 ${inter.className} my-6`}>
-        <h2 className="text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-bold my-6 font-antonio">Participant Details:</h2>
+        <h2 className="text-[1.6rem] lg:text-[2.5rem] xl:text-[3rem] font-bold my-6 font-antonio">Participant Details:</h2>
         <div className="mx-1 text-lg md:text-xl xl:text-2xl">
-          <p className=""><span className="font-bold">Name:</span> {name}</p>
-          <p className=""><span className="font-bold">College:</span> {college}</p>
-          <p className=""><span className="font-bold">WhatsApp No:</span> {wNo}</p>
-          <p className=""><span className="font-bold">Email:</span> {email}</p>
-          {teamName && <p className=""><span className="font-bold">Team Name:</span> {teamName}</p>}
+          <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Name:</span> {name}</p>
+          <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">College:</span> {college}</p>
+          <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">WhatsApp No:</span> {wNo}</p>
+          <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Email:</span> {email}</p>
+          {teamName && <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Team Name:</span> {teamName}</p>}
         </div>
       </div>
       <div>
         <div className="flex justify-between items-center my-4 mx-3 md:mx-6">
-          <h1 className="text-3xl lg:text-4xl text-white font-bold font-antonio">Total Amount</h1>
-          <p className="text-3xl lg:text-4xl text-white font-bold font-antonio">Rs.300</p>
+          <h1 className="text-[1.6rem] lg:text-4xl text-white font-bold font-antonio">Total Amount</h1>
+          <p className="text-[1.6rem] lg:text-4xl text-white font-bold font-antonio">Rs.300</p>
         </div>
         <hr className="opacity-50 mx-3 md:mx-6" />
       </div>
@@ -111,17 +111,17 @@ const RegSummery = () => {
         />
         <label
           htmlFor="agree"
-          className={`text-white text-lg xl:text-xl ${inter.className}`}>
+          className={`text-white pl-4 text-sm xl:text-xl ${inter.className}`}>
           I will take a screenshot of the payment and upload it in the following
           section.
         </label>
       </div>
       <div className="mx-3 flex flex-col md:flex-row gap-4 lg:w-3/4 xl:w-[60%] lg:mx-auto lg:gap-8">
-        <button className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}>
+        <button className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter`}>
           PAY NOW
         </button>
         <button 
-          className={`bg-[#07B6B0] text-xl font-semibold py-3 rounded-lg w-full my-4 cursor-pointer font-inter`}
+          className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter`}
           onClick={() => router.push('/transummary')}
           >
           PROCEED
@@ -129,9 +129,9 @@ const RegSummery = () => {
       </div>
       <a
         href="/reg"
-        className="text-white text-xl font-semibold mx-3 my-4 cursor-pointer"
+        className="text-white text-xl text-center font-semibold mx-4 my-4 cursor-pointer w-full"
       >
-        ﹤<span className={`underline underline-offset-4 py-4 font-inter`}>Edit Events</span>
+         &larr; {""}<span className={`underline underline-offset-4 py-4 font-inter`}>Edit Events</span>
       </a>
     </div>
   );

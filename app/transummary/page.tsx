@@ -94,14 +94,14 @@ const Transummery = () => {
     <div className="bg-[#0d0d0d] text-white font-sans">
       <Progressbar currentStep={2} totalSteps={3} />
       <div>
-        <p className='text-md text-center font-inter text-gray-200'>Finally, verify your payment!</p>
+        <p className='text-2xl mt-12 text-center font-inter text-gray-200'>Finally, verify your payment!</p>
       </div>
       <div className='flex flex-col items-center justify-center mt-24'>
         <Image src={success} alt="Payment Success" />
         <h1 className='text-2xl font-semibold font-inter text-white text-center mx-2 my-8'>Payment Success!</h1>
       </div>
       <div
-        className='flex flex-col items-center font-inter justify-center gap-4 border-2 border-dashed border-[#07B6B0] rounded-md p-4 mx-6'
+        className='flex flex-col items-center font-inter justify-center gap-4 border-2 border-dashed border-[#07B6B0] rounded-md p-4 mx-6 md:w-[70%] md:mx-auto  lg:w-[60%] xl:w-[50%] 2xl:w-[40%]'
         onDrop={handleFileDrop}
         onDragOver={(e) => e.preventDefault()}
       >
@@ -128,12 +128,12 @@ const Transummery = () => {
         <input
           type="text"
           placeholder='TRANSACTION ID'
-          className="p-2 rounded-md font-inter border-b-[5px] border-[#797a7a]  outline-none text-black w-[90%]"
+          className="p-2 rounded-md font-inter border-b-[5px] border-[#797a7a]  outline-none text-black w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%]"
           value={transactionId}
           onChange={handleTransactionIdChange}
         />
         <button
-          className='bg-[#07B6B0] text-white font-inter font-semibold text-xl rounded-md p-3 mt-4 w-[90%]'
+          className='bg-[#07B6B0] text-white font-inter font-semibold text-xl rounded-md p-3 mt-4 w-[90%] md:w-[70%] cursor-pointer lg:w-[60%] xl:w-[50%] 2xl:w-[40%]'
           onClick={handleFinish}
         >
           FINISH
