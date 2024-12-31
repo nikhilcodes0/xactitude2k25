@@ -51,7 +51,7 @@ const EventPage = async ({ params }: PageProps) => {
       <div className="w-full text-black font-sans pl-4 pt-4 md:hidden">
         
         <Link href="/events">
-          <button className=" items-center text-white text-center justify-center hover:bg-[#40E0D0]  flex gap-2 bg-[#0d0d0d] border-[#40E0D0] border-2 p-2 rounded-full "><Image src={back} className="w-4 invert inline" alt="back" /> Go Back</button>
+          <button className=" items-center text-white text-center font-semibold justify-center hover:bg-[#40E0D0]  flex gap-2 bg-[#0d0d0d] border-[#40E0D0] border-2 p-2 rounded-full "><Image src={back} className="w-4 invert inline" alt="back" /> Go Back</button>
         </Link>
       </div>
       <nav className="hidden md:block m-4 text-xl">
