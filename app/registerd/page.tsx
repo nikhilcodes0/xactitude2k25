@@ -51,7 +51,7 @@ const Registerd = () => {
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-6 rounded-3xl py-7 my-6 mx-5 shadow-[1px_1px_15px_rgb(0,0,0,0.2)] shadow-slate-700">
-        <p className="text-lg font-normal font-inter rounded-xl text-center p-2 bg-slate-50  mx-7 w-[90%]">
+        <p className="text-lg font-normal font-inter rounded-xl text-center p-2 bg-black  mx-7 w-[90%]">
           Participant ID
         </p>
         <p className="text-lg font-normal font-inter mx-7">{parsedSessionData.id}</p>

@@ -104,7 +104,7 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
                   ? "Team Name Available"
                   : selectedOption === "create"
                   ? "Team Name Unavailable"
-                  : "Team Name Unavailable"}
+                  :"Team Name Already Taken"}
               </p>
             </div>
           </div>

@@ -43,7 +43,11 @@ const RegSummery = () => {
   }
 
   const [registrationData, setRegistrationData] = useState<RegistrationData | null>(null);
+  const [isChecked, setIsChecked] = useState(false);
   const router = useRouter();
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
 
   // Load registration data from sessionStorage
   useEffect(() => {
@@ -107,22 +111,29 @@ const RegSummery = () => {
           type="checkbox"
           name="agree"
           id="agree"
+          checked={isChecked}
           className="w-8 h-8 md:w-7 md:h-7 xl:w-6 xl:h-6 rounded-xl accent-[#2FFF60]"
+          onChange={handleCheckboxChange}
         />
         <label
           htmlFor="agree"
-          className={`text-white pl-4 text-sm xl:text-xl ${inter.className}`}>
+          className={`text-white pl-4 text-sm xl:text-xl ${inter.className}`}
+          
+          >
           I will take a screenshot of the payment and upload it in the following
           section.
         </label>
       </div>
       <div className="mx-3 flex flex-col md:flex-row gap-4 lg:w-3/4 xl:w-[60%] lg:mx-auto lg:gap-8">
-        <button className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter`}>
+        <button className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter ${isChecked ? "opacity-100" : "opacity-50 cursor-not-allowed"}`}
+          disabled ={!isChecked}
+        >
           PAY NOW
         </button>
         <button 
-          className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter`}
+          className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter ${isChecked ? "opacity-100" : "opacity-50 cursor-not-allowed"}`}
           onClick={() => router.push('/transummary')}
+          disabled={!isChecked}
           >
           PROCEED
         </button>
