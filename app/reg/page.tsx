@@ -203,7 +203,7 @@ const Reg = () => {
           <input
             type="text"
             placeholder="Full Name"
-            className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none"
+            className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -211,7 +211,7 @@ const Reg = () => {
             <select
               name="colleges"
               id="colleges"
-              className="p-2 rounded-md border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
+              className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
               value={college}
               onChange={(e) => setCollege(e.target.value)}
             >
