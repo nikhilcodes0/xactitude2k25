@@ -96,7 +96,7 @@ const EventPage = async ({ params }: PageProps) => {
             {/* <p className="text-lg hidden md:block lg:text-end  w-[90%] ">{event.description}</p> */}
           </div>
         </div>
-        <div className="flex mt-8 gap-7 items-center md:justify-center shadow-lg w-fit shadow-card">
+        <div className="flex mt-8 gap-7 z-10 items-center md:justify-center shadow-lg w-fit shadow-card">
           {event?.image && (
             <Image
               src={event.image}

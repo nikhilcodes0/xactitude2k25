@@ -41,29 +41,31 @@ const Registerd = () => {
   }
 
   return (
-    <div className="text-white font-sans ">
+    <div className="text-white font-sans md:w-[90%] mx-auto">
       <Progressbar currentStep={3} totalSteps={3} />
       <div className="flex flex-col items-center justify-center mt-16">
         <Image src={success} alt="Success Icon" />
-        <h1 className="text-[2.7rem] font-bold text-[#07B6B0] text-center mx-2 my-8 font-antonio">Registered</h1>
-        <p className="text-xl text-center opacity-70 mx-10 font-inter">
+        <h1 className="text-[2.7rem] font-bold text-[#07B6B0] lg:text-[3.5rem] text-center mx-2 my-8 font-antonio">Registered</h1>
+        <p className="text-xl text-center opacity-70 mx-10 lg:text-2xl font-inter">
           You&apos;re all set! Get ready to shine at your events. See you there!
         </p>
       </div>
-      <div className="flex flex-col items-center justify-center gap-6 rounded-3xl py-7 my-6 mx-5 shadow-[1px_1px_15px_rgb(0,0,0,0.2)] shadow-slate-700">
-        <p className="text-lg font-normal font-inter rounded-xl text-center p-2 bg-black  mx-7 w-[90%]">
+      <div className="flex flex-col items-center justify-normal gap-6 md:gap-20 md:mx-10 lg:mx-20 xl:w-[80%] xl:mx-auto rounded-3xl  md:h-[19rem] py-7 my-6 mx-5 shadow-[1px_1px_15px_rgb(0,0,0,0.2)] shadow-slate-700">
+        <p className="text-lg md:text-2xl lg:text-3xl font-normal font-inter rounded-xl text-center p-2 bg-white text-black  mx-7 w-[90%]">
           Participant ID
         </p>
-        <p className="text-lg font-normal font-inter mx-7">{parsedSessionData.id}</p>
+        <p className="text-lg md:text-2xl lg:text-3xl font-normal font-inter mx-7">{parsedSessionData.id}</p>
       </div>
-      <div className="flex flex-col items-center justify-center gap-6 rounded-3xl py-7 my-5">
-        <button className="border-2 font-inter flex items-center gap-2 justify-center border-white text-[#25D366] text-xl font-normal rounded-3xl p-3 w-[90%] mx-6">
-          <span>
-            <Image src={whatsapp} alt="Copy Icon" />
-          </span>
-          Whatsapp Link
-        </button>
-        <button className="border-2 font-inter flex items-center gap-2 justify-center border-white text-xl font-normal rounded-3xl p-3 w-[90%] mx-6">
+      <div className="flex flex-col md:flex-row items-center justify-center md:mx-10 gap-6 lg:mx-20 xl:w-[80%] xl:mx-auto rounded-3xl py-7 my-5">
+        <Link href={`https://chat.whatsapp.com/EuhpgnQe7DQ2RfE1bjo96f`} className='w-full'>
+          <button className="border-2 font-inter flex items-center gap-2 justify-center border-white text-[#25D366] text-xl font-normal rounded-3xl p-3 w-[90%]  mx-6">
+            <span>
+              <Image src={whatsapp} alt="Copy Icon" />
+            </span>
+            Whatsapp Link
+          </button>
+        </Link>
+        <button className="border-2 font-inter flex items-center gap-2 justify-center border-white text-xl font-normal rounded-3xl p-3 w-[90%]  mx-6">
           <span>
             <Image src={copy} alt="Copy Icon" />
           </span>
@@ -71,8 +73,8 @@ const Registerd = () => {
         </button>
       </div>
       <Link href="/" className="text-white text-2xl font-semibold mx-3 my-4 cursor-pointer opacity-70">
-        
-        <span className="underline font-inter text-xl underline-offset-4">Home Page</span>
+        &larr; {""}
+        <span className="underline font-inter text-xl underline-offset-4"> Home Page</span>
       </Link>
     </div>
   );

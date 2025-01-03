@@ -5,10 +5,19 @@ import Image from 'next/image';
 import Progressbar from '../components/progressbar';
 import success from '../assets/Successicon.png';
 import upload from '../assets/Uploadicon.png';
+import { FileUpload } from "@/components/ui/file-upload";
 import { useRouter } from 'next/navigation';
 import { updateEventData, registerParticipant, registerTeam, generateParticipantId } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
 import { db } from "../../src/firebase";
 import { doc, getDoc } from "firebase/firestore"
+
+
+
+
+
+
+
+
 
 const Transummery = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -90,6 +99,17 @@ const Transummery = () => {
     }
   };
 
+  //Componenet function
+
+
+  const [files, setFiles] = useState<File[]>([]);
+  const handleFileUpload = (files: File[]) => {
+    setFiles(files);
+    console.log(files);
+  };
+
+
+
   return (
     <div className="bg-[#0d0d0d] text-white font-sans">
       <Progressbar currentStep={2} totalSteps={3} />
@@ -100,7 +120,7 @@ const Transummery = () => {
         <Image src={success} alt="Payment Success" />
         <h1 className='text-2xl font-semibold font-inter text-white text-center mx-2 my-8'>Payment Success!</h1>
       </div>
-      <div
+      {/* <div
         className='flex flex-col items-center font-inter justify-center gap-4 border-2 border-dashed border-[#07B6B0] rounded-md p-4 mx-6 md:w-[70%] md:mx-auto  lg:w-[60%] xl:w-[50%] 2xl:w-[40%]'
         onDrop={handleFileDrop}
         onDragOver={(e) => e.preventDefault()}
@@ -123,7 +143,14 @@ const Transummery = () => {
           onChange={handleFileChange}
         />
         <p className='text-[12px] opacity-70'>Supported formats: JPEG, PNG, PDF, PSD, PPT</p>
+
+      </div> */}
+      {/*This is the new upplode area and its code is in /component/ui/file-upload.tsx in root directory*/}
+      <div className="dark w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-black border-neutral-500 rounded-lg">
+          <FileUpload onChange={handleFileUpload} />
       </div>
+      {/* till here   */}
+
       <div className='flex flex-col items-center justify-center mt-16 pb-16 gap-4'>
         <input
           type="text"
@@ -144,3 +171,7 @@ const Transummery = () => {
 };
 
 export default Transummery;
+
+
+
+//////

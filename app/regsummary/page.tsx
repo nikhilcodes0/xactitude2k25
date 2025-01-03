@@ -96,7 +96,7 @@ const RegSummery = () => {
           <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">College:</span> {college}</p>
           <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">WhatsApp No:</span> {wNo}</p>
           <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Email:</span> {email}</p>
-          {teamName && <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Team Name:</span> {teamName}</p>}
+          {/* {teamName && <p className="text-sm font-bold"><span className="font-bold text-base text-[#07B6B0] mr-2">Team Name:</span> {teamName}</p>} */}
         </div>
       </div>
       <div>
