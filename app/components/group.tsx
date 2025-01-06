@@ -14,7 +14,9 @@ interface Props {
 const Group = ({ no, title, image, onTeamNameChange }: Props) => {
   const [teamName, setTeamName] = useState("");
   const [isTeamValid, setIsTeamValid] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<"create" | "join">("create");
+  const [selectedOption, setSelectedOption] = useState<"create" | "join">(
+    "create"
+  );
 
   const inputRef = useRef<HTMLInputElement>(null); // Reference for the input field
 
@@ -46,7 +48,9 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
       <div className="my-6">
         <hr className="opacity-50 py-4 md:hidden" />
         <div className="flex gap-6">
-          <h1 className="text-4xl text-white font-bold opacity-60 lg:text-5xl">{no}</h1>
+          <h1 className="text-4xl text-white font-bold opacity-60 lg:text-5xl">
+            {no}
+          </h1>
           <div>
             <Select
               title={title}
@@ -89,8 +93,13 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
                 placeholder="Team Name"
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)} // Update local state
+                onInput={(e) =>
+                  ((e.target as HTMLInputElement).value = (
+                    e.target as HTMLInputElement
+                  ).value.toUpperCase())
+                }
                 onBlur={handleBlur} // Trigger update on blur
-                className={`p-2 rounded-md border-b-[5px] outline-none text-black ${
+                className={`p-2 rounded-md border-b-[5px] outline-none text-black uppercase ${
                   isTeamValid ? "border-[#2FFF60]" : "border-[#ff5050]"
                 }`}
               />
