@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Progressbar from '../components/progressbar';
 import success from '../assets/Successicon.png';
@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { updateEventData, registerParticipant, registerTeam, generateParticipantId } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
 import { db } from "../../src/firebase";
 import { doc, getDoc } from "firebase/firestore"
-
+import { uploadImageToFirestore } from '../../src/utils/imageHelper';
 
 
 
@@ -21,24 +21,8 @@ import { doc, getDoc } from "firebase/firestore"
 
 const Transummery = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [file, setFile] = useState<File | null>(null);
   const [transactionId, setTransactionId] = useState('');
   const router = useRouter();
-
-  const handleFileDrop = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    const droppedFile = event.dataTransfer.files[0];
-    if (droppedFile) {
-      setFile(droppedFile);
-    }
-  };
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = event.target.files ? event.target.files[0] : null;
-    if (selectedFile) {
-      setFile(selectedFile);
-    }
-  };
 
   const handleTransactionIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTransactionId(event.target.value);
@@ -47,9 +31,11 @@ const Transummery = () => {
   const handleFinish = async () => {
     // Get the session data
     const sessionData = sessionStorage.getItem('registrationData');
+    const base64image = sessionStorage.getItem('base64image');
     const parsedSessionData = sessionData ? JSON.parse(sessionData) : null;
+    const parsedImage = base64image ? JSON.parse(base64image) : null;
   
-    if (parsedSessionData && transactionId) {
+    if (parsedSessionData && transactionId && parsedImage) {
       try {
         // Check if the participant exists
         const participantRef = doc(
@@ -75,10 +61,13 @@ const Transummery = () => {
   
         // Store the eventMap in parsedSessionData
         parsedSessionData.eventMap = parsedSessionData.eventMap || {}; // Ensure eventMap exists
-  
+
+        // Store the transaction image in the session data
+        parsedSessionData.tImg = parsedImage;
+
         // Update session storage with the new registration data (including updated tId)
         sessionStorage.setItem('registrationData', JSON.stringify(parsedSessionData));
-  
+    
         // Proceed with registering the participant
         await registerParticipant(parsedSessionData.college, parsedSessionData.name, parsedSessionData);
   
@@ -105,7 +94,7 @@ const Transummery = () => {
         alert("There was an error during registration. Please try again.");
       }
     } else {
-      alert('Transaction ID and registration data are required.');
+      alert('Transaction ID, registration data and Transaction image are required.');
     }
   };  
 

@@ -43,7 +43,7 @@ const Reg = () => {
   const [college, setCollege] = useState("");
   const [wNo, setWNo] = useState("");
   const [email, setEmail] = useState("");
-  const [teamName, setTeamName] = useState("");
+  const [tImg, setTransactionImage] = useState("");
   const [eventMap, setEventMap] = useState<{ [key: string]: string[] }>({});
 
   const router = useRouter();
@@ -104,7 +104,7 @@ const Reg = () => {
         college,
         wNo,
         email,
-        teamName,
+        tImg,
         eventMap,
         events: selectedEvents,
         id: "",

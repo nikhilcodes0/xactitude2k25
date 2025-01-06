@@ -3,6 +3,8 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { IconUpload } from "@tabler/icons-react";
 import { useDropzone } from "react-dropzone";
+import { uploadImageToFirestore, convertToBase64 } from "@/src/utils/imageHelper";
+import imageCompression from 'browser-image-compression';
 
 const mainVariant = {
   initial: {
@@ -33,15 +35,60 @@ export const FileUpload = ({
   const [files, setFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileChange = (newFiles: File[]) => {
-    setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    onChange && onChange(newFiles);
+  // Handle file input change (single file in this case)
+  const handleFileChange = async (newFiles: File[]) => {
+
+    // Compression options
+    const options = {
+      maxSizeMB: 1, // Max size of image in MB
+      maxWidthOrHeight: 1024, // Max width or height of the image
+      useWebWorker: true, // Use a web worker for better performance
+    };
+
+    // Check if file size and type are valid
+    if (newFiles && newFiles.length > 0) {
+      const file = newFiles[0];
+
+      // Check for valid file type and size
+      if (file.size > 5 * 1024 * 1024) { // 5MB max size
+        alert("File size exceeds 1MB");
+        return;
+      }
+      if (!file.type.startsWith("image/")) {
+        alert("Only image files are allowed");
+        return;
+      }
+
+      try {
+        const compressedFile = await imageCompression(file, options);
+    
+        // Check if compression was successful
+        console.log('Original file size:', file.size / 1024 / 1024, 'MB');
+        console.log('Compressed file size:', compressedFile.size / 1024 / 1024, 'MB');
+
+        let base64string = await convertToBase64(compressedFile);
+        // Save to sessionStorage
+        sessionStorage.setItem(
+          "base64image",
+          JSON.stringify(base64string)
+        );
+        console.log('Saved base64string to sessionStorage')
+
+      } catch (error) {
+        console.error('Error compressing the file:', error);
+      }
+
+      setFiles([file]);  // Only accept the first file for now
+      onChange && onChange([file]);  // Pass the file to the parent
+    }
   };
 
+  // Handle file click action
   const handleClick = () => {
     fileInputRef.current?.click();
   };
 
+  // Use Dropzone for file drag-and-drop functionality
   const { getRootProps, isDragActive } = useDropzone({
     multiple: false,
     noClick: true,
@@ -62,7 +109,9 @@ export const FileUpload = ({
           ref={fileInputRef}
           id="file-upload-handle"
           type="file"
-          onChange={(e) => handleFileChange(Array.from(e.target.files || []))}
+          onChange={(e) =>
+            handleFileChange(Array.from(e.target.files || []))
+          }
           className="hidden"
         />
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
