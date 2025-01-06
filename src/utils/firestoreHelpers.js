@@ -31,16 +31,17 @@ export const registerParticipant = async (
     const participantDoc = await getDoc(participantRef);
 
     if (participantDoc.exists()) {
-      // Append new teamName and events to existing arrays
+      // Append new teamName and events to existing arrays (correct approach)
       await updateDoc(participantRef, {
         teamName: arrayUnion(participantDetails.teamName), // Push teamName as array
-        events: arrayUnion(...participantDetails.events),
+        events: arrayUnion(...participantDetails.events),  // Append events correctly
       });
     } else {
-      // Create a new participant document, converting `teamName` into an array
+      // Create a new participant document, converting `teamName` into an array if not already
       await setDoc(participantRef, {
         ...participantDetails,
-        teamName: [participantDetails.teamName], // Convert teamName to array for Firestore
+        //teamName: [participantDetails.teamName], // Ensure teamName is an array
+        events: participantDetails.events || [],    // Ensure events is an array
       });
     }
 

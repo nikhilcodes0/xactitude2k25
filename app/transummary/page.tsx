@@ -73,20 +73,14 @@ const Transummery = () => {
         // Update the transaction ID in the session data
         parsedSessionData.tId = transactionId;
   
+        // Store the eventMap in parsedSessionData
+        parsedSessionData.eventMap = parsedSessionData.eventMap || {}; // Ensure eventMap exists
+  
         // Update session storage with the new registration data (including updated tId)
         sessionStorage.setItem('registrationData', JSON.stringify(parsedSessionData));
   
-        // Proceed with registering the participant and updating event data
+        // Proceed with registering the participant
         await registerParticipant(parsedSessionData.college, parsedSessionData.name, parsedSessionData);
-  
-        for (const event of parsedSessionData.events) {
-          await updateEventData(event, parsedSessionData.name, parsedSessionData);
-        }
-  
-        // If the participant is part of a team, register the team
-        if (parsedSessionData.teamName) {
-          await registerTeam(parsedSessionData.college, parsedSessionData.teamName, parsedSessionData.name);
-        }
   
         alert("Registration Successful!");
         router.push('/registerd'); // Navigate to success page
@@ -97,7 +91,7 @@ const Transummery = () => {
     } else {
       alert('Transaction ID and registration data are required.');
     }
-  };
+  };  
 
   //Componenet function
 

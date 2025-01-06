@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { StaticImageData } from "next/image";
 import Select from "./Select";
 import { validateTeam } from "@/src/utils/firestoreHelpers";
@@ -8,39 +8,36 @@ interface Props {
   title: string;
   team: boolean;
   image: string | StaticImageData;
-  onTeamNameChange?: (teamName: string) => void; // New prop to notify parent of team name changes
+  onTeamNameChange?: (eventTitle: string, teamName: string) => void; // Updated signature
 }
 
 const Group = ({ no, title, image, onTeamNameChange }: Props) => {
   const [teamName, setTeamName] = useState("");
   const [isTeamValid, setIsTeamValid] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<"create" | "join">(
-    "create"
-  ); // Track selected radio button
+  const [selectedOption, setSelectedOption] = useState<"create" | "join">("create");
 
-  // Use effect to validate the team name whenever it changes
+  const inputRef = useRef<HTMLInputElement>(null); // Reference for the input field
+
   useEffect(() => {
     const validate = async () => {
       const isValid = await validateTeam(teamName);
       if (selectedOption === "join") {
-        setIsTeamValid(!!isValid); // Normal validation for "Join Team"
+        setIsTeamValid(!!isValid);
       } else {
-        setIsTeamValid(!isValid); // Reverse validation for "Create Team"
+        setIsTeamValid(!isValid);
       }
     };
 
     if (teamName) {
       validate();
     } else {
-      setIsTeamValid(false); // Reset if team name is empty
+      setIsTeamValid(false);
     }
-  }, [teamName, selectedOption]); // Depend on both teamName and selectedOption
+  }, [teamName, selectedOption]);
 
-  const handleTeamNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const name = e.target.value;
-    setTeamName(name);
-    if (onTeamNameChange) {
-      onTeamNameChange(name); // Notify parent of the team name change
+  const handleBlur = () => {
+    if (onTeamNameChange && teamName.trim()) {
+      onTeamNameChange(title, teamName.trim()); // Pass event title and finalized team name
     }
   };
 
@@ -87,10 +84,12 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
             </div>
             <div className="flex gap-3 flex-col my-4">
               <input
+                ref={inputRef} // Attach the ref to the input field
                 type="text"
                 placeholder="Team Name"
                 value={teamName}
-                onChange={handleTeamNameChange} // Call the new handler
+                onChange={(e) => setTeamName(e.target.value)} // Update local state
+                onBlur={handleBlur} // Trigger update on blur
                 className={`p-2 rounded-md border-b-[5px] outline-none text-black ${
                   isTeamValid ? "border-[#2FFF60]" : "border-[#ff5050]"
                 }`}
@@ -104,7 +103,7 @@ const Group = ({ no, title, image, onTeamNameChange }: Props) => {
                   ? "Team Name Available"
                   : selectedOption === "create"
                   ? "Team Name Unavailable"
-                  :"Team Name Already Taken"}
+                  : "Team Name Already Taken"}
               </p>
             </div>
           </div>

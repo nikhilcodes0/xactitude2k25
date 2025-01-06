@@ -44,6 +44,7 @@ const Reg = () => {
   const [wNo, setWNo] = useState("");
   const [email, setEmail] = useState("");
   const [teamName, setTeamName] = useState("");
+  const [eventMap, setEventMap] = useState<{ [key: string]: string[] }>({});
 
   const router = useRouter();
 
@@ -57,6 +58,20 @@ const Reg = () => {
     });
   };
 
+  const handleTeamNameChange = (eventTitle: string, teamName: string) => {
+    setEventMap((prevMap) => {
+      const updatedMap = { ...prevMap };
+      // If the event already has an array of team names, push the new team name.
+      // Otherwise, initialize the array with the new team name.
+      if (updatedMap[eventTitle]) {
+        updatedMap[eventTitle].push(teamName);
+      } else {
+        updatedMap[eventTitle] = [teamName];
+      }
+      return updatedMap;
+    });
+  };
+  
   
 
   const handleRegister = async () => {
@@ -90,6 +105,7 @@ const Reg = () => {
         wNo,
         email,
         teamName,
+        eventMap,
         events: selectedEvents,
         id: "",
         tId: "",
@@ -277,7 +293,7 @@ const Reg = () => {
                   title={event.title}
                   image={event.image}
                   team={event.team}
-                  onTeamNameChange={setTeamName}
+                  onTeamNameChange={handleTeamNameChange}
                 />
               ))
           )}
