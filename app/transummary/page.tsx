@@ -82,6 +82,22 @@ const Transummery = () => {
         // Proceed with registering the participant
         await registerParticipant(parsedSessionData.college, parsedSessionData.name, parsedSessionData);
   
+        // Update event data using the eventMap
+        for (const [eventName, teamNames] of Object.entries(parsedSessionData.eventMap)) {
+          // Cast teamNames to an array of strings
+          const teams = teamNames as string[];
+        
+          for (const teamName of teams) {
+            await updateEventData(eventName, parsedSessionData.name, {
+              ...parsedSessionData,
+              teamName, // Add teamName to the details for each event
+            });
+        
+            // If the team exists, register the team
+            await registerTeam(parsedSessionData.college, teamName, parsedSessionData.name);
+          }
+        }        
+        
         alert("Registration Successful!");
         router.push('/registerd'); // Navigate to success page
       } catch (error) {
