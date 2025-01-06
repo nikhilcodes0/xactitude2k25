@@ -71,8 +71,6 @@ const Reg = () => {
       return updatedMap;
     });
   };
-  
-  
 
   const handleRegister = async () => {
     // Email validation regex
@@ -136,36 +134,42 @@ const Reg = () => {
           </button>
         </Link>
         <nav className="hidden md:block my-4 mx-3 md:mx-4 lg:mx-10 xl:mx-16 text-xl">
-        <ul className="flex mx-4 justify-between">
-          <li>
-            <Link href="/" className="text-white hover:text-[#40E0D0]">
-              HOME
-            </Link>
-          </li>
-          <li>
-            <ul className="flex gap-10 mx-5">
-              <li>
-                <Link
-                  href="/events"
-                  className="text-white hover:text-[#40E0D0]"
-                >
-                  EVENTS
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-white hover:text-[#40E0D0]">
-                  ABOUT
-                </Link>
-              </li>
-              <li>
-                <Link href="/soon" className="text-white hover:text-[#40E0D0]">
-                  REGISTER
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+          <ul className="flex mx-4 justify-between">
+            <li>
+              <Link href="/" className="text-white hover:text-[#40E0D0]">
+                HOME
+              </Link>
+            </li>
+            <li>
+              <ul className="flex gap-10 mx-5">
+                <li>
+                  <Link
+                    href="/events"
+                    className="text-white hover:text-[#40E0D0]"
+                  >
+                    EVENTS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-white hover:text-[#40E0D0]"
+                  >
+                    ABOUT
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/soon"
+                    className="text-white hover:text-[#40E0D0]"
+                  >
+                    REGISTER
+                  </Link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div>
         <h1
@@ -190,7 +194,9 @@ const Reg = () => {
       </div>
 
       {/* Selected Count */}
-      <div className={`flex gap-2 mx-3 md:mx-6 lg:mx-12 xl:mx-20 lg:my-8 lg:text-xl items-center my-4 ${inter.className}`}>
+      <div
+        className={`flex gap-2 mx-3 md:mx-6 lg:mx-12 xl:mx-20 lg:my-8 lg:text-xl items-center my-4 ${inter.className}`}
+      >
         <input
           type="radio"
           checked={events.some((event) => event.selected)}
@@ -221,10 +227,11 @@ const Reg = () => {
             placeholder="Full Name"
             className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none"
             value={name}
+            onInput={(e) => (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.toUpperCase()}
             onChange={(e) => setName(e.target.value)}
           />
           <div>
-            <select
+            {/* <select
               name="colleges"
               id="colleges"
               className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
@@ -247,7 +254,34 @@ const Reg = () => {
                 Christ University Central Camus
               </option>
               <option value="Jain University">Jain University</option>
-            </select>
+            </select> */}
+
+            <input
+              onInput={(e) => (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.toUpperCase()}
+              type="text"
+              name="colleges"
+              id="colleges"
+              value={college}
+              className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full"
+              
+              list="college"
+              placeholder="College Name"
+              onChange={(e) => setCollege(e.target.value)}
+            />
+            <datalist id="college" className="uppercase">
+             <option value="SAINT JOSEPH'S COLLEGE OF COMMERCE">
+               SAINT JOSEPH'S COLLEGE OF COMMERCE
+             </option>
+             <option value="SAINT JOSEPH'S COLLEGE">
+               SAINT JOSEPH'S COLLEGE
+             </option>
+             <option value="CHRIST UNIVERSITY CENTRAL CAMPUS">
+               CHRIST UNIVERSITY CENTRAL CAMPUS
+             </option>
+             <option value="JAIN UNIVERSITY">
+               JAIN UNIVERSITY
+             </option>
+            </datalist>
           </div>
           <div className="w-full flex flex-col gap-4 lg:flex-row">
             <input
@@ -273,7 +307,9 @@ const Reg = () => {
         <h1 className={`text-[2.7rem] font-bold mb-10 ${anton.className}`}>
           GROUP EVENTS
         </h1>
-        <div className={` bg-[#0D0D0D] md:grid grid-cols-2 lg:grid-cols-3 gap-3 text-white ${inter.className}`}>
+        <div
+          className={` bg-[#0D0D0D] md:grid grid-cols-2 lg:grid-cols-3 gap-3 text-white ${inter.className}`}
+        >
           {events
             .filter((event) => event.selected)
             .filter(
@@ -286,7 +322,7 @@ const Reg = () => {
               .filter(
                 (event) => eventsData.find((e) => e.slug === event.id)?.team
               )
-              .map((event,index) => (
+              .map((event, index) => (
                 <Group
                   key={event.id}
                   no={String(index + 1).padStart(2, "0")}
