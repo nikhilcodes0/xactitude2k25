@@ -227,36 +227,43 @@ const Reg = () => {
             placeholder="Full Name"
             className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none"
             value={name}
-            onInput={(e) => (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.toUpperCase()}
+            onInput={(e) =>
+              ((e.target as HTMLInputElement).value = (
+                e.target as HTMLInputElement
+              ).value.toUpperCase())
+            }
             onChange={(e) => setName(e.target.value)}
           />
           <div>
-            {/* <select
-              name="colleges"
-              id="colleges"
-              className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
-              value={college}
-              onChange={(e) => setCollege(e.target.value)}
-            >
-              <option value="" disabled>
-                Select your college
-              </option>
-              <option value="Kristu Jayanti College">
-                Kristu Jayanti College
-              </option>
-              <option value="Saint Joseph's College of Commerce">
-                Saint Joseph&apos;s College of Commerce
-              </option>
-              <option value="Saint Joseph's College">
-                Saint Joseph&apos;s College
-              </option>
-              <option value="Christ University Central Campus">
-                Christ University Central Camus
-              </option>
-              <option value="Jain University">Jain University</option>
-            </select> */}
+            <div className="flex flex-col gap-2">
+              <select
+                name="colleges"
+                id="colleges"
+                className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
+                value={college}
+                onChange={(e) => setCollege(e.target.value)}
+              >
+                <option value="" disabled>
+                  Select your college
+                </option>
+                <option value="Kristu Jayanti College">
+                  Kristu Jayanti College
+                </option>
+                <option value="Saint Joseph's College of Commerce">
+                  Saint Joseph&apos;s College of Commerce
+                </option>
+                <option value="Saint Joseph's College">
+                  Saint Joseph&apos;s College
+                </option>
+                <option value="Christ University Central Campus">
+                  Christ University Central Camus
+                </option>
+                <option value="Jain University">Jain University</option>
+              </select>
+              <p className="text-xl text-red-600 mx-2">Maximum Participants is already reached</p>
+            </div>
 
-            <input
+            {/* <input
               onInput={(e) => (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.toUpperCase()}
               type="text"
               name="colleges"
@@ -281,7 +288,7 @@ const Reg = () => {
              <option value="JAIN UNIVERSITY">
                JAIN UNIVERSITY
              </option>
-            </datalist>
+            </datalist> */}
           </div>
           <div className="w-full flex flex-col gap-4 lg:flex-row">
             <input

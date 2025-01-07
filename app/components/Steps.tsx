@@ -2,7 +2,7 @@ import React from 'react'
 
 const Steps = () => {
   return (
-    <div className='text-white font-inter flex justify-center hover:cursor-none my-5 px-4 md:w-[80%] lg:w-[60%] xl:w-[50%] mx-auto '>
+    <div className='text-white font-inter flex justify-center  my-5 px-4 md:w-[80%] lg:w-[60%] xl:w-[50%] mx-auto '>
         <div className='row-span-4 md:p-4 md:w-[80%] flex flex-col justify-center '>
             <div className='p-4'>
                 <h1 className='md:text-4xl text-lg text-black text-stroke'>Connect & Compete</h1>
