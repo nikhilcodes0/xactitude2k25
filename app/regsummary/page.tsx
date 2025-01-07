@@ -76,7 +76,7 @@ const RegSummery = () => {
           Great choice! Confirm and proceed
         </p>
       </div>
-      <h1 className={`text-[1.7rem] font-antonio font-bold text-white text-center mx-2 my-12 `}>
+      <h1 className={`text-[1.7rem] lg:text-[2.7rem] font-antonio font-bold text-white text-center mx-2 my-12 `}>
         REGISTRATION SUMMARY
       </h1>
       <div className="md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-3">
@@ -125,11 +125,13 @@ const RegSummery = () => {
         </label>
       </div>
       <div className="mx-3 flex flex-col md:flex-row gap-4 lg:w-3/4 xl:w-[60%] lg:mx-auto lg:gap-8">
+      <a href="https://portal.kristujayanti.edu.in/event-xactitude-2025" className="w-full">
         <button className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter ${isChecked ? "opacity-100" : "opacity-50 cursor-not-allowed"}`}
           disabled ={!isChecked}
         >
           PAY NOW
         </button>
+      </a>
         <button 
           className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter ${isChecked ? "opacity-100" : "opacity-50 cursor-not-allowed"}`}
           onClick={() => router.push('/transummary')}
