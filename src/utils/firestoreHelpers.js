@@ -166,3 +166,16 @@ export const generateParticipantId = async (collegeName) => {
     throw new Error('Failed to generate participant ID');
   }
 };
+
+// Function to check if the participant limit is reached
+export const checkParticipantslimit = async (collegeName) => {
+  try {
+    const participantsRef = collection(db, '2025',collegeName, "Participants");
+    const participantsSnapshot = await getDocs(participantsRef);
+    // return participantsSnapshot.size;
+    return participantsSnapshot.size == 20;
+  } catch (error) {
+    console.error('Error checking participant limit:', error);
+    return false;
+  }
+}

@@ -11,6 +11,7 @@ import collegeOptions from "./collegeOptions";
 import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
+import { checkParticipantslimit } from "@/src/utils/firestoreHelpers";
 
 
 
@@ -49,6 +50,7 @@ const Reg = () => {
   const [eventMap, setEventMap] = useState<{ [key: string]: string[] }>({});
 
   const router = useRouter();
+  let isLimitReached: boolean = false;
 
   const handleSelectClick = (name: string) => {
     setEvents((prevEvents) => {
@@ -73,6 +75,19 @@ const Reg = () => {
       return updatedMap;
     });
   };
+
+  const handleMaxParticipants = async (collegeName: string) => {
+    try {
+      isLimitReached = await checkParticipantslimit(collegeName);
+      if (isLimitReached) {
+        // alert("Maximum participants limit reached!");
+        document.getElementById("max-participants")?.classList.remove("hidden");
+      }
+      console.log(isLimitReached)
+    } catch (error) {
+      console.error("Error checking participant limit:", error);
+    }
+  }
 
   const handleRegister = async () => {
     // Email validation regex
@@ -277,7 +292,10 @@ const Reg = () => {
               className={`p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full ${
                 college ? 'text-black' : 'text-gray-400'
               }`}              value={college}
-              onChange={(e) => setCollege(e.target.value)}
+              onChange={async (e) => {
+                setCollege(e.target.value)
+                await handleMaxParticipants(e.target.value);
+              }}
             >
               <option value="" disabled>
                 Select your college
@@ -288,7 +306,7 @@ const Reg = () => {
                 </option>
               ))}
             </select>
-              <p className="md:text-xl hidden text-red-600 mx-2">
+              <p className="md:text-xl hidden text-red-600 mx-2" id = "max-participants">
                 Maximum Participants is already reached
               </p>
             </div>
@@ -377,8 +395,9 @@ const Reg = () => {
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
         <button
-          className={`bg-[#07B6B0] text-xl lg:text-2xl font-bold py-3 rounded-lg w-[90%] md:w-[40%] lg:w-[30%] my-6 cursor-pointer font-inter`}
+          className={`bg-[#07B6B0] text-xl lg:text-2xl font-bold py-3 rounded-lg w-[90%] md:w-[40%] lg:w-[30%] my-6 cursor-pointer font-inter ${isLimitReached ? "opacity-100" : "opacity-50 cursor-not-allowed" }`}
           onClick={handleRegister}
+          disabled={!isLimitReached}
         >
           Proceed
         </button>
