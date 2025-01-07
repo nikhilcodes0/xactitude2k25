@@ -7,10 +7,12 @@ import Select from "../components/Select";
 import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
 import Group from "../components/group";
-
+import collegeOptions from "./collegeOptions";
 import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
+
+
 
 const initialEvents = eventsData.map((event) => ({
   id: event.slug,
@@ -124,6 +126,10 @@ const Reg = () => {
     }
   };
 
+  const CollegeSelect = () => {
+    const [college, setCollege] = useState("");
+  };
+
   return (
     <div className="bg-[#0D0D0D] text-white font-sans">
       <div className="w-full bg-[#0D0D0D] text-[#0D0D0D] font-sans pl-4 pt-4">
@@ -172,6 +178,35 @@ const Reg = () => {
         </nav>
       </div>
       <div>
+        <h1
+          className={`${anton.className} text-[2.7rem] lg:text-[3.5rem] font-bold pt-12 pb-3 mx-3 md:mx-6 lg:mx-12 xl:mx-20`}
+        >
+          REGISTRATION GUIDELINES :
+        </h1>
+        <hr className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 opacity-60 mb-6"  />
+        <div className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 text-base md:text-2xl  font-inter">
+          <ul className="list-disc flex flex-col gap-3 mx-5 md:w-[70%]">
+            <li>Ensure all details are entered correctly.</li>
+            <li>
+              Double-check that you have selected the correct college along with
+              the corresponding branch name. If your college is not listed,
+              kindly contact 8073243278 immediately to avoid any discrepancies.
+            </li>
+            <li>
+              Only 20 members are allowed from each college, so register
+              promptly.
+            </li>
+            <li>Paying once allows participation in all events.</li>
+            <li>
+              Choose events according to the schedule provided and make sure you
+              join the right teams within each event.
+            </li>
+            <li>Registration window is open till 30th of Jan.</li>
+            <li>
+              For any queries, corrections, or changes, contact 8073243278.
+            </li>
+          </ul>
+        </div>
         <h1
           className={`${anton.className} text-[2.7rem] lg:text-[3.5rem] font-bold pt-12 pb-3 mx-3 md:mx-6 lg:mx-12 xl:mx-20`}
         >
@@ -236,31 +271,26 @@ const Reg = () => {
           />
           <div>
             <div className="flex flex-col gap-2">
-              <select
-                name="colleges"
-                id="colleges"
-                className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full text-gray-400"
-                value={college}
-                onChange={(e) => setCollege(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select your college
+            <select
+              name="colleges"
+              id="colleges"
+              className={`p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full ${
+                college ? 'text-black' : 'text-gray-400'
+              }`}              value={college}
+              onChange={(e) => setCollege(e.target.value)}
+            >
+              <option value="" disabled>
+                Select your college
+              </option>
+              {collegeOptions.map((collegeName, index) => (
+                <option key={index} value={collegeName}>
+                  {collegeName}
                 </option>
-                <option value="Kristu Jayanti College">
-                  Kristu Jayanti College
-                </option>
-                <option value="Saint Joseph's College of Commerce">
-                  Saint Joseph&apos;s College of Commerce
-                </option>
-                <option value="Saint Joseph's College">
-                  Saint Joseph&apos;s College
-                </option>
-                <option value="Christ University Central Campus">
-                  Christ University Central Camus
-                </option>
-                <option value="Jain University">Jain University</option>
-              </select>
-              <p className="text-xl text-red-600 mx-2">Maximum Participants is already reached</p>
+              ))}
+            </select>
+              <p className="md:text-xl hidden text-red-600 mx-2">
+                Maximum Participants is already reached
+              </p>
             </div>
 
             {/* <input

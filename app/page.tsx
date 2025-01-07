@@ -123,7 +123,7 @@ export default function Page() {
               <Image
                 src={bgimg}
                 alt="background image"
-                className=" object-fill z-0  mx-auto w-[100%] max-w-[300px] md:max-w-[430px] bottom-[0rem] md:bottom-[10rem] 2xl:max-w-[500px] xl:bottom-[6rem] md:w-[45%] absolute left-[62%] md:left-[45%] transform -translate-x-1/2"
+                className=" object-fill z-0  mx-auto w-[100%] max-w-[300px] md:max-w-[430px] bottom-[0rem] md:bottom-[10rem] 2xl:max-w-[500px] xl:bottom-[1rem] md:w-[45%] absolute left-[62%] md:left-[45%] xl:left-[50%] transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
                 <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-[12rem] z-10 right-[8rem] "
