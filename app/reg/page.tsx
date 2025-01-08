@@ -139,7 +139,7 @@ const Reg = () => {
   return (
     <div className="bg-[#0D0D0D] text-white font-sans">
       <div className="w-full bg-[#0D0D0D] text-[#0D0D0D] font-sans pl-4 pt-4">
-        <Link href="/events">
+        <Link href="/">
           <button className=" items-center md:hidden w-32 text-white font-semibold justify-center  flex gap-2 bg-[#0d0d0d] border-white border-2 p-2 rounded-full ">
             <Image src={home} className="w-4 inline" alt="home" />
             Home
@@ -301,33 +301,6 @@ const Reg = () => {
                 Maximum Participants is already reached
               </p>
             </div>
-
-            {/* <input
-              onInput={(e) => (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.toUpperCase()}
-              type="text"
-              name="colleges"
-              id="colleges"
-              value={college}
-              className="p-2 rounded-md uppercase border-b-[5px] border-opacity-50 border-black outline-none w-full"
-              
-              list="college"
-              placeholder="College Name"
-              onChange={(e) => setCollege(e.target.value)}
-            />
-            <datalist id="college" className="uppercase">
-             <option value="SAINT JOSEPH'S COLLEGE OF COMMERCE">
-               SAINT JOSEPH'S COLLEGE OF COMMERCE
-             </option>
-             <option value="SAINT JOSEPH'S COLLEGE">
-               SAINT JOSEPH'S COLLEGE
-             </option>
-             <option value="CHRIST UNIVERSITY CENTRAL CAMPUS">
-               CHRIST UNIVERSITY CENTRAL CAMPUS
-             </option>
-             <option value="JAIN UNIVERSITY">
-               JAIN UNIVERSITY
-             </option>
-            </datalist> */}
           </div>
           <div className="w-full flex flex-col gap-4 lg:flex-row">
             <input
