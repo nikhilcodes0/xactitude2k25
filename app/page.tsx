@@ -18,6 +18,9 @@ import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Footer from "./components/Footer";
 import ShimmerButton from "@/components/ui/shimmer-button";
+import info1 from "./assets/info1.png";
+import info2 from "./assets/info2.png";
+
 
 
 const humaneSemBd = localFont({
@@ -171,18 +174,18 @@ export default function Page() {
             </Marquee>
           </div>
           <hr className="h-px my-8 bg-gray-200 border-0 hover:cursor-none dark:bg-[#0d0d0d] w-[95%] relative left-[-25px] lg:left-[-30px] xl:left-[-40px] opacity-50 " />
-          <div className="text-white opacity-50 text-xl hover:cursor-none font-inter mt-14 mb-8 flex flex-col border-r-[3px] right-[-26%] relative md:right-[-35%] lg:right-[-37%] lg:text-2xl xl:right-[-41%] pr-4">
-            <p>Starts At </p>
-            <p className="">Jan 30 & 31</p>
-          </div>
         </div>
-        <div className="mt-28 md:w-[80%] lg:w-[60%] ">
-          <p className="text-white text-xl md:text-2xl  font-medium font-sans text-start p-4 px-4 md:px-16 lg:text-3xl">
-            <span className="font-black">XACTITUDE</span> is the ultimate stage
-            for students to ignite their potential, unleash their skills, and
-            shine before a dynamic crowd of colleges and fiercely spirited
-            competitors.
-          </p>
+        <div className="mt-28 flex flex-col md:flex-row gap-[2rem] md:gap-[1rem] text-white font-inter lg:mx-[5rem] ">
+          <div className="bg-[#181818] p-4 rounded-[2rem] mx-6  md:w-[50%]">
+            <h1 className="text-3xl m-3 lg:text-4xl">A Premier Tech Stage</h1>
+            <p className="mx-3 text-lg lg:text-xl mt-10">Xactitude is the ultimate platform where tech enthusiasts from colleges across the region unite to exchange ideas, collaborate, and innovate.</p>
+            <Image src={info1} alt="info1" className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"></Image>
+          </div>
+          <div className="bg-[#181818] p-4 rounded-[2rem] mx-6   md:w-[50%]">
+            <h1 className="text-3xl m-3 lg:text-4xl">Showcase Creativity and Passion</h1>
+            <p className="mx-3 text-lg lg:text-xl mt-10">An incredible opportunity to demonstrate your technical skills, unleash your creativity, and share your passion for groundbreaking technology with like-minded individuals.</p>
+            <Image src={info2} alt="info2" className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"></Image>
+          </div>
         </div>
         <div className="mt-32">
           <p className="text-white  text-5xl md:text-[8rem] font-black font-antonio text-start p-4 px-12">
