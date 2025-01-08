@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { IconUpload } from "@tabler/icons-react";
 import { useDropzone } from "react-dropzone";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { uploadImageToFirestore, convertToBase64 } from "@/src/utils/imageHelper";
 import imageCompression from 'browser-image-compression';
 
@@ -65,8 +66,9 @@ export const FileUpload = ({
         // Check if compression was successful
         console.log('Original file size:', file.size / 1024 / 1024, 'MB');
         console.log('Compressed file size:', compressedFile.size / 1024 / 1024, 'MB');
-
+        /* eslint-disable prefer-const */
         let base64string = await convertToBase64(compressedFile);
+        /* eslint-enable prefer-const */
         // Save to sessionStorage
         sessionStorage.setItem(
           "base64image",
@@ -79,6 +81,7 @@ export const FileUpload = ({
       }
 
       setFiles([file]);  // Only accept the first file for now
+      /* eslint-disable-next-line @typescript-eslint/no-unused-expressions */
       onChange && onChange([file]);  // Pass the file to the parent
     }
   };

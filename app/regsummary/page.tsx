@@ -38,7 +38,6 @@ const RegSummery = () => {
     college: string;
     wNo: string;
     email: string;
-    teamName?: string;
     events: string[];
   }
 
@@ -65,7 +64,7 @@ const RegSummery = () => {
     );
   }
 
-  const { name, college, wNo, email, teamName, events } = registrationData;
+  const { name, college, wNo, email, events } = registrationData;
 
   return (
     <div className={`bg-[#0d0d0d] text-white font-sans md:mx-5`}>

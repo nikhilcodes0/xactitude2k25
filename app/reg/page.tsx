@@ -12,9 +12,6 @@ import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
 import { checkParticipantslimit } from "@/src/utils/firestoreHelpers";
-import { documentId } from "firebase/firestore";
-
-
 
 const initialEvents = eventsData.map((event) => ({
   id: event.slug,
@@ -39,15 +36,14 @@ const inter = localFont({
   style: "normal",
   variable: "--font-inter",
 });
-///
 
 const Reg = () => {
   const [events, setEvents] = useState(initialEvents);
   const [name, setName] = useState("");
-  const [college, setCollege] = useState("");
+  const [college, setCollege] = useState(""); // Placeholder for future use
   const [wNo, setWNo] = useState("");
   const [email, setEmail] = useState("");
-  const [tImg, setTransactionImage] = useState("");
+  const [tImg] = useState(""); // Placeholder for future use, state setter removed as it is unused
   const [eventMap, setEventMap] = useState<{ [key: string]: string[] }>({});
 
   const router = useRouter();
@@ -66,8 +62,6 @@ const Reg = () => {
   const handleTeamNameChange = (eventTitle: string, teamName: string) => {
     setEventMap((prevMap) => {
       const updatedMap = { ...prevMap };
-      // If the event already has an array of team names, push the new team name.
-      // Otherwise, initialize the array with the new team name.
       if (updatedMap[eventTitle]) {
         updatedMap[eventTitle].push(teamName);
       } else {
@@ -81,7 +75,6 @@ const Reg = () => {
     try {
       isLimitReached = await checkParticipantslimit(collegeName);
       if (isLimitReached) {
-        // alert("Maximum participants limit reached!");
         document.getElementById("max-participants")?.classList.remove("hidden");
         document.getElementById("register-btn")?.classList.add("opacity-50");
         document.getElementById("register-btn")?.setAttribute("disabled", "true");
@@ -90,18 +83,15 @@ const Reg = () => {
         document.getElementById("register-btn")?.classList.remove("opacity-50");
         document.getElementById("register-btn")?.removeAttribute("disabled");
       }
-      console.log(isLimitReached)
+      console.log(isLimitReached);
     } catch (error) {
       console.error("Error checking participant limit:", error);
     }
-  }
+  };
 
   const handleRegister = async () => {
-    // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // Number validation regex
     const wNoRegex = /^\d{10}$/;
-    // Name validation regex
     const nameRegex = /^[a-zA-Z\s]+$/;
 
     const selectedEvents = events
@@ -134,7 +124,6 @@ const Reg = () => {
       };
 
       try {
-        // Save to sessionStorage
         sessionStorage.setItem(
           "registrationData",
           JSON.stringify(participantDetails)
@@ -147,11 +136,6 @@ const Reg = () => {
       }
     }
   };
-
-  const CollegeSelect = () => {
-    const [college, setCollege] = useState("");
-  };
-
   return (
     <div className="bg-[#0D0D0D] text-white font-sans">
       <div className="w-full bg-[#0D0D0D] text-[#0D0D0D] font-sans pl-4 pt-4">

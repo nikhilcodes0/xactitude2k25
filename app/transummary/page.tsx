@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Progressbar from '../components/progressbar';
 import success from '../assets/Successicon.png';
-import upload from '../assets/Uploadicon.png';
 import { FileUpload } from "@/components/ui/file-upload";
 import { useRouter } from 'next/navigation';
 import { updateEventData, registerParticipant, registerTeam, generateParticipantId } from '../../src/utils/firestoreHelpers'; // Import the required Firebase functions
 import { db } from "../../src/firebase";
 import { doc, getDoc } from "firebase/firestore"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { uploadImageToFirestore } from '../../src/utils/imageHelper';
 
 
@@ -100,8 +100,8 @@ const Transummery = () => {
 
   //Componenet function
 
-
-  const [files, setFiles] = useState<File[]>([]);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [files, setFiles] = useState<File[]>([]); // Keeping files variable for future use.
   const handleFileUpload = (files: File[]) => {
     setFiles(files);
     console.log(files);

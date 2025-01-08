@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client';
 import React from 'react';  // Import React to use JSX and React functionality
 
 // Define the progressbar functional component, expecting 'currentStep' and 'totalSteps' as props.
