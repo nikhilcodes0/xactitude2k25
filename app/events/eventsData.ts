@@ -18,7 +18,7 @@ const eventsData = [
     description: "Craft practical solutions to real-world problems under time constraints.",
     chips: ["Innovation", "Prototyping", "Collaboration"],
     about: "Welcome to Hack-n-Build, where your creativity, coding skills, and business acumen are put to the ultimate test! Start by crafting an innovative solution that addresses a real-world problem, ensuring its both feasible and impactful. Once your idea is locked in, you’ll dive into building the solution that works seamlessly and stands out. Finally, it will be time to pitch your creation, showcasing its market potential, scalability, and business value. Think fast, code smart, and pitch like a pro—Hack-n-Build is your stage to turn ideas into game-changing products!",
-    venue: "M1 Lab",
+    venue: "M4 Lab",
     guidelines : [
       "Team Size: 1 - 4 members.", 
       "Number of Rounds: 3 ",
@@ -57,7 +57,7 @@ const eventsData = [
     description: "Showcase your coding skills by solving algorithms and fixing bugs under pressure.",
     chips: ["Algorithms", "Problem Solving", "Debugging"],
     about: "Welcome to CodeShift, where speed, logic, and problem-solving reign supreme! Test your skills across two high-intensity phases, each demanding precision, quick thinking, and flawless execution. Race through fast-paced quizzes, guess tricky outputs, and dive deep into coding challenges. Whether you're solving or fixing, it’s all about making smart moves and fast decisions. Ready to outcode and outdebug the competition? Your time and wits will decide your fate in Codeshift!",
-    venue: "M4 Lab",
+    venue: "M1 Lab",
     guidelines: [
       "Team Size: 2 members.", 
       "Number of Rounds: 2 ",
@@ -78,7 +78,7 @@ const eventsData = [
     description: "Collaborate to build visually stunning and user-centric websites, blending creativity with technical expertise.",
     chips: ["Development", "UI/UX", "Design"],
     about: "Welcome to Weblynx, where your skills in design and development will be put to the test! First, you’ll demonstrate your knowledge of web design and development concepts. Next, it's time to craft a visually stunning design that balances creativity and usability, followed by bringing that design to life with pure code—no shortcuts allowed. To top it off, your website will need to be interactive, responsive, and spot-on with the design. It’s a perfect blend of creativity and technical precision. Ready to prove your web development chops in Weblynx? Let’s build something amazing!",
-    venue: "M5 Lab",
+    venue: "AL2 Lab",
     guidelines: [
       "Team Size: 2 members",
       "Number of Rounds: 2",
@@ -97,7 +97,7 @@ const eventsData = [
     description: "Secure digital systems and demonstrate your team’s ability to identify vulnerabilities.",
     chips: ["Ethical Hacking", "CTF", "Strategy"],
     about: "We are pleased to announce the upcoming Xploit event, an engaging Capture-The-Flag (CTF) competition designed for budding hackers to showcase their skills. This event aims to simulate realistic cybersecurity scenarios, providing participants with an opportunity to showcase their hacking skills and techniques. Dare to Defy the Digital Darkness? Capture the Flag, Fortify Your Digital Fortress!",
-    venue: "M5 Lab",
+    venue: "AL2 Lab",
     guidelines: [
       "Team Size: 2 members.",
       "Number of Rounds: 1 ",
@@ -119,7 +119,7 @@ const eventsData = [
     description: "Transform raw data into meaningful insights with impactful visualizations and analytical precision.",
     chips: ["Data Analytics", "Visualization Tools", "Statistical Modeling"],
     about: "Welcome to DataQuest – where data meets insight and storytelling! In this event, you will dive into complex datasets, transforming them through cleaning, analysis, and visualization to uncover meaningful insights and share compelling narratives. From addressing data quality challenges to creating visually striking, user-friendly dashboards, every step will test your analytical and presentation skills. Do you have what it takes to turn raw data into actionable insights? Show us your expertise at DataQuest!",
-    venue: "M4 Lab & M3 Audi",
+    venue: "M1 Lab & M3 Audi",
     guidelines: [
       "Team Size: 2 members.", 
       "Number of rounds: 2 ", 
@@ -140,7 +140,7 @@ const eventsData = [
     description: "Articulate your ideas on tech topics with clarity and confidence, engaging the audience and judges alike.",
     chips: ["Communication", "Critical Thinking", "Public Speaking"],
     about: "Welcome to Agora, where your wit, knowledge, and creativity collide! This event will have you on your toes as you listen closely, break down tech jargon for any audience, and debate like a prime time news reporter. From untangling complex ideas to defending your points with sharp precision (and a touch of sass), Agora is the ultimate test of how well you can explain, simplify, and argue in the world of IT. Ready to outsmart your opponents, impress with your clarity, and add a dash of snark? The stage is set—let the challenge begin!",
-    venue: "M5 Lab & M3 Audi",
+    venue: "M2 Lab & M3 Audi",
     guidelines: [
       "Team Size: 3 members.", 
       "Number of Rounds: 3 ", 
@@ -179,7 +179,7 @@ const eventsData = [
     description: "Showcase your storytelling through visually stunning edits that captivate the audience.",
     chips: ["Creativity", "Storytelling", "Visual Communication"],
     about: "Lights, camera, action! Get ready to unleash your creativity with Cinephoria, an extraordinary event crafted for aspiring photographers, filmmakers, and editors. Step into a realm where every shot tells a story, and every edit adds a touch of magic. Whether it is capturing the perfect moment or transforming visuals through stunning edits, this event will challenge your imagination and push your artistic boundaries.",
-    venue: "M2 Lab",
+    venue: "AL2 Lab",
     guidelines: [
       "Team Size: Solo participation.", 
       "Number of Rounds: 2 ", 
@@ -200,7 +200,7 @@ const eventsData = [
     description: "Compete in a fast-paced game where coordination and quick thinking win.",
     chips: ["Teamwork", "Strategy", "Reflexes"],
     about: "BattleGrounds Xtreme (BGX) will be an exciting e-sports event of Xactitude, bringing together the best players and squads for an adrenaline-fueled BGMI tournament. This event will be a true test of strategy, teamwork, and skill as participants battle it out on BGMI’s iconic maps such as Erangel, Miramar, Sanhok, and Arena Maps, offering a dynamic blend of long-range warfare and close-quarter combat.",
-    venue: "AL 1&2 Lab, M2 Audi",
+    venue: "AL1 Lab",
     guidelines: [
       "Team Size: 5 members.", 
       "Number of Rounds: 2 ", 
