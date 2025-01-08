@@ -146,22 +146,15 @@ const Reg = () => {
           </button>
         </Link>
         <nav className="hidden md:block my-4 mx-3 md:mx-4 lg:mx-10 xl:mx-16 text-xl">
-          <ul className="flex mx-4 justify-end">
-            {/* <li>
+          <ul className="flex mx-4 justify-between">
+            <li>
               <Link href="/" className="text-white hover:text-[#40E0D0]">
                 HOME
               </Link>
-            </li> */}
+            </li>
             <li>
               <ul className="flex gap-10 mx-5">
-              <li>
-                  <Link
-                    href="/"
-                    className="text-white hover:text-[#40E0D0]"
-                  >
-                    HOME
-                  </Link>
-                </li>
+              
                 <li>
                   <Link
                     href="/events"
@@ -178,6 +171,14 @@ const Reg = () => {
                     ABOUT
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/reg"
+                    className="font-semibold text-[#40E0D0]"
+                  >
+                    REGISTER
+                  </Link>
+                </li>
                 
               </ul>
             </li>
@@ -191,12 +192,11 @@ const Reg = () => {
           REGISTRATION GUIDELINES :
         </h1>
         <hr className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 opacity-60 mb-6"  />
-        <div className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 text-base md:text-2xl  font-inter">
+        <div className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 text-base md:text-xl  font-inter">
           <ul className="list-disc flex flex-col gap-3 mx-5 md:w-[70%]">
             <li>Ensure all details are entered correctly.</li>
             <li>
-              Double-check that you have selected the correct college along with
-              the corresponding branch name. If your college is not listed,
+              If your college is not listed,
               kindly contact 8073243278 immediately to avoid any discrepancies.
             </li>
             <li>

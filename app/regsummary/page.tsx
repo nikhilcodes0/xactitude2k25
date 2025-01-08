@@ -124,7 +124,7 @@ const RegSummery = () => {
         </label>
       </div>
       <div className="mx-3 flex flex-col md:flex-row gap-4 lg:w-3/4 xl:w-[60%] lg:mx-auto lg:gap-8">
-      <a href="https://portal.kristujayanti.edu.in/event-xactitude-2025" className="w-full">
+      <a href="https://portal.kristujayanti.edu.in/event-xactitude-2025" className="w-full" target="_blank">
         <button className={`bg-[#07B6B0] text-lg font-semibold py-3 rounded-lg w-full mb-4 cursor-pointer font-inter ${isChecked ? "opacity-100" : "opacity-50 cursor-not-allowed"}`}
           disabled ={!isChecked}
         >
