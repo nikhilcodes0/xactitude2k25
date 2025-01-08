@@ -12,6 +12,7 @@ import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
 import { checkParticipantslimit } from "@/src/utils/firestoreHelpers";
+import { documentId } from "firebase/firestore";
 
 
 
@@ -82,7 +83,13 @@ const Reg = () => {
       if (isLimitReached) {
         // alert("Maximum participants limit reached!");
         document.getElementById("max-participants")?.classList.remove("hidden");
-      } else document.getElementById("max-participants")?.classList.add("hidden");
+        document.getElementById("register-btn")?.classList.add("opacity-50");
+        document.getElementById("register-btn")?.setAttribute("disabled", "true");
+      } else {
+        document.getElementById("max-participants")?.classList.add("hidden");
+        document.getElementById("register-btn")?.classList.remove("opacity-50");
+        document.getElementById("register-btn")?.removeAttribute("disabled");
+      }
       console.log(isLimitReached)
     } catch (error) {
       console.error("Error checking participant limit:", error);
@@ -395,9 +402,9 @@ const Reg = () => {
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
         <button
-          className={`bg-[#07B6B0] text-xl lg:text-2xl font-bold py-3 rounded-lg w-[90%] md:w-[40%] lg:w-[30%] my-6 cursor-pointer font-inter ${isLimitReached ? "opacity-100" : "opacity-50 cursor-not-allowed" }`}
+          className={`bg-[#07B6B0] text-xl lg:text-2xl font-bold py-3 rounded-lg w-[90%] md:w-[40%] lg:w-[30%] my-6 cursor-pointer font-inter`}
           onClick={handleRegister}
-          disabled={!isLimitReached}
+          id="register-btn"
         >
           Proceed
         </button>
