@@ -82,7 +82,7 @@ const Reg = () => {
       if (isLimitReached) {
         // alert("Maximum participants limit reached!");
         document.getElementById("max-participants")?.classList.remove("hidden");
-      }
+      } else document.getElementById("max-participants")?.classList.add("hidden");
       console.log(isLimitReached)
     } catch (error) {
       console.error("Error checking participant limit:", error);
