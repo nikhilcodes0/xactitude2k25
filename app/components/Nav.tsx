@@ -80,7 +80,7 @@ const Nav: React.FC<NavbarProps> = ({ setHoverType }) => {
                     </Link>
                   </li> */}
             <li>
-              <Link href={"/soon"}
+              <Link href={"/reg"}
               onMouseEnter={() => setHoverType("link")} // Set hover type to 'link'
               onMouseLeave={() => setHoverType(null)} // Reset hover type
               className="hover:cursor-none">
@@ -119,7 +119,7 @@ const Nav: React.FC<NavbarProps> = ({ setHoverType }) => {
             <p className=" font-sans text-5xl text-[#40E0D0] p-0">Events</p>
           </Link>
           <Link
-            href="/soon"
+            href="/reg"
             className={`mx-8 relative transition-all duration-1000 ease-in-out ${
               isOpen ? "left-0" : "-left-48"
             }`}

@@ -89,7 +89,7 @@ const Events: React.FC<Props> = ({ setHoverType })  => {
         <p className='text-neutral-400 text-2xl font-antonio  font-bold mx-auto md:text-3xl'>ON 30th & 31st JAN</p>
         <div className='flex justify-between items-center mt-10 w-full'>
           <hr className='border-neutral-400 w-[6rem] md:w-[17rem]'/>
-          <Link href="/soon">
+          <Link href="/reg">
             <PulsatingButton className='block'
             onMouseEnter={() => handleMouseEnter("link")}
             onMouseLeave={() => handleMouseLeave()}

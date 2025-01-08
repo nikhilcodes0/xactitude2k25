@@ -146,14 +146,22 @@ const Reg = () => {
           </button>
         </Link>
         <nav className="hidden md:block my-4 mx-3 md:mx-4 lg:mx-10 xl:mx-16 text-xl">
-          <ul className="flex mx-4 justify-between">
-            <li>
+          <ul className="flex mx-4 justify-end">
+            {/* <li>
               <Link href="/" className="text-white hover:text-[#40E0D0]">
                 HOME
               </Link>
-            </li>
+            </li> */}
             <li>
               <ul className="flex gap-10 mx-5">
+              <li>
+                  <Link
+                    href="/"
+                    className="text-white hover:text-[#40E0D0]"
+                  >
+                    HOME
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/events"
@@ -170,14 +178,7 @@ const Reg = () => {
                     ABOUT
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/soon"
-                    className="text-white hover:text-[#40E0D0]"
-                  >
-                    REGISTER
-                  </Link>
-                </li>
+                
               </ul>
             </li>
           </ul>

@@ -77,7 +77,7 @@ const EventPage = async ({ params }: PageProps) => {
                 </Link>
               </li>
               <li>
-                <Link href="/soon" className="text-white hover:text-[#40E0D0]">
+                <Link href="/reg" className="text-white hover:text-[#40E0D0]">
                   REGISTER
                 </Link>
               </li>
@@ -178,7 +178,7 @@ const EventPage = async ({ params }: PageProps) => {
       <div className="flex px-4 py-4 mb-10 justify-start items-center">
         <div className="mx-4">
           <PulsatingButton className="w-[10rem] dark md:w-[15rem] lg:w-[20rem] lg:p-4">
-            <Link href={`/soon`} className="font-semibold lg:text-lg">
+            <Link href={`/reg`} className="font-semibold lg:text-lg">
               Register Now
             </Link>
           </PulsatingButton>
