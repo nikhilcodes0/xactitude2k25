@@ -174,7 +174,7 @@ const Reg = () => {
                 <li>
                   <Link
                     href="/reg"
-                    className="font-semibold text-[#40E0D0]"
+                    className="font-semibold text-[#40E0D0] underline underline-offset-4"
                   >
                     REGISTER
                   </Link>
