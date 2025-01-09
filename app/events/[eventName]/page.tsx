@@ -47,7 +47,7 @@ const EventPage = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className=" font-sans pt-4 mb-7 lg:px-10 dark text-white">
+    <div className=" font-sans pt-4 mb-10 lg:px-10 dark text-white">
       <div className="w-full text-black font-sans pl-4 pt-4 md:hidden">
         
         <Link href="/events">

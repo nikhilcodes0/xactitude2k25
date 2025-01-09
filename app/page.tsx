@@ -84,7 +84,7 @@ export default function Page() {
   
 
   return (
-    <div className="mb-7">
+    <div className="mb-10">
       <Cursor hoverType={hoverType} />
       <div className="bg-[0d0d0d] mt-32">
         <div className="z-10 ">

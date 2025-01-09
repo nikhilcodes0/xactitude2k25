@@ -65,7 +65,7 @@ const Registerd = () => {
   }
 
   return (
-    <div className="text-white font-sans mb-7 md:w-[90%] mx-auto">
+    <div className="text-white font-sans mb-10 md:w-[90%] mx-auto">
       <Progressbar currentStep={3} totalSteps={3} />
       <div className="flex flex-col items-center justify-center mt-16">
         <Image src={success} alt="Success Icon" />

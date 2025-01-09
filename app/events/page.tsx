@@ -24,7 +24,7 @@ const Events = () => {
   const [hoverType, setHoverType] = useState<string | null>(null);
 
   return (
-    <div className="text-white mb-7">
+    <div className="text-white mb-10">
       <Cursor 
         hoverType={hoverType}
       />

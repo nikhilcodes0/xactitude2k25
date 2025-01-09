@@ -137,7 +137,7 @@ const Reg = () => {
     }
   };
   return (
-    <div className="bg-[#0D0D0D] mb-7 text-white font-sans">
+    <div className="bg-[#0D0D0D] mb-10 text-white font-sans">
       <div className="w-full bg-[#0D0D0D] text-[#0D0D0D] font-sans pl-4 pt-4">
         <Link href="/">
           <button className=" items-center md:hidden w-32 text-white font-semibold justify-center  flex gap-2 bg-[#0d0d0d] border-white border-2 p-2 rounded-full ">
