@@ -110,7 +110,7 @@ const Transummery = () => {
 
 
   return (
-    <div className="bg-[#0d0d0d] text-white font-sans">
+    <div className="bg-[#0d0d0d] text-white font-sans mb-7">
       <Progressbar currentStep={2} totalSteps={3} />
       <div>
         <p className='text-2xl mt-12 text-center font-inter text-gray-200'>Finally, verify your payment!</p>
