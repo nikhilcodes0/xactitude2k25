@@ -203,7 +203,7 @@ export default function Page() {
           </div>
         </div>
         <div className="text-white font-inter text-sm mt-[5rem] flex justify-evenly ">
-          <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
+          <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing" target="_blank">
             <ShimmerButton
               className=" bg-[#0d0d0d] hover:cursor-none md:hidden rounded-3xl border border-[#4c4c4c] w-40"
               background="rgba(13, 13, 13, 1)"
@@ -213,7 +213,7 @@ export default function Page() {
               <span className="">Brochure</span>
             </ShimmerButton>
           </a>
-          <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
+          <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing" target="_blank">
             <ShimmerButton
               className="bg-[#0d0d0d] md:hidden rounded-3xl hover:cursor-none border border-[#4c4c4c] w-40"
               background="rgba(13, 13, 13, 1)"
