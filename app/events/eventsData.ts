@@ -18,7 +18,7 @@ const eventsData = [
     description: "Craft practical solutions to real-world problems under time constraints.",
     chips: ["Innovation", "Prototyping", "Collaboration"],
     about: "Welcome to Hack-n-Build, where your creativity, coding skills, and business acumen are put to the ultimate test! Start by crafting an innovative solution that addresses a real-world problem, ensuring its both feasible and impactful. Once your idea is locked in, you’ll dive into building the solution that works seamlessly and stands out. Finally, it will be time to pitch your creation, showcasing its market potential, scalability, and business value. Think fast, code smart, and pitch like a pro—Hack-n-Build is your stage to turn ideas into game-changing products!",
-    venue: "M4 Lab",
+    venue: "M4 Lab & M3 Audi",
     guidelines : [
       "Team Size: 1 - 4 members.", 
       "Number of Rounds: 3 ",
@@ -39,7 +39,7 @@ const eventsData = [
     description: "Take on an IT Manager's role and solve challenges with strategy and innovation.",
     chips: ["Leadership", "Team Management", "Decision Making"],
     about: "Step into the world of IT Manager, where quick thinking, sharp decision-making, and leadership under pressure are key! This event will test your ability to solve problems, make tough choices, and defend your strategy—all while staying cool under fire. Whether you're ditching any products, convincing skeptics of an issue in your company, or facing the hot seat, every round will push you to prove you are the kind of leader who thrives in the fast-paced world of IT. Ready to lead, innovate, and rise to the challenge? The spotlight’s on YOU!",
-    venue: "M1 Lab, M1 & M2 Audi",
+    venue: "M1 Audi",
     guidelines: [
       "Team Size: Solo participation.", 
       "Number of Rounds: 4 ",
@@ -57,7 +57,7 @@ const eventsData = [
     description: "Showcase your coding skills by solving algorithms and fixing bugs under pressure.",
     chips: ["Algorithms", "Problem Solving", "Debugging"],
     about: "Welcome to CodeShift, where speed, logic, and problem-solving reign supreme! Test your skills across two high-intensity phases, each demanding precision, quick thinking, and flawless execution. Race through fast-paced quizzes, guess tricky outputs, and dive deep into coding challenges. Whether you're solving or fixing, it’s all about making smart moves and fast decisions. Ready to outcode and outdebug the competition? Your time and wits will decide your fate in Codeshift!",
-    venue: "M1 Lab",
+    venue: "M4 Lab",
     guidelines: [
       "Team Size: 2 members.", 
       "Number of Rounds: 2 ",
@@ -97,7 +97,7 @@ const eventsData = [
     description: "Secure digital systems and demonstrate your team’s ability to identify vulnerabilities.",
     chips: ["Ethical Hacking", "CTF", "Strategy"],
     about: "We are pleased to announce the upcoming Xploit event, an engaging Capture-The-Flag (CTF) competition designed for budding hackers to showcase their skills. This event aims to simulate realistic cybersecurity scenarios, providing participants with an opportunity to showcase their hacking skills and techniques. Dare to Defy the Digital Darkness? Capture the Flag, Fortify Your Digital Fortress!",
-    venue: "AL2 Lab",
+    venue: "AL1 Lab",
     guidelines: [
       "Team Size: 2 members.",
       "Number of Rounds: 1 ",
@@ -119,7 +119,7 @@ const eventsData = [
     description: "Transform raw data into meaningful insights with impactful visualizations and analytical precision.",
     chips: ["Data Analytics", "Visualization Tools", "Statistical Modeling"],
     about: "Welcome to DataQuest – where data meets insight and storytelling! In this event, you will dive into complex datasets, transforming them through cleaning, analysis, and visualization to uncover meaningful insights and share compelling narratives. From addressing data quality challenges to creating visually striking, user-friendly dashboards, every step will test your analytical and presentation skills. Do you have what it takes to turn raw data into actionable insights? Show us your expertise at DataQuest!",
-    venue: "M1 Lab & M3 Audi",
+    venue: "M2 Audi",
     guidelines: [
       "Team Size: 2 members.", 
       "Number of rounds: 2 ", 
@@ -140,7 +140,7 @@ const eventsData = [
     description: "Articulate your ideas on tech topics with clarity and confidence, engaging the audience and judges alike.",
     chips: ["Communication", "Critical Thinking", "Public Speaking"],
     about: "Welcome to Agora, where your wit, knowledge, and creativity collide! This event will have you on your toes as you listen closely, break down tech jargon for any audience, and debate like a prime time news reporter. From untangling complex ideas to defending your points with sharp precision (and a touch of sass), Agora is the ultimate test of how well you can explain, simplify, and argue in the world of IT. Ready to outsmart your opponents, impress with your clarity, and add a dash of snark? The stage is set—let the challenge begin!",
-    venue: "M2 Lab & M3 Audi",
+    venue: "M1 Audi",
     guidelines: [
       "Team Size: 3 members.", 
       "Number of Rounds: 3 ", 
@@ -160,7 +160,7 @@ const eventsData = [
     description: "Compete in a thrilling quiz on topics like AI, cybersecurity, programming, and emerging trends.",
     chips: ["Trivia", "Quick Thinking", "Knowledge"],
     about: "Step into the ultimate IT quiz where knowledge meets strategy. Your mission: Crack the Code and demonstrate your expertise in the ever-evolving world of technology. Test your intellect, outsmart the competition, and prove you have what it takes to be crowned the quiz champion. The stage is set—are you ready to lead the way?",
-    venue: "M4 Lab & M1 Audi",
+    venue: "M3 Audi",
     guidelines: [
       "Team Size: 2 members.",  
       "Number of Rounds: 3 ", 
@@ -179,7 +179,7 @@ const eventsData = [
     description: "Showcase your storytelling through visually stunning edits that captivate the audience.",
     chips: ["Creativity", "Storytelling", "Visual Communication"],
     about: "Lights, camera, action! Get ready to unleash your creativity with Cinephoria, an extraordinary event crafted for aspiring photographers, filmmakers, and editors. Step into a realm where every shot tells a story, and every edit adds a touch of magic. Whether it is capturing the perfect moment or transforming visuals through stunning edits, this event will challenge your imagination and push your artistic boundaries.",
-    venue: "AL2 Lab",
+    venue: "AL1 Lab",
     guidelines: [
       "Team Size: Solo participation.", 
       "Number of Rounds: 2 ", 
@@ -200,7 +200,7 @@ const eventsData = [
     description: "Compete in a fast-paced game where coordination and quick thinking win.",
     chips: ["Teamwork", "Strategy", "Reflexes"],
     about: "BattleGrounds Xtreme (BGX) will be an exciting e-sports event of Xactitude, bringing together the best players and squads for an adrenaline-fueled BGMI tournament. This event will be a true test of strategy, teamwork, and skill as participants battle it out on BGMI’s iconic maps such as Erangel, Miramar, Sanhok, and Arena Maps, offering a dynamic blend of long-range warfare and close-quarter combat.",
-    venue: "AL1 Lab",
+    venue: "AL1 Lab & AL2 Lab",
     guidelines: [
       "Team Size: 5 members.", 
       "Number of Rounds: 2 ", 
