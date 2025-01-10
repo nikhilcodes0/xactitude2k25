@@ -21,8 +21,6 @@ import ShimmerButton from "@/components/ui/shimmer-button";
 import info1 from "./assets/info1.png";
 import info2 from "./assets/info2.png";
 
-
-
 const humaneSemBd = localFont({
   src: "./fonts/Humane-SemiBold.ttf",
   weight: "600",
@@ -81,8 +79,6 @@ export default function Page() {
     console.log("Hovering stopped");
   };
 
-  
-
   return (
     <div className="mb-10">
       <Cursor hoverType={hoverType} />
@@ -113,14 +109,13 @@ export default function Page() {
             </div>
             <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
               <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
-                <ShimmerButton className=" hidden md:block hover:cursor-none absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-[5rem] z-10 left-[8rem]"
-                background="rgba(13, 13, 13, 1)"
-                onMouseEnter={() => handleMouseEnter('link')}
-                onMouseLeave={() => handleMouseLeave()}
+                <ShimmerButton
+                  className=" hidden md:block hover:cursor-none absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-[5rem] z-10 left-[8rem]"
+                  background="rgba(13, 13, 13, 1)"
+                  onMouseEnter={() => handleMouseEnter("link")}
+                  onMouseLeave={() => handleMouseLeave()}
                 >
-                  <span className="">
-                    Brochure
-                  </span>
+                  <span className="">Brochure</span>
                 </ShimmerButton>
               </a>
               <Image
@@ -129,21 +124,20 @@ export default function Page() {
                 className=" object-fill z-0  mx-auto w-[100%] max-w-[300px] md:max-w-[430px] bottom-[0rem] md:bottom-[10rem] 2xl:max-w-[500px] xl:bottom-[1rem] md:w-[45%] absolute left-[62%] md:left-[45%] xl:left-[50%] transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
-                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-[5rem] z-10 right-[8rem] "
-                background="rgba(13, 13, 13, 1)"
-                onMouseEnter={() => handleMouseEnter('link')}
-                onMouseLeave={() => handleMouseLeave()}
+                <ShimmerButton
+                  className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-[5rem] z-10 right-[8rem] "
+                  background="rgba(13, 13, 13, 1)"
+                  onMouseEnter={() => handleMouseEnter("link")}
+                  onMouseLeave={() => handleMouseLeave()}
                 >
-                  <span>
-                    Schedule
-                  </span>
+                  <span>Schedule</span>
                 </ShimmerButton>
               </a>
             </div>
           </div>
           <BackgroundBeams className=" z-[-1]" />
         </div>
-        <div className="mt-[20rem] md:mt-[35rem] lg:pl-8">
+        <div className="mt-[23.2rem] md:mt-[35rem] lg:pl-8">
           <h1 className="text-white  text-[3rem]  font-black font-sans text-start p-4 px-3 md:flex md:text-[3rem] lg:text-[4rem] xl:text-[5rem]  ">
             Welcome to
             <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0]  text-[3rem] lg:text-[4rem] xl:text-[5rem]   md:ml-4 font-black">
@@ -163,7 +157,10 @@ export default function Page() {
             onMouseLeave={() => handleMouseLeave()}
             className="hover:cursor-none"
           >
-            <Marquee pauseOnHover={true} className="[--duration:50s] hover:cursor-none">
+            <Marquee
+              pauseOnHover={true}
+              className="[--duration:50s] hover:cursor-none"
+            >
               {eventsData.map((event) => (
                 <EventCard
                   key={event.name}
@@ -178,14 +175,54 @@ export default function Page() {
         <div className="mt-28 flex flex-col md:flex-row gap-[2rem] md:gap-[1rem] text-white font-inter lg:mx-[5rem] ">
           <div className="bg-[#181818] p-4 rounded-[2rem] mx-6  md:w-[50%]">
             <h1 className="text-3xl m-3 lg:text-4xl">A Premier Tech Stage</h1>
-            <p className="mx-3 text-lg lg:text-xl mt-10">Xactitude is the ultimate platform where tech enthusiasts from colleges across the region unite to exchange ideas, collaborate, and innovate.</p>
-            <Image src={info1} alt="info1" className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"></Image>
+            <p className="mx-3 text-lg lg:text-xl mt-10">
+              Xactitude is the ultimate platform where tech enthusiasts from
+              colleges across the region unite to exchange ideas, collaborate,
+              and innovate.
+            </p>
+            <Image
+              src={info1}
+              alt="info1"
+              className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"
+            ></Image>
           </div>
           <div className="bg-[#181818] p-4 rounded-[2rem] mx-6   md:w-[50%]">
-            <h1 className="text-3xl m-3 lg:text-4xl">Showcase Creativity and Passion</h1>
-            <p className="mx-3 text-lg lg:text-xl mt-10">An incredible opportunity to demonstrate your technical skills, unleash your creativity, and share your passion for groundbreaking technology with like-minded individuals.</p>
-            <Image src={info2} alt="info2" className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"></Image>
+            <h1 className="text-3xl m-3 lg:text-4xl">
+              Showcase Creativity and Passion
+            </h1>
+            <p className="mx-3 text-lg lg:text-xl mt-10">
+              An incredible opportunity to demonstrate your technical skills,
+              unleash your creativity, and share your passion for groundbreaking
+              technology with like-minded individuals.
+            </p>
+            <Image
+              src={info2}
+              alt="info2"
+              className="w-40 h-40 relative left-[60%] lg:left-[70%] xl:left-[80%] m-0 md:bottom-0"
+            ></Image>
           </div>
+        </div>
+        <div className="text-white font-inter text-sm mt-[5rem] flex justify-evenly ">
+          <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
+            <ShimmerButton
+              className=" bg-[#0d0d0d] hover:cursor-none md:hidden rounded-3xl border border-[#4c4c4c] w-40"
+              background="rgba(13, 13, 13, 1)"
+              onMouseEnter={() => handleMouseEnter("link")}
+              onMouseLeave={() => handleMouseLeave()}
+            >
+              <span className="">Brochure</span>
+            </ShimmerButton>
+          </a>
+          <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
+            <ShimmerButton
+              className="bg-[#0d0d0d] md:hidden rounded-3xl hover:cursor-none border border-[#4c4c4c] w-40"
+              background="rgba(13, 13, 13, 1)"
+              onMouseEnter={() => handleMouseEnter("link")}
+              onMouseLeave={() => handleMouseLeave()}
+            >
+              <span>Schedule</span>
+            </ShimmerButton>
+          </a>
         </div>
         <div className="mt-32">
           <p className="text-white  text-5xl md:text-[8rem] font-black font-antonio text-start p-4 px-12">
@@ -196,9 +233,7 @@ export default function Page() {
         <div className="mt-[8rem]">
           <Steps />
         </div>
-        <Events 
-          setHoverType={setHoverType}
-        />
+        <Events setHoverType={setHoverType} />
       </div>
       <Footer />
     </div>
