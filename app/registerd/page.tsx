@@ -81,7 +81,7 @@ const Registerd = () => {
         <p className="text-lg md:text-2xl lg:text-3xl font-normal font-inter mx-7" id='participantId'>{parsedSessionData.id}</p>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center md:mx-10 gap-6 lg:mx-20 xl:w-[80%] xl:mx-auto rounded-3xl py-7 my-5">
-        <Link href={`https://chat.whatsapp.com/EuhpgnQe7DQ2RfE1bjo96f`} className='w-full'>
+        <Link href={`https://chat.whatsapp.com/EuhpgnQe7DQ2RfE1bjo96f`} className='w-full' target="_blank">
           <button className="border-2 font-inter flex items-center gap-2 justify-center border-white text-[#25D366] text-xl font-normal rounded-3xl p-3 w-[90%]  mx-6">
             <span>
               <Image src={whatsapp} alt="Copy Icon" />
