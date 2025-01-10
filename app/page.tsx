@@ -113,7 +113,7 @@ export default function Page() {
             </div>
             <div className="text-white font-inter text-sm lg:text-lg flex justify-center gap-[27rem] ">
               <a href="https://drive.google.com/file/d/1J6sevdwuUYQBVIGIBPI6u5cpV5kmtli1/view?usp=sharing">
-                <ShimmerButton className=" hidden md:block hover:cursor-none absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-[12rem] z-10 left-[8rem]"
+                <ShimmerButton className=" hidden md:block hover:cursor-none absolute rounded-3xl border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:left-[12rem] xl:left-[20rem] 2xl:left-[29rem] bottom-[5rem] z-10 left-[8rem]"
                 background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
@@ -129,7 +129,7 @@ export default function Page() {
                 className=" object-fill z-0  mx-auto w-[100%] max-w-[300px] md:max-w-[430px] bottom-[0rem] md:bottom-[10rem] 2xl:max-w-[500px] xl:bottom-[1rem] md:w-[45%] absolute left-[62%] md:left-[45%] xl:left-[50%] transform -translate-x-1/2"
               />
               <a href="https://drive.google.com/file/d/1q6BXkXBxnHAwhRF5D8w1MwJc6ZJNbWUq/view?usp=sharing">
-                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-[12rem] z-10 right-[8rem] "
+                <ShimmerButton className="bg-[#0d0d0d] rounded-3xl hover:cursor-none hidden md:block border border-[#4c4c4c] px-4 py-2 w-40 lg:w-48 lg:right-[12rem] xl:right-[20rem] 2xl:right-[29rem] absolute bottom-[5rem] z-10 right-[8rem] "
                 background="rgba(13, 13, 13, 1)"
                 onMouseEnter={() => handleMouseEnter('link')}
                 onMouseLeave={() => handleMouseLeave()}
@@ -143,7 +143,7 @@ export default function Page() {
           </div>
           <BackgroundBeams className=" z-[-1]" />
         </div>
-        <div className="mt-[25rem] md:mt-[40rem] lg:pl-8">
+        <div className="mt-[20rem] md:mt-[35rem] lg:pl-8">
           <h1 className="text-white  text-[3rem]  font-black font-sans text-start p-4 px-3 md:flex md:text-[3rem] lg:text-[4rem] xl:text-[5rem]  ">
             Welcome to
             <p className="bg-gradient-to-b bg-clip-text text-transparent from-neutral-200 to-[#40E0D0]  text-[3rem] lg:text-[4rem] xl:text-[5rem]   md:ml-4 font-black">
