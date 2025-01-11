@@ -208,6 +208,9 @@ const Reg = () => {
               Choose events according to the schedule provided and make sure you
               join the right teams within each event.
             </li>
+            <li>
+              Each college can send only one team for each event.
+            </li>
             <li>Registration window is open till 30th of Jan.</li>
             <li>
               For any queries, corrections, or changes, contact 8073243278.
