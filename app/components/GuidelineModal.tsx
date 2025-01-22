@@ -37,16 +37,14 @@ const GuidelineModal = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className={`text-3xl text-center font-medium text-[#40E0D0] mb-4 ${anton.className}`}>
-              📝 Updated Guidelines
+              Updated Guidelines
             </h2>
             <p className="text-gray-600">
               Some events have updated guidelines. Please check the latest
               changes to ensure you are prepared!
             </p>
             <ul className="list-disc list-inside mt-3 text-gray-600">
-              <li>Event A: Extended submission deadline</li>
-              <li>Event B: Rule changes for participation</li>
-              <li>Event C: Updated team size restrictions</li>
+              <li>Xploit: Bring your own laptop</li>
             </ul>
             <button
               onClick={toggleModal}
