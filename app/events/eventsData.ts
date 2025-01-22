@@ -101,6 +101,7 @@ const eventsData = [
     guidelines: [
       "Team Size: 2 members.",
       "Number of Rounds: 1 ",
+      "Participants must bring their own systems with the necessary software installed.",
       "Participants are allowed to use search engines while the challenge is going on. Participants are not allowed to use any kind of LLM chatbots or AI models. ", 
       "Participants are encouraged to bring their own laptops. ", 
       "Participants are allowed to use any OS(Operating system) of their choice. ", 

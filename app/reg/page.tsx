@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Select from "../components/Select";
-
+import GuidelineModal from "../components/GuidelineModal";
 import eventsData from "../events/eventsData";
 import localFont from "next/font/local";
 import Group from "../components/group";
@@ -360,6 +360,7 @@ const Reg = () => {
       </div>
       <hr className="mx-3 md:mx-6 lg:mx-12 xl:mx-20 opacity-60 py-4 mt-10" />
 
+      <GuidelineModal/>
       {/* Submit Button */}
       <div className="my-3 flex flex-col items-center justify-center">
         <button
