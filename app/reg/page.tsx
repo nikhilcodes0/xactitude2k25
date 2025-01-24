@@ -12,6 +12,7 @@ import Image from "next/image";
 import home from "../assets/home-light.svg";
 import Link from "next/link";
 import { checkParticipantslimit } from "@/src/utils/firestoreHelpers";
+import { checkForDuplicateParticipants } from "@/src/utils/firestoreHelpers";
 
 const initialEvents = eventsData.map((event) => ({
   id: event.slug,
@@ -110,7 +111,11 @@ const Reg = () => {
     } else if (!nameRegex.test(name)) {
       alert("Please enter a valid name!");
       return;
-    } else {
+    } else if (await checkForDuplicateParticipants(college, name)) {
+      alert("You have already registered once, any changes can be made on spot!");
+      return;
+    }
+    else {
       const participantDetails = {
         name,
         college,
@@ -214,6 +219,9 @@ const Reg = () => {
             <li>Registration window is open till 30th of Jan.</li>
             <li>
               For any queries, corrections, or changes, contact 8073243278.
+            </li>
+            <li>
+              You can only register once, any changes can be done on spot on the day of the event.
             </li>
           </ul>
         </div>

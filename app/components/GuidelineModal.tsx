@@ -45,6 +45,7 @@ const GuidelineModal = () => {
             </p>
             <ul className="list-disc list-inside mt-3 text-gray-600">
               <li>Participants are requested to bring their own laptops for the Xploit event.</li>
+              <li>Participants can only register once, any changes can be made on spot on the day of the event.</li>
             </ul>
             <button
               onClick={toggleModal}

@@ -179,3 +179,15 @@ export const checkParticipantslimit = async (collegeName) => {
     return false;
   }
 }
+
+export const checkForDuplicateParticipants = async (collegeName, participantName) => {
+  try {
+    const participantsRef = collection(db, '2025', collegeName, "Participants");
+    const participantsSnapshot = await getDocs(participantsRef);
+    const participantDocs = participantsSnapshot.docs.filter(doc => doc.id === participantName);
+    return participantDocs.length > 0;
+  } catch (error) {
+    console.error('Error checking for duplicate participants:', error);
+    return false;
+  }
+}
