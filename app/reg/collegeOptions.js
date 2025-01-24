@@ -87,6 +87,7 @@ const collegeOptions = [
   "Jain University",
   "Jain University (Jakkasandra)",
   "Jain University Jayanagar",
+  "Jesse Degree College",
   "Jnana Vikas Institute of Technology",
   "JSS Academy of Technical Education",
   "Jyoti Nivas",
