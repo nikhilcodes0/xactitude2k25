@@ -133,7 +133,7 @@ const Transummery = () => {
   };
 
   return (
-    <div className="bg-[#0d0d0d] text-white font-sans mb-10">
+    <div className="bg-[#0d0d0d] text-white font-sans pb-10">
       <Progressbar currentStep={2} totalSteps={3} />
       <div>
         <p className="text-2xl mt-12 text-center font-inter text-gray-200">
@@ -177,7 +177,7 @@ const Transummery = () => {
       </div>
       {/* till here   */}
       {isOverlayVisible && (
-        <div className="w-full h-screen bg-gray-900 bg-opacity-80 absolute top-0 left-0 z-50 flex justify-center items-center">
+        <div className="w-full h-[120%] bg-gray-900 bg-opacity-80 absolute top-0 left-0 z-50 flex justify-center items-center">
           <Spinner size="large" />
         </div>
       )}
