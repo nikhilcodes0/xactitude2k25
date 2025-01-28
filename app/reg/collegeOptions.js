@@ -89,6 +89,7 @@ const collegeOptions = [
   "MS Ramaiah Institute of Technology",
   "M.S. Ramaiah College of Arts, Science, and Commerce",
   "MVJ College of Engineering",
+  "MVJ degree college",
   "Nadgir Institute of Engineering & Technology",
   "Nagarjuna Degree College",
   "National Institute of Technology Karnataka (NITK), Surathkal",
