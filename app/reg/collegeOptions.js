@@ -42,6 +42,7 @@ const collegeOptions = [
   "CMR Institute of Technology",
   "Dayananda Sagar College of Engineering",
   "Dayananda Sagar Institute of Technology",
+  "Don Bosco College, KR Puram",
   "Don Bosco Institute of Technology",
   "Dr Ambedkar Institute of Technology",
   "Dr Sri Sri Sri Shivakumara Mahaswamy College",
