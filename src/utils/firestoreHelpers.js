@@ -173,7 +173,7 @@ export const checkParticipantslimit = async (collegeName) => {
     const participantsRef = collection(db, '2025',collegeName, "Participants");
     const participantsSnapshot = await getDocs(participantsRef);
     // return participantsSnapshot.size;
-    return participantsSnapshot.size == 20;
+    return participantsSnapshot.size == 25;
   } catch (error) {
     console.error('Error checking participant limit:', error);
     return false;
